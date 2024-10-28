@@ -1,0 +1,178 @@
+/* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+
+.main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  border-radius: 10px;
+  
+}
+@keyframes logoSlider{
+  from{
+    top: -200px;
+  }
+  to{
+    left: 45%;
+    top: 5px;
+  }
+}
+@keyframes logoSliderBack{
+  from{
+    left: 45%;
+    top: 5px;
+  }
+  to{
+    top: -200px;
+  }
+}
+
+
+.logoSlider{
+  /* transition: all ease-in-out 500ms ; */
+  position: absolute;
+  width: 70px;
+  z-index: 999;
+  /* -webkit-animation: logoSlider 1s; */
+  /* -webkit-animation-fill-mode: forwards; */
+  animation: logoSliderBack 1s;
+  /* animation-fill-mode: forwards; */
+  
+}
+
+.main:hover{
+  .logoSlider{
+    -webkit-animation-fill-mode: forwards;
+    animation: logoSlider 0.5s;
+    animation-fill-mode: forwards;
+    /* top: -200px; */
+  }
+}
+.wrapper,
+.slide {
+  
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+.slide .image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.slide .image-data {
+  text-shadow: black 0px 0px 9px;
+  padding: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  z-index: 100;
+}
+.image-data span.text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+.image-data h2 {
+  font-size: 45px;
+  font-weight: 900;
+  color: #fff;
+}
+a.button {
+  text-shadow: var(--base-color) 1px 1px 2px;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: var(--text-color);
+  background: var(--base-color);
+  text-decoration: none;
+  margin-top: 25px;
+  transition: all 0.3s ease;
+}
+a.button:hover {
+  color: white;
+  background-color: var(--accent-color);
+}
+
+/* swiper button css */
+.nav-btn {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+}
+.nav-btn:hover {
+  background: rgba(0, 253, 106, 0.3);
+}
+.swiper-button-next {
+  right: 50px;
+}
+.swiper-button-prev {
+  left: 50px;
+}
+.nav-btn::before,
+.nav-btn::after {
+  font-size: 25px;
+  color: #fff;
+}
+.swiper-pagination-bullet {
+  opacity: 1;
+  height: 12px;
+  width: 12px;
+  background-color: #fff;
+  visibility: hidden;
+}
+.swiper-pagination-bullet-active {
+  border: 2px solid #fff;
+  background-color: #c87e4f;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-btn {
+    visibility: hidden;
+  }
+  .swiper-pagination-bullet {
+    visibility: visible;
+  }
+}
+@media screen and (max-width : 600px){
+  .image-data h2 {
+    font-size: 30px;
+  }
+  .logoSlider{
+    width: 50px;
+  }
+  .main {
+    height: 80%;
+  }
+  .slide{
+    margin-bottom: 5px;
+  }
+}
+@media screen and (max-width : 400px){
+  .image-data h2 {
+    font-size: 20px;
+  }
+  a.button{
+    font-size: medium;
+  }
+  .slide .image-data{
+    padding: 1rem;
+  }
+}
