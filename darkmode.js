@@ -1,79 +1,89 @@
-let darkmode = localStorage.getItem('darkmode')
+let darkmode = localStorage.getItem('darkmode' , 'light');
 
-const themeSwitch = document.getElementById('theme-switch')
-const down =   document.getElementById('down')
 
+const themeSwitch = document.getElementById('theme-switch');
 
 const enableDarkmode = () => {
-  
-  document.body.classList.add('darkmode')
-  localStorage.setItem('darkmode', 'active')
-}
+  document.body.classList.add('darkmode');
+  localStorage.setItem('darkmode', 'active');
+};
 
 const disableDarkmode = () => {
-  document.body.classList.remove('darkmode')
+  document.body.classList.remove('darkmode');
+  localStorage.setItem('darkmode', null);
+};
 
-  localStorage.setItem('darkmode', null)
+if (darkmode === "active") enableDarkmode();
+
+themeSwitch.addEventListener("click", toggleTheme);
+
+function toggleTheme() {
+  darkmode = darkmode === 'light' ? 'dark' : 'light';
+  localStorage.setItem('darkmode', darkmode);
+  
+  document.body.classList.toggle('darkmode', darkmode === 'dark');
+  
+  const moon = document.querySelector('.moon');
+  const moon2 = document.querySelector('.moon2');
+  const isLand1 = document.querySelector('.img1');
+  const isLand2 = document.querySelector('.img2');
+  
+  moon.classList.toggle('unhide', darkmode === 'dark');
+  moon2.classList.toggle('unhide', darkmode !== 'dark');
+  isLand1.classList.toggle('hidden', darkmode === 'dark');
+  isLand2.classList.toggle('unhide', darkmode === 'dark');
+
+  const down = document.getElementById('down');
+  down.classList.toggle('rotate180', darkmode === 'dark');
 }
 
-if(darkmode === "active") enableDarkmode()
+function updateTheme() {
+  darkmode = localStorage.getItem( 'light');
+  toggleTheme();
+}
 
-themeSwitch.addEventListener("click", () => {
-  location.reload()
-  darkmode = localStorage.getItem('darkmode')
-  darkmode !== "active" ? enableDarkmode() : disableDarkmode()
-  
-})
+document.addEventListener("DOMContentLoaded", updateTheme);
 
 
-//////////////
 
-let darkmode2 = localStorage.getItem('darkmode')
+// //////////////
 
-const themeSwitch2 = document.getElementById('theme-switch2')
-const down2 =   document.getElementById('down2')
+let darkmode2 = localStorage.getItem('darkmode') || 'light';
 
+const themeSwitch2 = document.getElementById('theme-switch2');
+const down2 = document.getElementById('down2');
 
 const enableDarkmode2 = () => {
-  
-  document.body.classList.add('darkmode')
-  localStorage.setItem('darkmode', 'active')
-}
+  document.body.classList.add('darkmode');
+  localStorage.setItem('darkmode', 'active');
+};
 
 const disableDarkmode2 = () => {
-  document.body.classList.remove('darkmode')
+  document.body.classList.remove('darkmode');
+  localStorage.setItem('darkmode', null);
+};
 
-  localStorage.setItem('darkmode', null)
-}
-
-if(darkmode2 === "active") enableDarkmode2()
+if (darkmode2 === "active") enableDarkmode2();
 
 themeSwitch2.addEventListener("click", () => {
-  location.reload()
-  darkmode2 = localStorage.getItem('darkmode')
-  darkmode2 !== "active" ? enableDarkmode2() : disableDarkmode2()
-  
-})
+  darkmode2 = darkmode2 === 'light' ? 'dark' : 'light';
+  localStorage.setItem('darkmode', darkmode2);
+
+  document.body.classList.toggle('darkmode', darkmode2 === 'dark');
+
+  const moon = document.querySelector('.moon');
+  const moon2 = document.querySelector('.moon2');
+  const isLand1 = document.querySelector('.img1');
+  const isLand2 = document.querySelector('.img2');
+
+  moon.classList.toggle('unhide', darkmode2 === 'dark');
+  moon2.classList.toggle('unhide', darkmode2 !== 'dark');
+  isLand1.classList.toggle('hidden', darkmode2 === 'dark');
+  isLand2.classList.toggle('unhide', darkmode2 === 'dark');
 
 
-///////////////////
-
-let moon = document.querySelector('.moon')
-
-if(darkmode === "active") {
-  moon.classList.add('unhide')
-}
-
-let moon2 = document.querySelector('.moon2')
-
-if(darkmode === "active") {
-  moon2.classList.add('hidden')
-}
-/////////////
-let isLand2 = document.querySelector('.img2')
-let isLand1 = document.querySelector('.img1')
-
-if(darkmode === "active") {
-  isLand2.classList.add('unhide')
-  isLand1.classList.add('hidden')
-}
+  moon.classList.toggle('unhide', darkmode === 'dark');
+  moon2.classList.toggle('unhide', darkmode !== 'dark');
+  isLand1.classList.toggle('hidden', darkmode === 'dark');
+  isLand2.classList.toggle('unhide', darkmode === 'dark');
+});

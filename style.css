@@ -744,7 +744,7 @@ body {
 }
 .moon2{
   transition: all ease-in-out 300ms;
-  /* display: none; */
+  display: none;
   width: 800px;
   height: 800px;
   position: absolute;
@@ -753,6 +753,12 @@ body {
   top: -170px;
   z-index: -1;
   opacity: 0.6;
+}
+.island1{
+  transition: all ease-in-out 500ms;
+}
+.island2{
+  transition: all ease-in-out 500ms;
 }
 .unhide{
   display: inline;
