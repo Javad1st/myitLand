@@ -737,8 +737,8 @@ body {
   height: 900px;
   position: absolute;
   /* left: 30px; */
-  right: -290px;
-  top: -170px;
+  right: -340px;
+  top: -190px;
   z-index: -1;
   opacity: 0.4;
 }
@@ -749,8 +749,8 @@ body {
   height: 800px;
   position: absolute;
   /* left: 30px; */
-  right: -290px;
-  top: -170px;
+  right: -280px;
+  top: -140px;
   z-index: -1;
   opacity: 0.6;
 }
