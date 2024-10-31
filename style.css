@@ -59,7 +59,8 @@
   --accent-color: #2ad183;
   --footer-color: #1B4332;
   --darkMode: #3f5c34;
-  --zed: #24a703;
+  --zed: #41da1b;
+  --zed2: #22ac00;
   
 }
 
@@ -75,6 +76,7 @@
   --darkMode: #b7e5a6;
   transition: all ease-in-out .5s;
   --zed: #05f561;
+  --zed2: #00a841;
   
 
 }
@@ -89,7 +91,8 @@
   --footer-color: #bcdfce;
   --darkMode: #b7e5a6;
   transition: all ease-in-out .5s;
-  
+  --zed: #05f561;
+  --zed2: #00a841;
 
 }
 
@@ -202,6 +205,25 @@ header::before{
 
 .headerButton {
   cursor: pointer;
+}
+.headerButton4{
+  margin-right: 3rem;
+}
+.headerButton4 .linkOne{
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+  background-color: var(--zed);
+  padding: 0.4rem;
+  border-radius: 0px 12px 12px 0px;
+}
+.headerButton4 .linkTwo{
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+  background-color: var(--zed2);
+  padding: 0.4rem;
+  border-radius: 12px 0px 0px 12px;
 }
 .logo{
   width: 50px;
