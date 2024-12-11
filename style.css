@@ -96,13 +96,13 @@
 
 }
 
-
+html{
+  scroll-behavior: smooth;
+}
 
 body{
   transition: all ease-in-out .5s;
   background-color: var(--base-color);
-
-  
   
   
 }
@@ -217,6 +217,10 @@ header::before{
   padding: 0.4rem;
   border-radius: 0px 12px 12px 0px;
 }
+.headerButton4 .linkOne:hover{
+  background-color: var(--accent-color);
+  color: var(--text-color);
+}
 .headerButton4 .linkTwo{
   text-decoration: none;
   cursor: pointer;
@@ -224,6 +228,10 @@ header::before{
   background-color: var(--zed2);
   padding: 0.4rem;
   border-radius: 12px 0px 0px 12px;
+}
+.headerButton4 .linkTwo:hover{
+  background-color: var(--accent-color);
+  color: var(--text-color);
 }
 .logo{
   width: 50px;

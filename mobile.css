@@ -35,6 +35,11 @@
     .hamburger-menu{
       display: block;
     }
+    .headerButton {
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: 15px;
+    }
   
     header {
       flex-direction: row;
@@ -146,4 +151,10 @@
       height: 400px;
     }
   }
- 
+  @media screen and (max-width : 1366px){
+   
+    .bigPicture img{
+      width: 650px;
+      height: 450px;
+    }
+    }
