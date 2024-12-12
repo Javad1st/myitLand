@@ -158,3 +158,17 @@
       height: 450px;
     }
     }
+  @media (min-width: 1367px) and (max-width : 1800px){
+   
+    .bigPicture img{
+      width: 700px;
+      height: 500px;
+    }
+    }
+    @media screen and (max-width: 900px) {
+      .headerButton {
+          cursor: pointer;
+          font-size: 14px;
+          margin-top: 15px;
+      }
+    }
