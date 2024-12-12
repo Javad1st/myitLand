@@ -71,37 +71,3 @@ document.querySelectorAll('.menu-btn').forEach(button => {
       icon.classList.toggle('rotate');
   });
 });
-
-/////////////
-
-const cat1 = document.querySelector('.cat1');
-const cat2 = document.querySelector('.cat2');
-const cat3 = document.querySelector('.cat3');
-const cat4 = document.querySelector('.cat4');
-const cat5 = document.querySelector('.cat5');
-
-cat1.document.addEventListener('click' , () => {
- 
-  cat1.classList.add('click')
-
-});
-cat2.document.addEventListener('click' , () => {
- 
-  cat2.classList.add('click')
-
-});
-cat3.document.addEventListener('click' , () => {
- 
-  cat3.classList.add('click')
-
-});
-cat4.document.addEventListener('click' , () => {
- 
-  cat4.classList.add('click')
-
-});
-cat5.document.addEventListener('click' , () => {
- 
-  cat5.classList.add('click')
-
-});

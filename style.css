@@ -114,12 +114,11 @@ body{
   
 }
 
-
 header {
   transition: all ease-in-out 1s;
   height: 10%;
-  background-image: url(tasavir/baKeyfiayat.jpg);
-  background-position: center ;
+  background-image: linear-gradient(rgba(0, 255, 98, 0.13), rgba(27, 49, 8, 0.199)), url(tasavir/baKeyfiayat.jpg);
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-color: var(--base-color);
@@ -127,19 +126,29 @@ header {
   position: relative;
   isolation: isolate;
   width: 100%;
-  opacity: 90%;
-  /* position: fixed; */
+  opacity: 95%;
   top: 0;
-  background-color: var(--primary-color);
   color: var(--text-color);
-  padding: 1rem;
+  padding: 1.5rem 2rem; /* افزایش padding برای فضای بیشتر */
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-radius: 0 0 50px 50px;
   z-index: 999;
-  box-shadow: 0 -6px 10px 5px var(--footer-color)
+  box-shadow: 0 -6px 15px rgba(0, 0, 0, 0.3); /* سایه ملایم‌تر */
+  text-shadow: 1px 1px 2px var(--base-color); 
 }
+.headerTitle {
+  cursor: pointer;
+  font-size: 3rem; /* افزایش اندازه فونت */
+  transition: color 0.3s ease; /* انیمیشن تغییر رنگ */
+}
+
+.headerTitle:hover {
+  font-weight: bolder;
+  color: var(--zed); /* تغییر رنگ هنگام هاور */
+}
+
 header::before{ 
   content: '';
    position: absolute;
@@ -210,6 +219,8 @@ header::before{
   margin-right: 3rem;
 }
 .headerButton4 .linkOne{
+  width: 20px;
+  height: 20px;
   text-decoration: none;
   cursor: pointer;
   color: black;
@@ -222,6 +233,8 @@ header::before{
   color: var(--text-color);
 }
 .headerButton4 .linkTwo{
+  width: 20px;
+  height: 20px;
   text-decoration: none;
   cursor: pointer;
   color: black;

@@ -96,6 +96,7 @@
 
 }
 .cats {
+    
    display: grid;
    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
    grid-template-rows: 1fr ;
@@ -103,7 +104,6 @@
     gap: 1rem;
 }
 .cats1{
-    
 }
 .cats2 .cat{
     position: absolute;
@@ -114,15 +114,16 @@
 }
 
 .cat{
+   
   cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 10px;
-    font-size: x-large;
-    background-color: var(--accent-color);
-    color: var(--text-color);
+  padding: 0.5rem;
+  border-radius: 10px;
+  font-size: x-large;
+  background-color: var(--accent-color);
+  color: var(--text-color);
 }
-.cat:active{
-  background-color: var(--primary-color);
+.click{
+  background-color: var(--footer-colorcolor);
 }
 .block{
     animation: appear linear;
@@ -162,7 +163,7 @@
   }
   .menu::before{
     content: '';
-     position: absolute;
+    position: absolute;
     z-index: -20;
     inset: 0;
     background: var(--base-color);
@@ -254,25 +255,25 @@
   .show-dropdown {
     max-height: 300px; /* ارتفاعی که محتوا به خود می‌گیرد هنگام باز شدن */
   }
-
-
-.blogs{
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-  border: 1px solid var(--text-color);
-  border-radius: 25px;
-  margin: 2rem 1rem;
-  padding: 3rem;
-  /* background: linear-gradient(var(--base-color) , var(--primary-color)); */
-  background-color: var(--base-color);
-}
-.blog{
-  background: linear-gradient(var(--base-color) , var(--base-variant));
-  transition: all ease-in 200ms;
+  
+  
+  .blogs{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    border: 1px solid var(--text-color);
+    border-radius: 25px;
+    margin: 2rem 1rem;
+    padding: 3rem;
+    /* background: linear-gradient(var(--base-color) , var(--primary-color)); */
+    background-color: var(--base-color);
+  }
+  .blog{
+    background: linear-gradient(var(--base-color) , var(--base-variant));
+    transition: all ease-in 200ms;
     border: 0.5px solid var(--text-color);
     color: var(--text-color);
     
@@ -284,42 +285,42 @@
     border-radius: 20px;
     /* height: 350px; */
     padding: 1rem;
-}
-.blog:hover{
-  margin-top: -1rem;
-  box-shadow: 0px 3px 15px var(--zed);
-}
-
-.blog img{
+  }
+  .blog:hover{
+    margin-top: -1rem;
+    box-shadow: 0px 3px 15px var(--zed);
+  }
+  
+  .blog img{
     
     width: 220px;
     height: 150px;
     border-radius: 10px;
-}
-.blog h2{
+  }
+  .blog h2{
     color: var(--secondary-text);
     font-weight: bolder;
-}
-.blog p{
+  }
+  .blog p{
     font-weight: 600;
     text-align: center;
     color: var(--text-color);
-}
-.blog button{
-  transition: all ease-in 200ms;
-  padding: 0.5rem;
-  border-radius: 10px;
-  background-color: var(--zed);
-  color: black
-}
-.blog button:hover{
-  background-color: var(--zed2);
-  color: white
-}
-.blog .writer{
+  }
+  .blog button{
+    transition: all ease-in 200ms;
+    padding: 0.5rem;
+    border-radius: 10px;
+    background-color: var(--zed);
+    color: black
+  }
+  .blog button:hover{
+    background-color: var(--zed2);
+    color: white
+  }
+  .blog .writer{
     font-weight: bolder;
-}
-#theme-switch {
+  }
+  #theme-switch {
     height: 40px;
     width: 40px;
     padding: 0;
@@ -347,7 +348,7 @@
   .darkmode #theme-switch svg:last-child {
     display: block;
   }
-
+  
   #theme-switch2 {
     margin-top: 0.8rem;
     height: 40px;
@@ -377,28 +378,47 @@
   .darkmode #theme-switch2 svg:last-child {
     display: block;
   }
-
-
+  .catl3{
+    margin-top: 0.3rem;
+  }
+  .cat6{
+    text-decoration: none;
+    background-color: var(--text-color);
+    color: var(--base-color);
+    position: absolute;
+    left: 5rem;
+  }
+  
+  
   @media screen and (max-width : 900px) {
 
     .hamburger-menu{
-        display: block;
-      }
-      #theme-switch{
-       display: none;
-      }
-      .cats{
-        grid-template-columns: 1fr 1fr 1fr;
-      }
-  }
-  @media screen and (max-width : 600px) {
+      display: block;
+    }
+    #theme-switch{
+      display: none;
+    }
     .cats{
+      grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+    @media screen and (max-width : 600px) {
+      .cats{
         grid-template-columns: 1fr 1fr ;
       }
-  }
-  @media screen and (max-width : 450px){
-
-    .cats{
+    }
+    @media screen and (max-width : 450px){
+      
+      .cats{
         grid-template-columns: 1fr ;
       }
-  }
+    }
+    @media screen and (max-width : 1100px) {
+        .cat6{
+            position: static;
+            
+        }
+
+
+    }
+    

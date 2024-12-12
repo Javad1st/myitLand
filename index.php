@@ -9,8 +9,8 @@ session_start();
 <html lang="en" dir="rtl">
 
 <head>
-  <link rel="stylesheet" href="loading.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="loading.css">
   <link rel="stylesheet" href="Image Slider on Website/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="mobile.css">
@@ -61,7 +61,7 @@ session_start();
           <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
         </svg></div>
         <div id="homeDropdown" class="dropdownContent dropdownContent1">
-          <a href="/main" class="dropdownItem dropdownItem1"><svg class="iconA" xmlns="http://www.w3.org/2000/svg" width="24"
+          <a href="maqale ha/maqale.php" class="dropdownItem dropdownItem1"><svg class="iconA" xmlns="http://www.w3.org/2000/svg" width="24"
               height="24" viewBox="0 0 24 24" style="fill: var(--zed);">
               <path d="M2 7v1l11 4 9-4V7L11 4z"></path>
               <path
