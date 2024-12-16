@@ -117,7 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <p>قبلاً ثبت‌نام کرده‌اید؟ <a href="#">ورود</a></p>
         </div>
     </div>
-
-    <script src="login.js"></script>
+    <script src="login.js"></script>       
+    <script src="register.js"></script>
 </body>
 </html>
