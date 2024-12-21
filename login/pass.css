@@ -1,0 +1,43 @@
+/* برای مرورگرهای وب کیت (Chrome, Safari, etc.) */
+input[type="password"]::-webkit-textfield-decoration-container,
+input[type="password"]::-webkit-clear-button,
+input[type="password"]::-webkit-inner-spin-button,
+input[type="password"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+/* برای Firefox */
+input[type="password"]::-moz-clear-button,
+input[type="password"]::-moz-inner-spin-button,
+input[type="password"]::-moz-calendar-picker-indicator {
+    display: none;
+}
+
+/* برای Internet Explorer و Edge */
+input[type="password"]::-ms-clear,
+input[type="password"]::-ms-reveal {
+    display: none;
+}
+.input-field {
+    position: relative;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  .toggle-password svg {
+    width: 20px;
+    height: 20px;
+    color: #6c757d;
+    transition: color 0.3s ease;
+  }
+  
+  .toggle-password:hover svg {
+    color: #000;
+  }
+  

@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>فرم ورود</title>
-    <link rel="stylesheet" href="loginstyle.css"> <!-- ارجاع به فایل CSS -->
+    <link rel="stylesheet" href="loginstyle.css"> 
+    <link rel="stylesheet" href="pass.css"><!-- ارجاع به فایل CSS -->
 </head>
 <body>
     <div class="wrapper">
@@ -41,7 +42,7 @@
             if ($insert->rowCount() > 0) {
 
                 $user = $insert->fetch(PDO::FETCH_ASSOC);
-                
+             
                 // تأیید رمز عبور
                 if (password_verify($password, $user['password'])) {
                     // ورود موفق
@@ -78,19 +79,26 @@
                 <div class="error-message"><?php echo $emailError; ?></div><br>
             <?php endif; ?>
             <div class="input-field">
-                <input type="password" id="password" name="password" required minlength="8">
-                <label for="password">رمز عبور</label>
-            </div>
+    <input type="password" id="password" name="password" required minlength="8">
+    <label for="password">رمز عبور</label>
+    <span class="toggle-password">
+        <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+    </span>
+</div>
+
             <?php if ($passwordError): ?>
                 <div class="error-message"><?php echo $passwordError; ?></div><br>
             <?php endif; ?>
             <button type="submit" name="login">ورود</button>
         </form>
         <div class="register">
-            <p>هنوز ثبت‌نام نکرده‌اید؟ <a href="register.php">ثبت‌نام</a></p>
+            <p>هنوز ثبت‌نام نکرده‌اید؟ <a href="rgister.php">ثبت‌نام</a></p>
         </div>
     </div>
 
-    
+    <script src="eyes.js"></script>
 </body>
 </html>

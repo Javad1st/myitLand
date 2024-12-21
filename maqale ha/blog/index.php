@@ -1,3 +1,15 @@
+<?php 
+session_start();
+$id=$_GET['id'];
+include '../../database/db.php';
+$selectblog=$conn->prepare("SELECT * FROM blogs WHERE id=?");
+$selectblog->bindValue(1,$id);
+$selectblog->execute();
+$blogs=$selectblog->fetchAll(PDO::FETCH_ASSOC); 
+foreach ($blogs as $b)
+$tagss=explode(',' , $b['tags']);
+?>
+
 <!DOCTYPE html>
 <html lang="fa">
 <head>
@@ -91,23 +103,20 @@
 </header>
   </div>
 </div>
-    <div class="container" dir="rtl">
-        <h1>عنوان مقاله</h1>
-        <img src="https://via.placeholder.com/800x400" alt="تصویر مقاله" class="article-image">
-        <p>
-            این یک متن نمونه برای مقاله است. شما می‌توانید این متن را با محتوای واقعی خود جایگزین کنید. 
-            اینجا می‌توانید درباره موضوع مقاله خود توضیح دهید و اطلاعات مفیدی را ارائه دهید.
-        </p>
-        <h2>زیرعنوان</h2>
-        <p>
-            اینجا می‌توانید جزئیات بیشتری را درباره موضوع مقاله خود بنویسید. 
-            می‌توانید از لیست‌ها، جداول و دیگر عناصر HTML برای بهبود ساختار مقاله استفاده کنید.
-        </p>
-
-
-        <p class="nevisande">نویسنده : فلانی</p>
-    </div>
-    <button class="read-more">بازگشت</button>
+<div class="container" dir="rtl">
+  <?php foreach($blogs as $blog): ?>
+    <h1><?= ($blog['title']) ?></h1>
+    <img src="../../uploads/<?= ($blog['image']) ?>" alt="تصویر مقاله" class="article-image">
+    <p><?= ($blog['caption']) ?></p>
+    <h2>برچسب‌ها</h2>
+    <?php foreach($tagss as $tags): ?>
+      <span><?= htmlspecialchars($tags) ?>#</span>
+    <?php endforeach; ?>
+    <p class="nevisande"> نویسنده: <?= htmlspecialchars($blog['writer']) ?></p>
+    <p class="nevisande"> تاریخ انتشار: <?= htmlspecialchars($blog['date']) ?></p>
+  <?php endforeach; ?>
+  <a href="../maqale.php"><button class="read-more">بازگشت</button></a>
+</div>
 
     <script src="script.js"></script>
 </body>

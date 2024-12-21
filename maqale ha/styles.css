@@ -1,120 +1,125 @@
+* {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: iranSans;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+}
+
 @font-face {
-    font-family: iranSans;
-    font-style: normal;
-    font-weight: bolder;
-    src: url(../IranSans/Farsi\ numerals/IRANSansXFaNum-Black.ttf);
-  }
-  @font-face {
-    font-family: iranSans;
-    font-style: normal;
-    font-weight: bold;
-    src: url(../IranSans/Farsi\ numerals/IRANSansXFaNum-Bold.ttf);
-  }
-  @font-face {
-    font-family: iranSans;
-    font-style: normal;
-    font-weight: 900;
-    src: url(../IranSans/Farsi\ numerals/IRANSansXFaNum-DemiBold.ttf);
-  }
-  @font-face {
-    font-family: iranSans;
-    font-style: normal;
-    font-weight: 800;
-    src: url(../IranSans/Farsi\ numerals/IRANSansXFaNum-Medium.ttf);
-  }
-  @font-face {
-    font-family: iranSans;
-    font-style: normal;
-    font-weight: 600;
-    src: url(../IranSans/Farsi\ numerals/IRANSansXFaNum-Regular.ttf);
-  }
-  @font-face {
-    font-family: iranSans;
-    font-style: normal;
-    font-weight: 400;
-    src: url(../IranSans/Farsi\ numerals/IRANSansXFaNum-Thin.ttf);
-  }
-  @font-face {
-    font-family: iranSans;
-    font-style: normal;
-    font-weight: 300;
-    src: url(../IranSans/Farsi\ numerals/IRANSansXFaNum-UltraLight.ttf);
-  }
-  
-  * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: iranSans;
-    font-weight: 700;
-    
-  }
-  
-  :root {
-    --base-color: #f0f0f0;
-    --base-variant: #c2eed1;
-    --text-color: #081C15;
-    --secondary-text: #2D6A4F;
-    --primary-color: #8ee6bd;
-    --accent-color: #2ad183;
-    --footer-color: #1B4332;
-    --darkMode: #3f5c34;
-    --zed: #41da1b;
-    --zed2: #22ac00;
-    
-  }
-  
-  .darkmode {
-    
-    --base-color: #081C15;
-    --base-variant: #1B4332;
-    --text-color: #d8f3dc;
-    --secondary-text: #bbfac4;
-    --primary-color: #1c4b35;
-    --accent-color: #006d3a;
-    --footer-color: #bcdfce;
-    --darkMode: #b7e5a6;
-    transition: all ease-in-out .5s;
-    --zed: #05f561;
-    --zed2: #00a841;
-    
-  
-  }
-  body{
-    background-color: var(--base-color);
-    background: linear-gradient(var(--base-color) , var(--primary-color));
-  }
-
-.categories{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 1rem;
-    gap: 3rem;
-    margin-right: 2rem;
-    margin-top: 1rem;
-
+  font-family: iranSans;
+  font-style: normal;
+  font-weight: bolder;
+  src: url(../IranSans/Farsi\ numerals/IRANSansXFaNum-Black.ttf);
 }
+
+@font-face {
+  font-family: iranSans;
+  font-style: normal;
+  font-weight: bold;
+  src: url(../IranSans/Farsi\ numerals/IRANSansXFaNum-Bold.ttf);
+}
+
+@font-face {
+  font-family: iranSans;
+  font-style: normal;
+  font-weight: 900;
+  src: url(../IranSans/Farsi\ numerals/IRANSansXFaNum-DemiBold.ttf);
+}
+
+@font-face {
+  font-family: iranSans;
+  font-style: normal;
+  font-weight: 800;
+  src: url(../IranSans/Farsi\ numerals/IRANSansXFaNum-Medium.ttf);
+}
+
+@font-face {
+  font-family: iranSans;
+  font-style: normal;
+  font-weight: 600;
+  src: url(../IranSans/Farsi\ numerals/IRANSansXFaNum-Regular.ttf);
+}
+
+@font-face {
+  font-family: iranSans;
+  font-style: normal;
+  font-weight: 400;
+  src: url(../IranSans/Farsi\ numerals/IRANSansXFaNum-Thin.ttf);
+}
+
+@font-face {
+  font-family: iranSans;
+  font-style: normal;
+  font-weight: 300;
+  src: url(../IranSans/Farsi\ numerals/IRANSansXFaNum-UltraLight.ttf);
+}
+
+:root {
+  --base-color: #f0f0f0;
+  --base-variant: #c2eed1;
+  --text-color: #081C15;
+  --secondary-text: #2D6A4F;
+  --primary-color: #8ee6bd;
+  --accent-color: #2ad183;
+  --footer-color: #1B4332;
+  --darkMode: #3f5c34;
+  --zed: #41da1b;
+  --zed2: #22ac00;
+}
+
+.darkmode {
+  --base-color: #081C15;
+  --base-variant: #1B4332;
+  --text-color: #d8f3dc;
+  --secondary-text: #bbfac4;
+  --primary-color: #1c4b35;
+  --accent-color: #006d3a;
+  --footer-color: #bcdfce;
+  --darkMode: #b7e5a6;
+  transition: all ease-in-out .5s;
+  --zed: #05f561;
+  --zed2: #00a841;
+}
+
+body {
+  background-color: var(--base-color);
+  background: linear-gradient(var(--base-color), var(--primary-color));
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 1rem;
+  gap: 3rem;
+  margin-right: 2rem;
+  margin-top: 1rem;
+}
+
 .cats {
-    
-   display: grid;
-   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-   grid-template-rows: 1fr ;
-
-    gap: 1rem;
-}
-.cats1{
-}
-.cats2 .cat{
-    position: absolute;
-    top: 20px;
-    left: 10px;
-    background: none;
-    width: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 1rem;
 }
 
-.cat{
-   
+.cats1 {}
+
+.cats2 .cat {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  background: none;
+  width: fit-content;
+}
+
+.cat {
   cursor: pointer;
   padding: 0.5rem;
   border-radius: 10px;
@@ -122,303 +127,197 @@
   background-color: var(--accent-color);
   color: var(--text-color);
 }
-.click{
+
+.click {
   background-color: var(--footer-colorcolor);
 }
-.block{
-    animation: appear linear;
-    animation-timeline: view() ;
-    animation-range: entry 0 cover 30%;
-  }
-  body {
-    /* font-family: Arial, sans-serif; */
-  }
-  
-  .hamburger-menu {
-    /* position: relative; */
-  }
-  
-  .hamburger-icon{
-    cursor: pointer;
-    padding: 10px;
-    background-color: var(--footer-color);
-    border-radius: 5px;
-    display: flex;
-  }
-  
-  .menu {
-    background-attachment: fixed;
-    isolation: isolate;
-    position: fixed;
-    top: 0;
-    left: -300px; /* منو در ابتدا بیرون صفحه است */
-    width: 300px;
-    height: 100vh;
-    /* background-color: var(--base-color); */
-    border-radius: 0 5px 5px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    transition: left 0.3s ease; /* انیمیشن برای حرکت منو */
-  }
-  .menu::before{
-    content: '';
-    position: absolute;
-    z-index: -20;
-    inset: 0;
-    background: var(--base-color);
-  }
-  
-  .menu-item {
-    margin: 20px 10px;
-    transition: left 0.3s ease;
-  }
-  
-  .menu-btn {
-    background-color: var(--accent-color);
-    color: var(--text-color);
-    padding: 10px;
-    border: none;
-    width: 100%;
-    text-align: left;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    opacity: 100%;
-  }
-  
-  .menu-btn:hover {
-    background-color: #45a049;
-  }
-  
-  .icon {
-    transition: transform 0.3s ease;
-  }
-  
-  .rotate {
-    transform: rotate(180deg);
-  }
-  
-  .dropdown-content {
-    display: none;
-    flex-direction: column;
-    margin-top: 5px;
-  }
-  
-  .dropdown-content a {
-    background-color: var(--base-color);
-    color: var(--secondary-text);
-    padding: 10px;
-    text-decoration: none;
-    display: block;
-    transition: background-color 0.3s ease;
-    border-radius: 5px;
-  }
-  
-  .dropdown-content a:hover {
-    background-color: var(--base-variant);
-  }
-  .hamburger-menu{
-    display: none;
-  }
-  
-  .show {
-    display: flex;
-    animation: dropdown 0.5s ease forwards;
-  }
-  
-  .menu-open {
-    left: 0; /* وقتی منو باز می‌شود */
-  }
-  .close-icon {
-    cursor: pointer;
-    padding: 10px;
-    background-color: var(--footer-color);
-    color: var(--base-color);
-    border-radius: 5px;
-    text-align: right;
-    margin: 10px;
-    display: flex;
-    width: fit-content;
-  }
-  .close-icon:hover {
-    background-color: #4CAF50;
-  }
-  .dropdown-content {
-    overflow: hidden;
-    transition: max-height 0.3s ease-out; /* انیمیشن کشویی */
-  }
-  
-  .show-dropdown {
-    max-height: 300px; /* ارتفاعی که محتوا به خود می‌گیرد هنگام باز شدن */
-  }
-  
-  
-  .blogs{
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-    border: 1px solid var(--text-color);
-    border-radius: 25px;
-    margin: 2rem 1rem;
-    padding: 3rem;
-    /* background: linear-gradient(var(--base-color) , var(--primary-color)); */
-    background-color: var(--base-color);
-  }
-  .blog{
-    background: linear-gradient(var(--base-color) , var(--base-variant));
-    transition: all ease-in 200ms;
-    border: 0.5px solid var(--text-color);
-    color: var(--text-color);
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    width: 250px;
-    border-radius: 20px;
-    /* height: 350px; */
-    padding: 1rem;
-  }
-  .blog:hover{
-    margin-top: -1rem;
-    box-shadow: 0px 3px 15px var(--zed);
-  }
-  
-  .blog img{
-    
-    width: 220px;
-    height: 150px;
-    border-radius: 10px;
-  }
-  .blog h2{
-    color: var(--secondary-text);
-    font-weight: bolder;
-  }
-  .blog p{
-    font-weight: 600;
-    text-align: center;
-    color: var(--text-color);
-  }
-  .blog button{
-    transition: all ease-in 200ms;
-    padding: 0.5rem;
-    border-radius: 10px;
-    background-color: var(--zed);
-    color: black
-  }
-  .blog button:hover{
-    background-color: var(--zed2);
-    color: white
-  }
-  .blog .writer{
-    font-weight: bolder;
-  }
-  #theme-switch {
-    height: 40px;
-    width: 40px;
-    padding: 0;
-    border-radius: 50%;
-    background-color: var(--darkMode);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 3px solid var(--secondary-text);
-    transition: ease-in 1s;
-  }
-  
-  #theme-switch svg {
-    fill: var(--base-variant);
-  }
-  
-  #theme-switch svg:last-child {
-    display: none;
-  }
-  
-  .darkmode #theme-switch svg:first-child {
-    display: none;
-  }
-  
-  .darkmode #theme-switch svg:last-child {
-    display: block;
-  }
-  
-  #theme-switch2 {
-    margin-top: 0.8rem;
-    height: 40px;
-    width: 40px;
-    padding: 0;
-    border-radius: 50%;
-    background-color: var(--darkMode);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 3px solid var(--secondary-text);
-    transition: ease-in 1s;
-  }
-  
-  #theme-switch2 svg {
-    fill: var(--base-variant);
-  }
-  
-  #theme-switch2 svg:last-child {
-    display: none;
-  }
-  
-  .darkmode #theme-switch2 svg:first-child {
-    display: none;
-  }
-  
-  .darkmode #theme-switch2 svg:last-child {
-    display: block;
-  }
-  .catl3{
-    margin-top: 0.3rem;
-  }
-  .cat6{
-    text-decoration: none;
-    background-color: var(--text-color);
-    color: var(--base-color);
-    position: absolute;
-    left: 5rem;
-  }
-  
-  
-  @media screen and (max-width : 900px) {
 
-    .hamburger-menu{
-      display: block;
-    }
-    #theme-switch{
-      display: none;
-    }
-    .cats{
-      grid-template-columns: 1fr 1fr 1fr;
-      }
-    }
-    @media screen and (max-width : 600px) {
-      .cats{
-        grid-template-columns: 1fr 1fr ;
-      }
-    }
-    @media screen and (max-width : 450px){
-      
-      .cats{
-        grid-template-columns: 1fr ;
-      }
-    }
-    @media screen and (max-width : 1100px) {
-        .cat6{
-            position: static;
-            
-        }
+.block {
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 30%;
+}
 
+.hamburger-menu {
+  display: none;
+}
 
-    }
-    
+.hamburger-icon {
+  cursor: pointer;
+  padding: 10px;
+  background-color: var(--footer-color);
+  border-radius: 5px;
+  display: flex;
+}
+
+.menu {
+  background-attachment: fixed;
+  isolation: isolate;
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100vh;
+  border-radius: 0 5px 5px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: left 0.3s ease;
+}
+
+.menu::before {
+  content: '';
+  position: absolute;
+  z-index: -20;
+  inset: 0;
+  background: var(--base-color);
+}
+
+.menu-item {
+  margin: 20px 10px;
+  transition: left 0.3s ease;
+}
+
+.menu-btn {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  padding: 10px;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 100%;
+}
+
+.menu-btn:hover {
+  background-color: #45a049;
+}
+
+.icon {
+  transition: transform 0.3s ease;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.dropdown-content {
+  display: none;
+  flex-direction: column;
+  margin-top: 5px;
+}
+
+.dropdown-content a {
+  background-color: var(--base-color);
+  color: var(--secondary-text);
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--base-variant);
+}
+
+.show {
+  display: flex;
+  animation: dropdown 0.5s ease forwards;
+}
+
+.menu-open {
+  left: 0;
+}
+
+.close-icon {
+  cursor: pointer;
+  padding: 10px;
+  background-color: var(--footer-color);
+  color: var(--base-color);
+  border-radius: 5px;
+  text-align: right;
+  margin: 10px;
+  display: flex;
+  width: fit-content;
+}
+
+.close-icon:hover {
+  background-color: #4CAF50;
+}
+
+.blogs {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  border: 1px solid var(--text-color);
+  border-radius: 25px;
+  margin: 2rem 1rem;
+  padding: 3rem;
+  background-color: var(--base-color);
+}
+
+.blog {
+  background: linear-gradient(var(--base-color), var(--base-variant));
+  transition: all ease-in 200ms;
+  border: 0.5px solid var(--text-color);
+  color: var(--text-color);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 250px;
+  height: 400px;
+  border-radius: 20px;
+  padding: 1rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+.blog img {
+  width: 220px;
+  height: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.blog h2 {
+  color: var(--secondary-text);
+  font-weight: bolder;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  margin: 0;
+}
+
+.blog p {
+  font-weight: 600;
+  color: var(--text-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.blog button {
+  transition: all ease-in 200ms;
+  padding: 0.5rem;
+  border-radius: 10px;
+  background-color: var(--zed);
+  color: black;
+  margin-top: auto;
+}
+
+.blog button:hover {
+  background-color: var(--zed2);
+  color: white;
+}

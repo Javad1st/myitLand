@@ -106,7 +106,7 @@ session_start();
           
           
           echo '<a class="linkOne" href="login/login.php">ورود</a>'; 
-          echo '<a class="linkTwo" href="login/register.php">ثبت‌نام</a>'; 
+          echo '<a class="linkTwo" href="login/rgister.php">ثبت‌نام</a>'; 
         } 
         ?>
 
@@ -222,6 +222,7 @@ session_start();
           <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
         </svg>
       </a>
+      <a href="./maqale ha/maqale.php"><button style="background-color: green; padding: 10px; border-radius: 10px; color: white; cursor: pointer; " class="blogha" id="blogha"  >برای مشاهده تمامی مقالات کلیک کنید</button></a>
     </div>
     <img class="img1" src="svgHa/ITLand.png" alt="">
     <img class="img2" src="svgHa/ITLand2.png" alt="">
