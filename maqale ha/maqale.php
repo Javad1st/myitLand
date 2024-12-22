@@ -8,13 +8,13 @@ $blogs = $select->fetchAll(PDO::FETCH_ASSOC);
 <html lang="en" dir="rtl">
 <head>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="st.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مقالات</title>
 </head>
 <body>
     <div class="categories">
-        <link rel="stylesheet" href="st.css">
         <div class="cats cats1">
             <div class="cat cat1">همه مقاله ها</div>
             <div class="cat cat2">ورزشی</div>
@@ -46,7 +46,7 @@ $blogs = $select->fetchAll(PDO::FETCH_ASSOC);
 $content = $blog['caption'];
  
  
-                echo   limit_words($content,15). 'ادامه ...'; 
+                echo   limit_words($content,15); 
                     
                     ?>
                 </p>
@@ -60,5 +60,6 @@ $content = $blog['caption'];
     </div>
 
     <script src="script.js"></script>
+    <script src="scr.js"></script>
 </body>
 </html>
