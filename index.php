@@ -210,8 +210,8 @@ session_start();
         </div>
   </div>
   <div id="base" class="baseOf">
-    <img class="moon2" src="svgHa/b8420a7ec558f6cd2e796a3fabffa775.png" alt="">
-    <img class="moon" src="svgHa/—Pngtree—hazy and beautiful halo moon_5336588.png" alt="">
+    <img class="moon" src="svgHa/b8420a7ec558f6cd2e796a3fabffa775.png" alt="">
+    <img class="moon2" src="svgHa/—Pngtree—hazy and beautiful halo moon_5336588.png" alt="">
     <div class="bigPicture">
       <div class="bigText">
         <h2>سایت مقاله ای آیتی لند</h2>
@@ -225,7 +225,7 @@ session_start();
       <a href="./maqale ha/maqale.php"><button style="background-color: green; padding: 10px; border-radius: 10px; color: white; cursor: pointer; " class="blogha" id="blogha"  >برای مشاهده تمامی مقالات کلیک کنید</button></a>
     </div>
     <img class="img1" src="svgHa/ITLand.png" alt="">
-    <img class="img2" src="svgHa/ITLand2.png" alt="">
+    <img class="img2 disNone" src="svgHa/ITLand2.png" alt="">
   </div>
   
   <div class="primarySection">
