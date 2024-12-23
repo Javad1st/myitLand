@@ -323,7 +323,7 @@ body {
 .blog img {
   transition: all ease-out 200ms;
   position: absolute;
-top: -30px;
+top: -35px;
   width: 280px;
   height: 200px;
   /* border: 1px solid var(--text-color);  */
@@ -337,7 +337,7 @@ top: -30px;
 }
 .blog h2 {
   position: absolute;
-  top: 180px;
+  top: 190px;
   color: var(--secondary-text);
   font-weight: bolder;
   font-size: 1.8rem;
