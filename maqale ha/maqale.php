@@ -44,7 +44,7 @@ require_once('../header.php');
             <div class="blog">
             <img src="../uploads/<?= ($blog['image']) ?>" alt="تصویر مقاله" class="article-image">
             <h2><?= htmlspecialchars($blog['title']) ?></h2>
-                <p>
+                <div class="discreption">
                     <?php
                      
 
@@ -58,7 +58,7 @@ $content = $blog['caption'];
                 echo   limit_words($content,5); 
                     
                     ?>
-                </p>
+                </div>
                 <button>مشاهده</button>
                 <p class="writer">
                     نویسنده: <?= htmlspecialchars($blog['writer']) ?>
