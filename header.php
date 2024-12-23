@@ -79,9 +79,9 @@
       </div>
       <div class="partOfHeader partOfHeader3">
         <div class="headerTitle">
-            <a href="../index.php">
+            
                 <h4>itland</h4>
-            </a>
+            
         </div>
         
         
