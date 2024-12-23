@@ -358,13 +358,16 @@ body {
   background-color: var(--zed2);
   color: white;
 }
-
+.categories{
+  position: relative;
+}
 .cats1 .cat6{
   background-color: var(--text-color);
   color: var(--base-color);
   position: absolute;
   left: 1rem;
-  top: 1rem;
+  top: 0;
+  z-index: 1000;
 }
 @media (max-width: 1200px) {
   .cats {

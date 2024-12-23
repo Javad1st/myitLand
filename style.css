@@ -134,7 +134,11 @@ header {
   box-shadow: 0 -6px 15px rgba(0, 0, 0, 0.3); /* سایه ملایم‌تر */
   text-shadow: 1px 1px 2px var(--base-color); 
 }
+.headerTitle a{
+  text-decoration: none;
+}
 .headerTitle {
+  color: var(--text-color);
   cursor: pointer;
   font-size: 3rem; /* افزایش اندازه فونت */
   transition: color 0.3s ease; /* انیمیشن تغییر رنگ */
@@ -142,9 +146,8 @@ header {
 
 .headerTitle:hover {
   font-weight: bolder;
-  color: var(--zed); /* تغییر رنگ هنگام هاور */
+  color: var(--secondary-text); /* تغییر رنگ هنگام هاور */
 }
-
 header::before{ 
   content: '';
    position: absolute;
@@ -663,8 +666,8 @@ body {
 
 .hamburger-icon{
   cursor: pointer;
+  background-color: #19764a;
   padding: 10px;
-  background-color: var(--footer-color);
   border-radius: 5px;
   display: flex;
 }
@@ -759,7 +762,7 @@ body {
 .close-icon {
   cursor: pointer;
   padding: 10px;
-  background-color: var(--footer-color);
+  background-color: #19764a;
   color: var(--base-color);
   border-radius: 5px;
   text-align: right;

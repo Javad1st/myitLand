@@ -1,5 +1,6 @@
 let darkmode = localStorage.getItem('darkmode') || 'light';
 const themeSwitch = document.getElementById('theme-switch');
+const themeSwitch2 = document.getElementById('theme-switch2');
 
 const toggleDarkmode = (mode) => {
     if (mode === 'active') {
@@ -12,12 +13,19 @@ const toggleDarkmode = (mode) => {
 
 toggleDarkmode(darkmode);
 
-themeSwitch.addEventListener("click", () => {
+const handleThemeSwitch = () => {
     darkmode = darkmode === 'light' ? 'active' : 'light';
     toggleDarkmode(darkmode);
-    updateDisplay(); 
-});
+    updateDisplay();
+};
 
+themeSwitch.addEventListener("click", handleThemeSwitch);
+themeSwitch2.addEventListener("click", handleThemeSwitch);
+
+
+
+
+//////////////////
 const moon = document.querySelector('.moon');
 const moon2 = document.querySelector('.moon2');
 const isLand1 = document.querySelector('.img1');
@@ -26,19 +34,19 @@ const down = document.getElementById('down');
 
 function updateDisplay() {
     if (darkmode === 'active') {
-        moon.classList.add('hidden'); // ماه به سمت راست می‌رود و ناپدید می‌شود
-        moon2.classList.remove('hidden'); // ماه 2 از سمت چپ می‌آید
-        moon2.classList.add('unhide'); // ماه 2 نمایان می‌شود
+        moon.classList.add('hidden'); 
+        moon2.classList.remove('hidden'); 
+        moon2.classList.add('unhide'); 
 
         isLand1.classList.remove('disOn')
         isLand1.classList.add('disNone')
         isLand2.classList.remove('disNone');
         isLand2.classList.add('disOn')
     } else {
-        moon.classList.remove('hidden'); // ماه به حالت عادی برمی‌گردد
-        moon.classList.add('unhide'); // ماه نمایان می‌شود
-        moon2.classList.add('hidden'); // ماه 2 به سمت چپ می‌رود و ناپدید می‌شود
-        moon2.classList.remove('unhide'); // ماه 2 ناپدید می‌شود
+        moon.classList.remove('hidden'); 
+        moon.classList.add('unhide'); 
+        moon2.classList.add('hidden'); 
+        moon2.classList.remove('unhide'); 
 
         isLand1.classList.remove('disNone')
         isLand1.classList.add('disOn')

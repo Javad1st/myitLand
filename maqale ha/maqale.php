@@ -7,6 +7,8 @@ $blogs = $select->fetchAll(PDO::FETCH_ASSOC);
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
 <head>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../mobile.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="st.css">
     <meta charset="UTF-8">
@@ -14,6 +16,13 @@ $blogs = $select->fetchAll(PDO::FETCH_ASSOC);
     <title>مقالات</title>
 </head>
 <body>
+
+<?php
+
+require_once('../header.php');
+
+?>
+
     <div class="categories">
         <div class="cats cats1">
             <div class="cat cat1">همه مقاله ها</div>
@@ -59,7 +68,10 @@ $content = $blog['caption'];
         <?php endforeach; ?>
     </div>
 
-    <script src="script.js"></script>
+    
     <script src="scr.js"></script>
+    <script src="../darkmode.js"></script>
+    <script src="../script.js"></script>
+
 </body>
 </html>
