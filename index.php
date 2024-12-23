@@ -2,6 +2,15 @@
 
 session_start();
 ?>
+<?php 
+include './database/db.php';
+
+// دریافت سه مقاله آخر
+$select = $conn->prepare("SELECT * FROM blogs ORDER BY id DESC LIMIT 3");
+$select->execute();
+$blogs = $select->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 
 
 
@@ -233,41 +242,17 @@ session_start();
     <div id="slider" class="slider block">
       <section class="main swiper mySwiper">
         <div class="wrapper swiper-wrapper">
-          <div class="slide swiper-slide">
-            <img src="Image Slider on Website/images/banner.jpg" alt="" class="image" />
-            <img class="logoSlider"
-            src="tasavir/kisspng-logo-web-development-business-company-programmer-5ac6bd6d2129e5.6658857615229740611359.png"
-            alt="">
+            <?php foreach (array_slice($blogs, 0, 3) as $blog): ?>
+            <div class="slide swiper-slide">
+            <img src="./uploads/<?= ($blog['image']) ?>" alt="تصویر مقاله" class="image" />
             <div class="image-data">
-              <span class="text">جاوا اسکریپت</span>
-              <h2 class="sliderText">
-                جزوه کامل جاوا اسکریپت
-              </h2>
-              <a href="#" class="button">ادامه</a>
+            <h2 class="sliderText">
+                            <?= htmlspecialchars($blog['title']) ?>
+                        </h2>
+                        <a href="maqale ha/blog/index.php?id=<?= $blog['id'] ?>" class="button">ادامه</a>
+               </div>
             </div>
-            </div>
-            <div class="slide swiper-slide">
-              <img src="Image Slider on Website/images/img1.jpg" alt="" class="image" />
-              <div class="image-data">
-                <span class="text">مقالاتی درباره زندگی بزگان</span>
-                <h2 class="sliderText">
-                  از زندگینامه ها لذت ببرید <br />
-                  مقالات درسی ایتی لند
-                </h2>
-                <a href="#" class="button">ادامه</a>
-              </div>
-            </div>
-            <div class="slide swiper-slide">
-              <img src="Image Slider on Website/images/img2.jpg" alt="" class="image" />
-              <div class="image-data">
-                <span class="text">مقالاتی درباره زندگی بزگان</span>
-                <h2 class="sliderText">
-                  از زندگینامه ها لذت ببرید <br />
-                  مقالات درسی ایتی لند
-                </h2>
-                <a href="#" class="button">ادامه</a>
-              </div>
-            </div>
+            <?php endforeach; ?>
           </div>
 
           <div class="swiper-button-next nav-btn"></div>
@@ -295,67 +280,9 @@ session_start();
         </script>
       </div>
       
-      <div class="slider block">
-        <section class="main swiper mySwiper">
-          <div class="wrapper swiper-wrapper">
-            <div class="slide swiper-slide">
-              <img src="Image Slider on Website/images/img3.jpg" alt="" class="image" />
-              <div class="image-data">
-                <span class="text">مقالاتی درباره زندگی بزگان</span>
-                <h2 class="sliderText">
-                  از زندگینامه ها لذت ببرید <br />
-                  مقالات درسی ایتی لند
-                </h2>
-                <a href="#" class="button">ادامه</a>
-              </div>
-            </div>
-            <div class="slide swiper-slide">
-              <img src="Image Slider on Website/images/img1.jpg" alt="" class="image" />
-              <div class="image-data">
-                <span class="text">مقالاتی درباره زندگی بزگان</span>
-                <h2 class="sliderText">
-                  از زندگینامه ها لذت ببرید <br />
-                  مقالات درسی ایتی لند
-                </h2>
-                <a href="#" class="button">ادامه</a>
-              </div>
-            </div>
-            <div class="slide swiper-slide">
-              <img src="Image Slider on Website/images/img2.jpg" alt="" class="image" />
-              <div class="image-data">
-                <span class="text">مقالاتی درباره زندگی بزگان</span>
-                <h2 class="sliderText">
-                  از زندگینامه ها لذت ببرید <br />
-                  مقالات درسی ایتی لند
-                </h2>
-                <a href="#" class="button">ادامه</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-button-next nav-btn"></div>
-          <div class="swiper-button-prev nav-btn"></div>
-          <div class="swiper-pagination"></div>
-        </section>
+    
         
         <!-- Swiper JS -->
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-        
-        <!-- Initialize Swiper -->
-        <script>
-          var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 1,
-            loop: true,
-            pagination: {
-              el: ".swiper-pagination",
-              clickable: true,
-            },
-            navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-            },
-          });
-        </script>
       </div>
     </div>
     
