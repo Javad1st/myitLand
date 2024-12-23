@@ -46,7 +46,7 @@ $blogs = $select->fetchAll(PDO::FETCH_ASSOC);
 $content = $blog['caption'];
  
  
-                echo   limit_words($content,15); 
+                echo   limit_words($content,5); 
                     
                     ?>
                 </p>
