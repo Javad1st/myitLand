@@ -323,7 +323,7 @@ body {
 .blog img {
   transition: all ease-out 200ms;
   position: absolute;
-top: -70px;
+top: -30px;
   width: 280px;
   height: 200px;
   /* border: 1px solid var(--text-color);  */
