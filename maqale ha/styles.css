@@ -287,8 +287,8 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  width: 350px; 
-  height: 450px;
+  width: 380px; 
+  height: 600px;
   border-radius: 20px;
   padding: 1.5rem; 
   /* overflow: hidden; */
@@ -337,10 +337,10 @@ top: -35px;
 }
 .blog h2 {
   position: absolute;
-  top: 190px;
+  top: 230px;
   color: var(--secondary-text);
   font-weight: bolder;
-  font-size: 1.8rem;
+  font-size: 2rem;
   line-height: 1.4rem;
   margin: 0;
 }
@@ -348,7 +348,7 @@ top: -35px;
 .blog div {
   font-weight: 600;
  position: absolute;
- top: 250px;
+ top: 330px;
  font-size: 1.4rem;
   color: var(--text-color);
   overflow: hidden;
