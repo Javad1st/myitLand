@@ -70,11 +70,11 @@
         else {  
           
           
-          echo '<a class="linkOne" href="login/login.php">ورود</a>'; 
-          echo '<a class="linkTwo" href="login/rgister.php">ثبت‌نام</a>'; 
+          echo '<a class="linkOne" href="./login/login.php">ورود</a>'; 
+          echo '<a class="linkTwo" href="./login/rgister.php">ثبت‌نام</a>'; 
         } 
+        
         ?>
-
         </div>
       </div>
       <div class="partOfHeader partOfHeader3">
