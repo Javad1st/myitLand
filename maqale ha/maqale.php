@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include '../database/db.php';
 $select = $conn->prepare("SELECT * FROM blogs");
 $select->execute();
@@ -19,7 +20,7 @@ $blogs = $select->fetchAll(PDO::FETCH_ASSOC);
 
 <?php
 
-require_once('../header.php');
+require_once('./header-maqale.php');
 
 ?>
 
@@ -50,7 +51,6 @@ require_once('../header.php');
 
  
  
-# Example Usage
  
 $content = $blog['caption'];
  

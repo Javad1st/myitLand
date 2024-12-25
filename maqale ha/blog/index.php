@@ -17,6 +17,12 @@ $tagss=explode(',' , $b['tags']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>blog</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+    .not-login {
+  display: flex;
+  justify-content: center;
+}
+</style>
 </head>
 <body>
     <button id="theme-switch">
@@ -116,7 +122,31 @@ $tagss=explode(',' , $b['tags']);
     <p class="nevisande"> تاریخ انتشار: <?= htmlspecialchars($blog['date']) ?></p>
   <?php endforeach; ?>
   <a href="../maqale.php"><button class="read-more">بازگشت</button></a>
+  <?php if (isset($_SESSION['user_email'])):?>
+    <div style="text-align: center; margin-top: 20px;">
+        <form action="../../pdf.php" method="post" target="_blank">
+            <input type="hidden" name="blog_id" value="<?= htmlspecialchars($id) ?>">
+            <button dir="rtl" type="submit" class="download-pdf">دانلود این مقاله با فرمت pdf</button>
+        </form>
+    </div>
+    <?php else:?>
+      <div class="not-login">
+  <a  target="_blank" href="../../login/login.php"><button id="login-pdf" >برای دانلود مقاله باید ورود کنید</button></a>
+
+  </div> 
+      <?php endif;?>
+        
+
+        
+      
+
+
+
+ 
 </div>
+
+
+
 
     <script src="script.js"></script>
 </body>
