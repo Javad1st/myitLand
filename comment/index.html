@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>بخش نظرات</title>
+</head>
+<body dir="rtl" class="darkmode">
+    <div class="comments-section">
+        <h2>نظرات</h2>
+        <form id="comment-form">
+            <input type="text" id="name" placeholder="نام خود را وارد کنید..." required>
+            <textarea id="comment" placeholder="نظر خود را اینجا بنویسید..." required></textarea>
+            <button type="submit">ارسال نظر</button>
+        </form>
+        <div id="comments-list">
+            <div class="comment">
+                <p><strong>کاربر ۱:</strong> نظر اول.</p>
+            </div>
+            <div class="comment">
+                <p><strong>کاربر ۲:</strong> نظر دوم.</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
