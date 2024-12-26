@@ -275,11 +275,32 @@ body {
   border-radius: 25px;
   margin: 2rem 1rem;
   padding: 3rem;
+  position: relative; 
   background-color: var(--base-color);
 }
 
+.blogs::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(../svgHa/giphy.gif);
+  background-size: cover;
+  background-position: center; 
+  opacity: 0.8; 
+  z-index: 1; 
+}
+
+.blogs > * {
+  position: relative;
+  z-index: 2; 
+}
+
 .blog {
-  background: linear-gradient(var(--base-color), var(--base-variant));
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
   transition: all ease-in 200ms;
   border: 2px solid var(--text-color); 
   color: var(--text-color);
@@ -291,7 +312,6 @@ body {
   height: 600px;
   border-radius: 20px;
   padding: 1.5rem; 
-  /* overflow: hidden; */
   text-align: center;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
   position: relative;

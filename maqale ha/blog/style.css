@@ -83,6 +83,7 @@ body {
 
     max-width: 800px;
     margin: auto;
+    margin-top: 1rem;
     background: var(--base-variant);
     padding: 30px;
     border-radius: 15px;
@@ -91,6 +92,7 @@ body {
 }
 
 .container:hover {
+  z-index: -10;
     transform: translateY(-5px);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
 }
@@ -158,6 +160,9 @@ h2 {
     z-index: 1000;
     
 }
+.headOfMenu{
+  position: relative;
+}
 
 .hamburger-icon{
     width: fit-content;
@@ -166,6 +171,7 @@ h2 {
     background-color: var(--footer-color);
     border-radius: 5px;
     display: flex;
+    z-index: 2;
 }
 
 .menu {
@@ -316,6 +322,9 @@ h2 {
 
   
   #theme-switch2 {
+    position: absolute;
+    left: 20px;
+    top: 0px;
     margin-top: 0.8rem;
     height: 40px;
     width: 40px;
@@ -346,6 +355,17 @@ h2 {
   }
  
 
+  .down{
+    transition: all ease-out 200ms;
+    padding: 0.5rem;
+    font-size: x-large;
+    background-color: var(--base-color);
+    color: var(--text-color);
+    border-radius: 8px;
+  }
+  .down:hover{
+    background-color: var(--primary-color);
+  }
 
   @media screen and (max-width : 900px) {
 

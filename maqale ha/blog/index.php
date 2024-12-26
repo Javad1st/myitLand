@@ -126,12 +126,12 @@ $tagss=explode(',' , $b['tags']);
     <div style="text-align: center; margin-top: 20px;">
         <form action="../../pdf.php" method="post" target="_blank">
             <input type="hidden" name="blog_id" value="<?= htmlspecialchars($id) ?>">
-            <button dir="rtl" type="submit" class="download-pdf">دانلود این مقاله با فرمت pdf</button>
+            <button dir="rtl" type="submit" class="download-pdf down">دانلود این مقاله با فرمت pdf</button>
         </form>
     </div>
     <?php else:?>
       <div class="not-login">
-  <a  target="_blank" href="../../login/login.php"><button id="login-pdf" >برای دانلود مقاله باید ورود کنید</button></a>
+  <a  target="_blank" href="../../login/login.php"><button id="login-pdf" class="down" >برای دانلود مقاله باید ورود کنید</button></a>
 
   </div> 
       <?php endif;?>
@@ -148,6 +148,9 @@ $tagss=explode(',' , $b['tags']);
 
 
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
+<script src="../../script.js"></script>
+<script src="../../darkmode.js"></script>
+
 </body>
 </html>
