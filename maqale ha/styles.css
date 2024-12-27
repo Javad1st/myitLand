@@ -286,10 +286,10 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url(../svgHa/giphy.gif);
+  background-image: url(../tasavir/kamHagm.jpg);
   background-size: cover;
   background-position: center; 
-  opacity: 0.8; 
+  opacity: 0.3; 
   z-index: 1; 
 }
 
@@ -299,10 +299,10 @@ body {
 }
 
 .blog {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3px);
   transition: all ease-in 200ms;
-  border: 2px solid var(--text-color); 
+  border: 1px solid var(--text-color); 
   color: var(--text-color);
   display: flex;
   flex-direction: column;
