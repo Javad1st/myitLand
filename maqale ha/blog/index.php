@@ -14,18 +14,20 @@ $blogs = $selectblog->fetchAll(PDO::FETCH_ASSOC);
 if (!$blogs) {
     die('مقاله‌ای با این شناسه یافت نشد.');
 }
-
 // پردازش فرم ارسال نظر
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
     $userid = htmlspecialchars(trim($_POST['userid']));
     $text = htmlspecialchars(trim($_POST['text']));
+  $user_email = $_SESSION['user_email'];
 
     // بررسی اینکه فیلدها خالی نباشند
     if (!empty($userid) && !empty($text)) {
-        $coment = $conn->prepare("INSERT INTO coment (post, userid, text) VALUES (?, ?, ?)");
+        $coment = $conn->prepare("INSERT INTO coment (post, userid, text , user_email) VALUES (?, ?, ? , ?)");
         $coment->bindValue(1, $id, PDO::PARAM_INT);
         $coment->bindValue(2, $userid, PDO::PARAM_STR);
         $coment->bindValue(3, $text, PDO::PARAM_STR);
+        $coment->bindValue(4, $user_email, PDO::PARAM_STR);
+        $coment->bindValue(4, $user_email, PDO::PARAM_STR);
         $coment->execute();
 
         // پیام موفقیت
