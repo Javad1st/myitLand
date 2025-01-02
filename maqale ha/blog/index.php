@@ -63,6 +63,18 @@ foreach ($blogs as $b) {
         .success { color: green; }
         .comment-form { margin-top: 20px; }
         .comment { border-bottom: 1px solid #ccc; padding: 10px 0; }
+       .image{
+        display: flex;
+justify-content: center;   
+
+ }
+ .image>img{
+  width: 800px;
+  height: 400px;
+ }
+ textarea{
+  height: 200px;
+ }
     </style>
 </head>
 <body>
@@ -152,7 +164,10 @@ foreach ($blogs as $b) {
         <?php foreach ($blogs as $blog): ?>
             <h1><?= $blog['title'] ?></h1>
             <img src="../../uploads/<?= $blog['image'] ?>" alt="تصویر مقاله" class="article-image">
-            <p><?= ($blog['caption']) ?></p>
+            <p><p> <?= $caption = str_replace('../uploads/', '../../uploads/', $blog['caption']);
+     $caption;
+    ?></p>
+            </p>
             <h2>برچسب‌ها</h2>
             <?php foreach ($tagss as $tags): ?>
                 <span>#<?= htmlspecialchars($tags) ?></span>
