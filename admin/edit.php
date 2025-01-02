@@ -59,6 +59,18 @@ if (isset($_POST['sub'])) {
         input{
             margin: 20px 0px;
         }
+        textarea {
+            width: 100%;
+            height: 400px;
+            font-size: 16px;
+        }
+        img{
+            text-align: center;
+        }
+        img{
+            display: flex;
+            justify-content: center;
+        }
     </style>
 </head>
 <body dir="rtl" >
@@ -73,12 +85,21 @@ if (isset($_POST['sub'])) {
         <?php  foreach($blogs as $blog):  ?>
         <input name="title" type="text"  placeholder="موضوع مقاله" class="form-control"   value="<?= $blog['title'];  ?>" >
         <br><br><br><br>
-        <script src="//cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script>
-
-        <textarea name="editor1" id="editor1"><?= $blog['caption'];  ?></textarea>   <br><br>
-        <script>
-            CKEDITOR.replace('editor1');
-        </script>
+        <textarea name="editor1" id="editor1"><?= $blog['caption']?></textarea>  
+            <br><br>
+            <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create(document.querySelector('#editor1'), {
+            ckfinder: {
+                uploadUrl: './upload_image.php' // مسیر آپلود تصاویر
+            }
+        })
+        .catch(error => {
+            console.error(error);
+        });
+</script>
+     
 
         <input class="form-control mb-5" type="text" name="writer" value="<?= $blog['writer'];  ?>" placeholder="نویسنده">
         <input  name="time" type="number"  value="<?= $blog['readtime'];  ?>"  placeholder="زمان تقریبی مطالعه" class="form-control mb-5" >

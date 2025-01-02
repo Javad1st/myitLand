@@ -7,6 +7,7 @@ $date = jdate('Y/m/d');
 session_start();
 
 if (isset($_POST['sub'])) {
+
     $title = $_POST['title'];
     $caption = $_POST['editor1'];
     $writer = $_POST['writer'];
@@ -49,48 +50,53 @@ if (isset($_POST['sub'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="bootstrap.css">
     <style>
-        input{
+        input {
             margin: 20px 0px;
         }
-        body{
+        body {
             text-align: center;
         }
     </style>
 </head>
 <body dir="rtl" >
     <div class="container">
-    <?php  include 'header.php' ?>
+        <?php include 'header.php' ?>
 
-   
-    <h1>بخش افزودن مقاله</h1>
-    <p>طراح سایت :امیر عزیز التجار</p> 
-  
-  
-    <?php  echo $date ?>
-    <form action="" method="post" enctype="multipart/form-data">
-    <input name="title" type="text" placeholder="موضوع مقاله" class="form-control">
-    <br><br><br><br>
-    <script src="//cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script>
-    <textarea name="editor1" id="editor1"></textarea>  
-    <br><br>
-    <script>
-        CKEDITOR.replace('editor1');
-    </script>
-    <br>
-    <input class="form-control" type="text" name="writer" placeholder="نویسنده">
-    <br>
-    <input name="time" type="number" placeholder="زمان تقریبی مطالعه" class="form-control">
-    <br>
-    <input name="image" type="file" class="form-control"> <!-- تغییر این فیلد به file -->
-    <br>
-    <input name="tags" type="text" placeholder="تگ ها" class="form-control">
-    <br>
-    <input name="sub" type="submit" class="btn btn-success form-control" value="ثبت مقاله">
-</form>
+        <h1>بخش افزودن مقاله</h1>
+        <p>طراح سایت :امیر عزیز التجار</p> 
+        <?php echo $date ?>
 
-     
+        <form action="" method="post" enctype="multipart/form-data">
+            <input name="title" type="text" placeholder="موضوع مقاله" class="form-control">
+            <br><br><br><br>
+
+            <!-- CKEditor 5 -->
+            <textarea name="editor1" id="editor1"></textarea>  
+            <br><br>
+            <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create(document.querySelector('#editor1'), {
+            ckfinder: {
+                uploadUrl: './upload_image.php' // مسیر آپلود تصاویر
+            }
+        })
+        .catch(error => {
+            console.error(error);
+        });
+</script>
+            <br>
+            
+            <input class="form-control" type="text" name="writer" placeholder="نویسنده">
+            <br>
+            <input name="time" type="number" placeholder="زمان تقریبی مطالعه" class="form-control">
+            <br>
+            <input name="image" type="file" class="form-control"> <!-- تغییر این فیلد به file -->
+            <br>
+            <input name="tags" type="text" placeholder="تگ ها" class="form-control">
+            <br>
+            <input name="sub" type="submit" class="btn btn-success form-control" value="ثبت مقاله">
+        </form>
     </div>
 </body>
-
-
 </html>
