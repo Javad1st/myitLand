@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2024 at 02:15 AM
+-- Generation Time: Jan 03, 2025 at 02:01 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -37,6 +37,26 @@ CREATE TABLE `blogs` (
   `image` varchar(255) NOT NULL,
   `tags` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `blogs`
+--
+
+INSERT INTO `blogs` (`id`, `title`, `caption`, `writer`, `date`, `readtime`, `image`, `tags`) VALUES
+(1, 'اولین مقاله', '<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p><figure class=\"image\"><img src=\"../uploads/1735840944_1734912051_download (2).jpg\"></figure><p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p><figure class=\"image\"><img src=\"../uploads/1735840962_download (1).jpg\"></figure>', 'amir', '۱۴۰۳/۱۰/۱۳', 1, '1735840979_1734967948_IMG_20241112_171906_385.jpg', 'لینوکس , کالی , دبیان , اوبونتو');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `coment`
+--
+
+CREATE TABLE `coment` (
+  `id` int(11) NOT NULL,
+  `post` int(11) NOT NULL,
+  `userid` varchar(255) NOT NULL,
+  `text` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
 -- --------------------------------------------------------
 
@@ -75,6 +95,12 @@ ALTER TABLE `blogs`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `coment`
+--
+ALTER TABLE `coment`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -95,6 +121,12 @@ ALTER TABLE `writers`
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `coment`
+--
+ALTER TABLE `coment`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -107,7 +139,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `writers`
 --
 ALTER TABLE `writers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
