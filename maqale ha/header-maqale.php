@@ -26,7 +26,7 @@
           <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
         </svg></div>
         <div id="homeDropdown" class="dropdownContent dropdownContent1">
-          <a href="maqale.php" class="dropdownItem dropdownItem1"><svg class="iconA" xmlns="http://www.w3.org/2000/svg" width="24"
+          <a href="maqale ha/maqale.php" class="dropdownItem dropdownItem1"><svg class="iconA" xmlns="http://www.w3.org/2000/svg" width="24"
               height="24" viewBox="0 0 24 24" style="fill: var(--zed);">
               <path d="M2 7v1l11 4 9-4V7L11 4z"></path>
               <path
@@ -64,14 +64,14 @@
           </div>
         </div>
         <div class="headerButton headerButton4">
-        <?php if (isset($_SESSION['user_email'])) { echo '<a class="linkTwo" href="../logout.php">خروج از حساب </a>'; } 
+        <?php if (isset($_SESSION['user_email'])) { echo '<a class="linkTwo" href="logout.php">خروج از حساب </a>'; } 
         
         
         else {  
           
           
-          echo '<a class="linkOne" href="../login/login.php">ورود</a>'; 
-          echo '<a class="linkTwo" href="../login/rgister.php">ثبت‌نام</a>'; 
+          echo '<a class="linkOne" href="./login/login.php">ورود</a>'; 
+          echo '<a class="linkTwo" href="./login/rgister.php">ثبت‌نام</a>'; 
         } 
         
         ?>
@@ -83,9 +83,118 @@
                 <h4>itland</h4>
             
         </div>
-        
-        
       </div>
+
+        <div class="partOfHeader partOfHeader5">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+  <form action="">
+  <input type="search" autofocus required>
+  <i class="fa fa-search"></i>
+  <button onclick="clearInput()">Clear</a>
+  </form>
+        </div>
+        <style>
+
+.partOfHeader5 form {
+  position: relative;
+  top: 25px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 700ms;
+  width: 50px;
+  height: 50px;
+  background: var(--text-color);
+  border-radius: 18px;
+  border: 4px solid var(--text-color);
+  padding: 5px 10px 5px 10px;
+}
+
+
+.partOfHeader5 input {
+  position: absolute;
+  top: 0;
+  left: -4px;
+  width: 0;
+  height: 42.5px;
+  line-height: 30px;
+  outline: 0;
+  border: 0;
+  font-size: 1em;
+  border-radius: 20px;
+  padding: 0 40px 0 10px;
+  background: var(--text-color);
+  color: var(--base-color);
+  
+}
+
+.partOfHeader5 .fa {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 42.5px;
+  height: 42.5px;
+  position: absolute;
+  top: 0;
+  right: -1px;
+  color: var(--base-color);
+  border-radius: 18px;
+  text-align: center;
+  font-size: 1.2em;
+ 
+}
+.partOfHeader5 form:focus-within,
+.partOfHeader5 form:hover,
+.partOfHeader5 form:valid{
+  width: 200px;
+  cursor: pointer;
+}
+
+.partOfHeader5 form:hover input,
+.partOfHeader5 form:focus-within input,
+.partOfHeader5 form:valid input {
+  width: 100%;
+} 
+
+.partOfHeader5 form:hover .fa,
+.partOfHeader5 form:focus-within .fa,
+.partOfHeader5 form:valid .fa {
+  background:var(--zed);
+  color: white;
+}
+
+.partOfHeader5 button {
+  display: none;
+  position: absolute;
+  top: 70px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 20px;
+  color: white;
+  padding: 4px;
+  min-height: max-content;
+  background: transparent;
+  outline: 0;
+  border: 1px solid #303030;
+  border-radius: 4px;
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.partOfHeader5 form:valid button {
+  display: block;
+}
+
+        </style>
+        <script>
+          
+const clearInput = () => {
+  const input = document.getElementsByTagName("input")[0];
+  input.value = "";
+}
+
+        </script>
       <div class="partOfHeader partOfHeader4">
         <button id="theme-switch">
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
@@ -122,16 +231,8 @@
               </svg>
             </button>
             <div class="headerButton headerButton4">
-            <?php if (isset($_SESSION['user_email'])) { echo '<a class="linkTwo" href="../logout.php">خروج از حساب </a>'; } 
-        
-        
-        else {  
-          
-          
-          echo '<a class="linkOne" href="../login/login.php">ورود</a>'; 
-          echo '<a class="linkTwo" href="../login/rgister.php">ثبت‌نام</a>'; 
-        } 
-        ?>
+              <a class="linkOne" href="login/login.php">ورود</a>
+              <a class="linkTwo" href="login/rgister.php">ثبت نام</a>
             </div>
           </div>
           <div class="menu-item">

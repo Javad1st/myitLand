@@ -1,0 +1,52 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #e0f7fa, #80deea); /* گرادیانت پس‌زمینه */
+}
+
+.profile-container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    padding: 20px;
+}
+
+.profile-header {
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(to right, #4CAF50, #81C784); /* گرادیانت برای هدر */
+    color: white;
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid white;
+    margin-bottom: 10px;
+}
+
+.profile-name {
+    font-size: 28px;
+    margin: 10px 0;
+}
+
+.profile-bio {
+    font-size: 18px;
+    margin: 0;
+}
+
+.logout-button {
+    background-color: #f44336; /* رنگ قرمز */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s,
+}
