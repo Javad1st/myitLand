@@ -57,7 +57,7 @@ $blogs = $select->fetchAll(PDO::FETCH_ASSOC);
       <div class="bigText">
         <h2>سایت مقاله ای آیتی لند</h2>
         <p>مقالات رایگان و بروز برنامه نویسی در دنیا با آیتی لند</p>
-        <a href="#slider" class="bigText1">اسکرول کنید
+        <a style="font-weight: 900;" href="#slider" class="bigText1">اسکرول کنید
           <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="3 0 17 17"
           style="fill: var(--text-color);  border-radius: 50%;">
           <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
