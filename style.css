@@ -2,44 +2,39 @@
   font-family: iranSans;
   font-style: normal;
   font-weight: bolder;
-  src: url(IranSans/Farsi\ numerals/IRANSansXFaNum-Black.ttf);
+  src: url(yekan/Yekan-Bakh-FaNum-07-Heavy.woff);
 }
+
 @font-face {
   font-family: iranSans;
   font-style: normal;
   font-weight: bold;
-  src: url(IranSans/Farsi\ numerals/IRANSansXFaNum-Bold.ttf);
+  src: url(yekan/Yekan-Bakh-FaNum-06-Bold.woff);
 }
+
 @font-face {
   font-family: iranSans;
   font-style: normal;
   font-weight: 900;
-  src: url(IranSans/Farsi\ numerals/IRANSansXFaNum-DemiBold.ttf);
+  src: url(yekan/Yekan-Bakh-FaNum-08-Fat.woff);
 }
+
 @font-face {
   font-family: iranSans;
   font-style: normal;
-  font-weight: 800;
-  src: url(IranSans/Farsi\ numerals/IRANSansXFaNum-Medium.ttf);
+  font-weight: 700;
+  src: url(yekan/Yekan-Bakh-FaNum-05-Medium.woff);
 }
-@font-face {
-  font-family: iranSans;
-  font-style: normal;
-  font-weight: 600;
-  src: url(IranSans/Farsi\ numerals/IRANSansXFaNum-Regular.ttf);
-}
-@font-face {
-  font-family: iranSans;
-  font-style: normal;
-  font-weight: 400;
-  src: url(IranSans/Farsi\ numerals/IRANSansXFaNum-Thin.ttf);
-}
+
+
+
 @font-face {
   font-family: iranSans;
   font-style: normal;
   font-weight: 300;
-  src: url(IranSans/Farsi\ numerals/IRANSansXFaNum-UltraLight.ttf);
+  src: url(yekan/Yekan-Bakh-FaNum-04-Regular.woff);
 }
+
 
 * {
   padding: 0;
