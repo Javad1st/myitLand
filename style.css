@@ -55,6 +55,8 @@
   --darkMode: #27ae60; 
   --zed: #2ecc71;
   --zed2: #27ae60; 
+  --grad1: rgba(104, 229, 238, 0.671);
+  --grad2: #00ccff;
 }
 
 
@@ -70,20 +72,24 @@
   transition: all ease-in-out .5s;
   --zed: #2ecc71; 
   --zed2: #27ae60; 
+  --grad1: rgba(27, 98, 190, 0.671);
+  --grad2: #91e9ff;
 }
 .darkmode2 {
 
-  --base-color: #081C15;
-  --base-variant: #1B4332;
-  --text-color: #d8f3dc;
-  --secondary-text: #bbfac4;
-  --primary-color: #1c4b35;
-  --accent-color: #006d3a;
-  --footer-color: #bcdfce;
-  --darkMode: #b7e5a6;
+  --base-color: #00182f; 
+  --base-variant: #1c2329; 
+  --text-color: #ecf0f1; 
+  --secondary-text: #bdc3c7; 
+  --primary-color: #167ba0; 
+  --accent-color: #1abc9c; 
+  --footer-color: #2c3e50; 
+  --darkMode: #1abc9c; 
   transition: all ease-in-out .5s;
-  --zed: #05f561;
-  --zed2: #00a841;
+  --zed: #2ecc71; 
+  --zed2: #27ae60; 
+  --grad1: rgba(27, 98, 190, 0.671);
+  --grad2: #91e9ff;
 
 }
 
@@ -108,7 +114,7 @@ body{
 header {
   transition: all ease-in-out 1s;
   height: 10%;
-  background-image: linear-gradient(rgba(0, 255, 98, 0.13), rgba(27, 49, 8, 0.199)), url(tasavir/baKeyfiayat.jpg);
+  /* background: linear-gradient(rgba(0, 255, 98, 0.308), rgba(27, 49, 8, 0.199)); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -117,31 +123,32 @@ header {
   position: relative;
   isolation: isolate;
   width: 100%;
-  opacity: 95%;
+  opacity: 90%;
   top: 0;
   color: var(--text-color);
-  padding: 1.5rem 2rem; /* افزایش padding برای فضای بیشتر */
+  padding: 1.5rem 2rem; 
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-radius: 0 0 50px 50px;
   z-index: 999;
-  box-shadow: 0 -6px 15px rgba(0, 0, 0, 0.3); /* سایه ملایم‌تر */
+  box-shadow: 0 -6px 15px rgba(0, 0, 0, 0.3); 
   text-shadow: 1px 1px 2px var(--base-color); 
 }
-.headerTitle a{
+.headerTitle {
   text-decoration: none;
+  margin-right: 0.5rem;
 }
 .headerTitle {
   color: var(--text-color);
   cursor: pointer;
-  font-size: 3rem; /* افزایش اندازه فونت */
-  transition: color 0.3s ease; /* انیمیشن تغییر رنگ */
+  font-size: 3rem; 
+  transition: color 0.3s ease; 
 }
 
 .headerTitle:hover {
   font-weight: bolder;
-  color: var(--secondary-text); /* تغییر رنگ هنگام هاور */
+  color: var(--secondary-text); 
 }
 header::before{ 
   content: '';
@@ -242,7 +249,10 @@ header::before{
   color: var(--text-color);
 }
 .logo{
-  width: 50px;
+  width: 60px;
+  height: 60px;
+  margin-top: -10px;
+  margin-right: -0.7rem;
 }
 
 .contact {
@@ -271,24 +281,25 @@ header::before{
 }
 .gradient {
   position: fixed;
-   top: 15%;
+   top: 25%;
   
   --size: 700px;
-  --speed: 20s;
+  --speed: 15s;
   --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
   width: var(--size);
   height: var(--size);
   filter: blur(calc(var(--size) / 5));
-  background-image: linear-gradient(rgba(40, 255, 176, 0.85), #2d95eb);
+  background-image: linear-gradient(var(--grad1), var(--grad2));
   animation: rotate var(--speed) var(--easing) alternate infinite;
   border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
-  z-index: -1;
- filter: blur(-200%);
+  z-index: -10;
+ filter: blur(-900%);
+ opacity: 0.75;
 }
 
 @media (min-width: 720px) {
   .gradient {
-    --size: 900px;
+    --size: 1000px;
     top: 0%;
     
   }
