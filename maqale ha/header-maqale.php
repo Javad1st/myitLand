@@ -1,6 +1,6 @@
 <header>
       <div class="partOfHeader partOfHeader1">
-        <img class="logo" src="tasavir/4695738.webp" alt="">
+        <img class="logo" src="../tasavir/Untitled-2.png" alt="">
       </div>
       <div class="partOfHeader partOfHeader2">
         <!-- About Us Dropdown -->
