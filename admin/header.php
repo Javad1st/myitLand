@@ -52,10 +52,10 @@
         <ul class="navbar-nav ml-auto">
           
             <li class="nav-item">
-                <a class="nav-link" href="#">کاربران</a>
+                <a class="nav-link" href="users.php">کاربران</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">نظرات</a>
+                <a class="nav-link" href="comments.php">نظرات</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">منو ها</a>

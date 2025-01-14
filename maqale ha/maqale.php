@@ -12,6 +12,7 @@ $blogs = $select->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="../mobile.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="st.css">
+    <link rel="stylesheet" href="risponse.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مقالات</title>
@@ -43,7 +44,7 @@ require_once('./header-maqale.php');
 } foreach ($blogs as $blog): ?>
             <div class="blog">
                 <img src="../uploads/<?= ($blog['image']) ?>" alt="تصویر مقاله" class="article-image">
-                <h2><?= htmlspecialchars($blog['title']) ?></h2>
+             <h2>  <a href="./blog/index.php?id=<?=$blog['id'] ?>"><?= htmlspecialchars($blog['title']) ?></a></h2> 
                 <div class="discreption">
                     <?php
                      

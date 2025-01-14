@@ -87,7 +87,7 @@ if (isset($_POST['sub'])) {
 </script>
             <br>
             
-            <input class="form-control" type="text" name="writer" placeholder="نویسنده">
+            <input class="form-control" type="text" name="writer" placeholder="نویسنده" required>
             <br>
             <input name="time" type="number" placeholder="زمان تقریبی مطالعه" class="form-control">
             <br>
