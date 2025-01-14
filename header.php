@@ -1,82 +1,11 @@
+<div class="head">
+
+
 <header>
       <div class="partOfHeader partOfHeader1">
         <img class="logo" src="tasavir/Untitled-2.png" alt="">
       </div>
-      <div class="partOfHeader partOfHeader2">
-        <!-- About Us Dropdown -->
-        <div class="headerButton headerButton1" onclick="toggleDropdown('aboutDropdown')">درباره ما <svg
-            xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-            style="fill: #1B4332; background-color: white; border-radius: 50%;">
-            <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
-          </svg> </div>
-        <div id="aboutDropdown" class="dropdownContent">
-          <a href="/overview" class="dropdownItem">Overview</a>
-          <a href="/team" class="dropdownItem">Team</a>
-          <a href="/careers" class="dropdownItem">Careers</a>
-        </div>
-        
-        <!-- Support Dropdown -->
-        <div class="headerButton headerButton2">پشتیبانی </div>
-        
-        
-        <!-- Home Dropdown -->
-        <div class="headerButton headerButton3" onclick="toggleDropdown('homeDropdown')">درس ها <svg
-          xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-          style="fill: #1B4332;background-color: white; border-radius: 50%;">
-          <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
-        </svg></div>
-        <div id="homeDropdown" class="dropdownContent dropdownContent1">
-          <a href="maqale ha/maqale.php" class="dropdownItem dropdownItem1"><svg class="iconA" xmlns="http://www.w3.org/2000/svg" width="24"
-              height="24" viewBox="0 0 24 24" style="fill: var(--zed);">
-              <path d="M2 7v1l11 4 9-4V7L11 4z"></path>
-              <path
-              d="M4 11v4.267c0 1.621 4.001 3.893 9 3.734 4-.126 6.586-1.972 7-3.467.024-.089.037-.178.037-.268V11L13 14l-5-1.667v3.213l-1-.364V12l-3-1z">
-            </path>
-          </svg>دوره ها</a>
-          <a href="/news" class="dropdownItem dropdownItem2"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-            height="24" viewBox="0 0 24 20" style="fill: var(--zed);">
-            <path
-                d="M10 3H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM9 9H5V5h4v4zm11-6h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zm-1 6h-4V5h4v4zm-9 4H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1zm-1 6H5v-4h4v4zm8-6c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4zm0 6c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z">
-              </path>
-            </svg>دسته بندی ها</a>
-            <a href="#category" class="dropdownItem dropdownItem3"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-              height="24" viewBox="0 0 24 24" style="fill: var(--zed);">
-              <path
-                d="M19.875 3H4.125C2.953 3 2 3.897 2 5v14c0 1.103.953 2 2.125 2h15.75C21.047 21 22 20.103 22 19V5c0-1.103-.953-2-2.125-2zm0 16H4.125c-.057 0-.096-.016-.113-.016-.007 0-.011.002-.012.008L3.988 5.046c.007-.01.052-.046.137-.046h15.75c.079.001.122.028.125.008l.012 13.946c-.007.01-.052.046-.137.046z">
-              </path>
-              <path d="M6 7h6v6H6zm7 8H6v2h12v-2h-4zm1-4h4v2h-4zm0-4h4v2h-4z"></path>
-            </svg>اخبار</a>
-          <a href="/main" class="dropdownItem dropdownItem4"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-              height="24" viewBox="0 0 24 24" style="fill: var(--zed);">
-              <path
-              d="M19 3H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h8a.996.996 0 0 0 .707-.293l7-7a.997.997 0 0 0 .196-.293c.014-.03.022-.061.033-.093a.991.991 0 0 0 .051-.259c.002-.021.013-.041.013-.062V5c0-1.103-.897-2-2-2zM5 5h14v7h-6a1 1 0 0 0-1 1v6H5V5zm9 12.586V14h3.586L14 17.586z">
-            </path>
-          </svg>مقالات رایگان</a>
-          <a href="/main" class="dropdownItem dropdownItem5"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-              height="24" viewBox="0 0 24 24" style="fill: var(--zed);">
-              <path
-              d="M20 13.01h-7V10h1c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2h-4c-1.103 0-2 .897-2 2v4c0 1.103.897 2 2 2h1v3.01H4V18H3v4h4v-4H6v-2.99h5V18h-1v4h4v-4h-1v-2.99h5V18h-1v4h4v-4h-1v-4.99zM10 8V4h4l.002 4H10z">
-            </path>
-          </svg>رود مپ</a>
-          <div class="dropdownC">
-            <h2>پیشنهاد آیتی لند :</h2>
-            <p>مقاله جاوا اسکریپت و مقاله پی اچ پی</p>
-          </div>
-        </div>
-        <div class="headerButton headerButton4">
-        <?php if (isset($_SESSION['user_email'])) { echo '<a class="linkTwo" href="logout.php">خروج از حساب </a>'; } 
-        
-        
-        else {  
-          
-          
-          echo '<a class="linkOne" href="./login/login.php">ورود</a>'; 
-          echo '<a class="linkTwo" href="./login/rgister.php">ثبت‌نام</a>'; 
-        } 
-        
-        ?>
-        </div>
-      </div>
+     
       <div class="partOfHeader partOfHeader3">
         <div class="headerTitle">
             
@@ -94,99 +23,7 @@
   <button onclick="clearInput()">Clear</a>
   </form>
         </div>
-        <style>
-
-.partOfHeader5 form {
-  position: relative;
-  top: 25px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: all 700ms;
-  width: 50px;
-  height: 50px;
-  background: var(--text-color);
-  border-radius: 18px;
-  border: 4px solid var(--text-color);
-  padding: 5px 10px 5px 10px;
-}
-
-
-.partOfHeader5 input {
-  position: absolute;
-  top: 0;
-  left: -4px;
-  width: 0;
-  height: 42.5px;
-  line-height: 30px;
-  outline: 0;
-  border: 0;
-  font-size: 1em;
-  border-radius: 20px;
-  padding: 0 40px 0 10px;
-  background: var(--text-color);
-  color: var(--base-color);
-  
-}
-
-.partOfHeader5 .fa {
-  box-sizing: border-box;
-  padding: 10px;
-  width: 42.5px;
-  height: 42.5px;
-  position: absolute;
-  top: 0;
-  right: -1px;
-  color: var(--base-color);
-  border-radius: 18px;
-  text-align: center;
-  font-size: 1.2em;
  
-}
-.partOfHeader5 form:focus-within,
-.partOfHeader5 form:hover,
-.partOfHeader5 form:valid{
-  width: 200px;
-  cursor: pointer;
-}
-
-.partOfHeader5 form:hover input,
-.partOfHeader5 form:focus-within input,
-.partOfHeader5 form:valid input {
-  width: 100%;
-} 
-
-.partOfHeader5 form:hover .fa,
-.partOfHeader5 form:focus-within .fa,
-.partOfHeader5 form:valid .fa {
-  background:var(--zed);
-  color: white;
-}
-
-.partOfHeader5 button {
-  display: none;
-  position: absolute;
-  top: 70px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  font-size: 20px;
-  color: white;
-  padding: 4px;
-  min-height: max-content;
-  background: transparent;
-  outline: 0;
-  border: 1px solid #303030;
-  border-radius: 4px;
-  text-align: center;
-  width: 100%;
-  cursor: pointer;
-}
-
-.partOfHeader5 form:valid button {
-  display: block;
-}
-
-        </style>
         <script>
           
 const clearInput = () => {
@@ -195,6 +32,100 @@ const clearInput = () => {
 }
 
         </script>
+         <div class="partOfHeader partOfHeader">
+
+         <?php if (isset($_SESSION['user_email'])) { echo '<div class="profile1">
+        <button id="profileBtn1">پروفایل</button>
+        <div id="dropdown1" class="dropdown-content1">
+            <a href="#">داشبورد شخصی</a>
+            <a href="#">خروج از حساب</a>
+        </div>
+    </div>'; } 
+        
+        
+        else {  
+          
+          
+          echo '<a class="linkOne" href="./login/login.php">ورود</a>'; 
+          echo '<a class="linkTwo" href="./login/rgister.php">ثبت‌نام</a>'; 
+        } 
+        
+        ?>
+        <style>
+
+
+
+.profile1 {
+    position: relative;
+    display: inline-block;
+}
+
+#profileBtn1 {
+    padding: 20px;
+    cursor: pointer;
+   border-radius: 50%;
+   width: 60px;
+   height: 60px;
+   display: flex;
+   align-items: center;
+   justify-content:center ;
+}
+
+.dropdown-content1 {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px;
+    right: -30px;
+}
+
+.dropdown-content1 a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content1 a:hover {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+
+
+
+        </style>
+
+        <script>
+
+document.getElementById("profileBtn1").onclick = function() {
+    var dropdown = document.getElementById("dropdown1");
+    if (dropdown.style.display === "block") {
+        dropdown.style.display = "none";
+    } else {
+        dropdown.style.display = "block";
+    }
+};
+
+// برای بستن منو وقتی کاربر بر روی خارج از آن کلیک کند
+window.onclick = function(event) {
+    if (!event.target.matches('#profileBtn1')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.style.display === 'block') {
+                openDropdown.style.display = 'none';
+            }
+        }
+    }
+}
+
+
+        </script>
+
+         </div>
       <div class="partOfHeader partOfHeader4">
         <button id="theme-switch">
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
@@ -281,4 +212,73 @@ const clearInput = () => {
             </div>
           </div>
         </header>
+        
+
+
+        <div class="header2">
+        <!-- About Us Dropdown -->
+        <div class="headerButton headerButton1" onclick="toggleDropdown('aboutDropdown')">درباره ما <svg
+            xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+            style="fill: #1B4332; background-color: white; border-radius: 50%;">
+            <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
+          </svg> 
+        <div id="aboutDropdown" class="dropdownContent">
+          <a href="/overview" class="dropdownItem">Overview</a>
+          <a href="/team" class="dropdownItem">Team</a>
+          <a href="/careers" class="dropdownItem">Careers</a>
+        </div>
+        </div>
+        
+        <!-- Support Dropdown -->
+        <div class="headerButton headerButton2">پشتیبانی </div>
+        
+        
+        <!-- Home Dropdown -->
+        <div class="headerButton headerButton3" onclick="toggleDropdown('homeDropdown')">درس ها <svg
+          xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+          style="fill: #1B4332;background-color: white; border-radius: 50%;">
+          <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
+        </svg>
+        <div id="homeDropdown" class="dropdownContent dropdownContent1">
+          <a href="maqale ha/maqale.php" class="dropdownItem dropdownItem1"><svg class="iconA" xmlns="http://www.w3.org/2000/svg" width="24"
+              height="24" viewBox="0 0 24 24" style="fill: var(--zed);">
+              <path d="M2 7v1l11 4 9-4V7L11 4z"></path>
+              <path
+              d="M4 11v4.267c0 1.621 4.001 3.893 9 3.734 4-.126 6.586-1.972 7-3.467.024-.089.037-.178.037-.268V11L13 14l-5-1.667v3.213l-1-.364V12l-3-1z">
+            </path>
+          </svg>دوره ها</a>
+          <a href="/news" class="dropdownItem dropdownItem2"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+            height="24" viewBox="0 0 24 20" style="fill: var(--zed);">
+            <path
+                d="M10 3H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM9 9H5V5h4v4zm11-6h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zm-1 6h-4V5h4v4zm-9 4H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1zm-1 6H5v-4h4v4zm8-6c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4zm0 6c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z">
+              </path>
+            </svg>دسته بندی ها</a>
+            <a href="#category" class="dropdownItem dropdownItem3"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+              height="24" viewBox="0 0 24 24" style="fill: var(--zed);">
+              <path
+                d="M19.875 3H4.125C2.953 3 2 3.897 2 5v14c0 1.103.953 2 2.125 2h15.75C21.047 21 22 20.103 22 19V5c0-1.103-.953-2-2.125-2zm0 16H4.125c-.057 0-.096-.016-.113-.016-.007 0-.011.002-.012.008L3.988 5.046c.007-.01.052-.046.137-.046h15.75c.079.001.122.028.125.008l.012 13.946c-.007.01-.052.046-.137.046z">
+              </path>
+              <path d="M6 7h6v6H6zm7 8H6v2h12v-2h-4zm1-4h4v2h-4zm0-4h4v2h-4z"></path>
+            </svg>اخبار</a>
+          <a href="/main" class="dropdownItem dropdownItem4"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+              height="24" viewBox="0 0 24 24" style="fill: var(--zed);">
+              <path
+              d="M19 3H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h8a.996.996 0 0 0 .707-.293l7-7a.997.997 0 0 0 .196-.293c.014-.03.022-.061.033-.093a.991.991 0 0 0 .051-.259c.002-.021.013-.041.013-.062V5c0-1.103-.897-2-2-2zM5 5h14v7h-6a1 1 0 0 0-1 1v6H5V5zm9 12.586V14h3.586L14 17.586z">
+            </path>
+          </svg>مقالات رایگان</a>
+          <a href="/main" class="dropdownItem dropdownItem5"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+              height="24" viewBox="0 0 24 24" style="fill: var(--zed);">
+              <path
+              d="M20 13.01h-7V10h1c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2h-4c-1.103 0-2 .897-2 2v4c0 1.103.897 2 2 2h1v3.01H4V18H3v4h4v-4H6v-2.99h5V18h-1v4h4v-4h-1v-2.99h5V18h-1v4h4v-4h-1v-4.99zM10 8V4h4l.002 4H10z">
+            </path>
+          </svg>رود مپ</a>
+          <div class="dropdownC">
+            <h2>پیشنهاد آیتی لند :</h2>
+            <p>مقاله جاوا اسکریپت و مقاله پی اچ پی</p>
+          </div>
+        </div>
+        </div>
+    
+      </div>
+      </div>
         

@@ -110,6 +110,14 @@ body{
   align-items: center;
   
 }
+.head{
+  transition: all ease-in-out 1s;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 header {
   transition: all ease-in-out 1s;
@@ -134,7 +142,35 @@ header {
   z-index: 999;
   box-shadow: 0 -6px 15px rgba(0, 0, 0, 0.3); 
   text-shadow: 1px 1px 2px var(--base-color); 
+
+  max-width: 1300px;
 }
+.header2{
+
+  transition: all ease-in-out 1s;
+  height: 10%;
+  /* background: linear-gradient(rgba(0, 255, 98, 0.308), rgba(27, 49, 8, 0.199)); */
+  background-color: var(--base-color);
+  isolation: isolate;
+  width: 80%;
+  opacity: 90%;
+  top: 0;
+  color: var(--text-color);
+  /* padding: 1.5rem 2rem;  */
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  justify-content: space-around;
+  border-radius: 0 0 50px 50px;
+  z-index: 998;
+  box-shadow: 0 -6px 15px rgba(0, 0, 0, 0.3); 
+  text-shadow: 1px 1px 2px var(--base-color); 
+  position: relative;
+  max-width: 1000px;
+
+}
+
+
 .headerTitle {
   text-decoration: none;
   margin-right: 0.5rem;
@@ -173,10 +209,6 @@ header::before{
   font-size: larger;
 }
 
-.partOfHeader2 {
-  display: flex;
-  gap: 2rem;
-}
 
 .partOfHeader3 {
   display: flex;
@@ -185,6 +217,9 @@ header::before{
   right: 5rem;
 }
 
+.partOfHeader5{
+margin: 0 0;
+}
 #theme-switch {
   height: 40px;
   width: 40px;
@@ -216,9 +251,12 @@ header::before{
 
 .headerButton {
   cursor: pointer;
+  /* height: fit-content; */
+  position: relative;
+ 
 }
-.headerButton4{
-  margin-right: 3rem;
+.headerButton1{
+/* margin-right: 7rem ; */
 }
 .headerButton4 .linkOne{
   width: 20px;
@@ -333,6 +371,103 @@ body {
 
 .disOn{
   display: inline;
+}
+
+
+.partOfHeader5{
+  position: relative;
+  /* right: 500px; */
+}
+
+
+.partOfHeader5 form {
+  position: relative;
+  top: 25px;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  transition: all 500ms;
+  width: 50px;
+  height: 50px;
+  background: var(--text-color);
+  border-radius: 18px;
+  border: 4px solid var(--text-color);
+  /* padding: 5px 10px 5px 10px; */
+}
+
+
+.partOfHeader5 input {
+  position: absolute;
+  top: 0;
+  left: -4px;
+  width: 0;
+  height: 42.5px;
+  line-height: 30px;
+  outline: 0;
+  border: 0;
+  font-size: 1em;
+  border-radius: 20px;
+  padding: 0 40px 0 10px;
+  background: var(--text-color);
+  color: var(--base-color);
+  
+}
+
+.partOfHeader5 .fa {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 42.5px;
+  height: 42.5px;
+  position: absolute;
+  top: 0;
+  right: -1px;
+  color: var(--base-color);
+  border-radius: 18px;
+  text-align: center;
+  font-size: 1.2em;
+ 
+}
+.partOfHeader5 form:focus-within,
+.partOfHeader5 form:hover,
+.partOfHeader5 form:valid{
+  width: 250px;
+  cursor: pointer;
+}
+
+.partOfHeader5 form:hover input,
+.partOfHeader5 form:focus-within input,
+.partOfHeader5 form:valid input {
+  width: 100%;
+} 
+
+.partOfHeader5 form:hover .fa,
+.partOfHeader5 form:focus-within .fa,
+.partOfHeader5 form:valid .fa {
+  background:var(--zed);
+  color: white;
+}
+
+.partOfHeader5 button {
+  display: none;
+  position: absolute;
+  top: 70px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 20px;
+  color: white;
+  padding: 4px;
+  min-height: max-content;
+  background: transparent;
+  outline: 0;
+  border: 1px solid #303030;
+  border-radius: 4px;
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.partOfHeader5 form:valid button {
+  display: block;
 }
 
 .bigText{
@@ -635,15 +770,17 @@ footer li{
   background-color: var(--base-variant);
 }
 #homeDropdown {
-  margin-right: 13rem;
-  margin-top: 2.5rem;
+ position: absolute;
+ top: 50px;
+ right: -50px;
 }
 #supportDropdown {
   margin-right: 6rem;
   margin-top: 2.5rem;
 }
 #aboutDropdown{
-  margin-top: 2.5rem;
+  position: absolute;
+  top: 40px;
   
 }
 @keyframes appear {
@@ -667,7 +804,8 @@ body {
 }
 
 .hamburger-menu {
-  position: relative;
+  position: absolute;
+  left: 30px;
 }
 
 .hamburger-icon{

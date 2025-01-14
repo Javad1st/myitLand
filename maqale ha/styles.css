@@ -262,10 +262,10 @@ body {
   align-items: center;
   flex-wrap: wrap;
   margin-top: 2rem;
-  border: 1px solid var(--text-color);
+  /* border: 1px solid var(--text-color); */
   border-radius: 25px;
-  margin: 2rem 1rem;
-  padding: 3rem;
+  margin: 2rem 0rem;
+  padding: 1rem;
   position: relative; 
   /* background-color: var(--base-color); */
 }
@@ -299,14 +299,14 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  /* width: 350px;  */
+  width: 350px; 
   height: 490px;
   border-radius: 10px;
   padding: 1.5rem; 
   text-align: center;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
   /* position: relative; */
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 
@@ -395,13 +395,46 @@ top: -85px;
   
 }
 .blog .view {
+  transition: all ease-out 300ms;
   color: var(--text-color);
-  padding: 1.5rem 0;
+  padding: 1.2rem 0;
   font-size: 1.2rem;
   width: inherit;
   margin-bottom: -2rem;
   /* padding-top: 1rem; */
-  border-top: 2px solid rgba(42, 71, 79, 0.2);
+  border-top: 2px solid rgba(71, 115, 128, 0.418);
+}
+
+.blog .view:hover {
+    /* background-color: #1c262977; */
+    color: var(--zed2);
+}
+
+
+
+.icon {
+  display: flex;
+  align-items: center;
+
+}
+
+.icon svg {
+  cursor: pointer;
+  transition: fill 0.2s;
+}
+
+.icon:hover svg {
+  fill: #27ae60; 
+}
+.icon:hover{
+  color: #27ae60;
+}
+
+.comment:hover{
+color: unset;
+}
+.comment:hover svg{
+  fill: unset;
 }
 
 
@@ -421,9 +454,6 @@ a{
 }
 
 
-.blog .view:hover {
-    background-color: #1c262977;
-}
 .categories{
   position: relative;
 }
