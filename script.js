@@ -73,3 +73,5 @@ window.addEventListener('load', function() {
         document.getElementById('content').style.display = 'block';
     });
 });
+
+

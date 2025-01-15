@@ -1,4 +1,8 @@
+
+
 <?php 
+
+
 
 include '../jdf.php';
 include '../database/db.php'; 
@@ -41,6 +45,8 @@ if (isset($_POST['sub'])) {
     $insert->execute();
 }
 ?>
+
+
 
 <html lang="en">
 <head>

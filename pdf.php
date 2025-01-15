@@ -47,7 +47,8 @@ body { font-family: dejavusans; background-color: #81C784; margin: 0; padding: 2
 .container { max-width: 800px; margin: auto; background: #4CAF50; padding: 30px; border-radius: 15px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); }
 h1 { color: #1B5E20; font-size: 2.5em; margin-bottom: 15px; text-align: center; }
 .article-image { width: 800px; height: 400px; border-radius: 15px; margin-bottom: 20px; border: 5px solid #388E3C; display: block; margin-left: auto; margin-right: auto; }
-p { font-weight: 600;  line-height: 1.8; color:rgb(5, 5, 5); margin-top: 15px; font-size: 1.3em; text-align: center; }
+p { font-weight: 600; line-height: 1.8; color:rgb(5, 5, 5); margin-top: 15px; font-size: 1.3em; text-align: center; }
+p img { display: flex; justify-content: center; width: 800px; height: 400px; }  /* استایل برای وسط‌چین کردن تصویر در تگ p */
 h2 { color: #388E3C; margin-top: 20px; font-size: 1.8em; text-align: center; }
 span { color:rgb(6, 6, 6); margin-top: 10px; font-size: 1em; text-align: center; }
 .nevisande { text-align: center; margin-top: 3rem; }
@@ -56,11 +57,13 @@ span { color:rgb(6, 6, 6); margin-top: 10px; font-size: 1em; text-align: center;
 </style>
 ';
 
+$caption = str_replace('../uploads/', './uploads/', $blog['caption']);
+
 $html .= '<div class="container">';
 $html .= '<h1>' . htmlspecialchars($blog['title']) . '</h1>';
 $html .= '<img src="./uploads/' . htmlspecialchars($blog['image']) .  '" alt="تصویر مقاله" class="article-image">';
 
-$html .= '<p>' . $blog['caption'] . '</p>';
+$html .= '<p>' . $caption . '</p>';  // افزودن محتوای caption داخل تگ p
 $html .= '<h2>برچسب‌ها</h2>';
 $tags = explode(',', $blog['tags']);
 foreach ($tags as $tag) {

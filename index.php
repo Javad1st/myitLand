@@ -23,6 +23,9 @@ $blogs = $select->fetchAll(PDO::FETCH_ASSOC);
 
 
 
+
+
+
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
 
@@ -33,7 +36,7 @@ $blogs = $select->fetchAll(PDO::FETCH_ASSOC);
   <link rel="stylesheet" href="blogbox.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="mobile.css">
-
+<link rel="shortcut icon" href="./tasavir/Untitled-2.png" type="image/x-icon">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>myITLand</title>
@@ -131,7 +134,15 @@ $blogs = $select->fetchAll(PDO::FETCH_ASSOC);
 {
     $words = explode(" ",$string);
     return implode(" ",array_splice($words,0,$word_limit));
-} foreach (array_slice($blogs, 0, 8) as $blog):  ?>
+} foreach (array_slice($blogs, 0, 8) as $blog):
+
+  $rowcoment = $conn->prepare("SELECT COUNT(*) FROM coment WHERE post = ? ");
+  $rowcoment->bindValue(1, $blog['id'], PDO::PARAM_INT);
+  $rowcoment->execute();
+  $count = $rowcoment->fetchColumn(); // استفاده از fetchColumn برای شمارش
+  
+  
+?>
             <div class="blog">
                 <img src="./uploads/<?= ($blog['image']) ?>" alt="تصویر مقاله" class="article-image">
                 <h2><a href="./maqale ha/blog/index.php?id=<?= $blog['id'] ?>"><?= htmlspecialchars($blog['title']) ?></a></h2>
@@ -169,8 +180,8 @@ $blogs = $select->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-                    <div class="comment icon">12 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20 2H4c-1.103 0-2 .894-2 1.992v12.017C2 17.106 2.897 18 4 18h3v4l6.351-4H20c1.103 0 2-.894 2-1.992V3.992A1.998 1.998 0 0 0 20 2zm-9 8a2 2 0 1 1-2-2c.086 0 .167.015.25.025.082-.014.164-.025.25-.025A1.5 1.5 0 0 1 11 9.5c0 .086-.012.168-.025.25.01.083.025.165.025.25zm4 2a2 2 0 0 1-2-2c0-.086.015-.167.025-.25A1.592 1.592 0 0 1 13 9.5 1.5 1.5 0 0 1 14.5 8c.086 0 .168.011.25.025.083-.01.164-.025.25-.025a2 2 0 0 1 0 4z"/></svg></div>
-                </div>
+<div class="comment icon"><?=$count ?> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20 2H4c-1.103 0-2 .894-2 1.992v12.017C2 17.106 2.897 18 4 18h3v4l6.351-4H20c1.103 0 2-.894 2-1.992V3.992A1.998 1.998 0 0 0 20 2zm-9 8a2 2 0 1 1-2-2c.086 0 .167.015.25.025.082-.014.164-.025.25-.025A1.5 1.5 0 0 1 11 9.5c0 .086-.012.168-.025.25.01.083.025.165.025.25zm4 2a2 2 0 0 1-2-2c0-.086.015-.167.025-.25A1.592 1.592 0 0 1 13 9.5 1.5 1.5 0 0 1 14.5 8c.086 0 .168.011.25.025.083-.01.164-.025.25-.025a2 2 0 0 1 0 4z"/></svg></div>
+</div>
                 
                 <a href="maqale ha/blog/index.php?id=<?=$blog['id'] ?>">
                 <div class="view">مشاهده</div>

@@ -58,6 +58,7 @@ foreach ($blogs as $b) {
     <title><?= htmlspecialchars($blogs[0]['title']) ?></title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./comment.css">
+    <link rel="shortcut icon" href="../../tasavir/Untitled-2.png" type="image/x-icon">
     <style>
         .error { color: red; }
         .success { color: green; }

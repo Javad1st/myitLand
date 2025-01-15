@@ -1,3 +1,12 @@
+<?php
+
+// بررسی اینکه آیا کاربر وارد شده است یا نه
+if (!isset($_SESSION['logged_in']) && !isset($_COOKIE['logged_in'])) {
+    // اگر سشن یا کوکی 'logged_in' وجود نداشته باشد، هدایت به صفحه ورود
+    header("Location: login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,6 +61,9 @@
         <ul class="navbar-nav ml-auto">
           
             <li class="nav-item">
+                <a class="nav-link" href="./adminout.php">خروج</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="users.php">کاربران</a>
             </li>
             <li class="nav-item">
@@ -60,6 +72,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">منو ها</a>
             </li>
+            
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     مقالات
