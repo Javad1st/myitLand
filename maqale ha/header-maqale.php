@@ -1,3 +1,84 @@
+<?php
+// اتصال به پایگاه داده
+include '../database/db.php';
+
+// بررسی پارامتر جستجو
+if (isset($_GET['query'])) {
+    $query = htmlspecialchars($_GET['query']);  // جلوگیری از حملات XSS
+
+    // جستجو در پایگاه داده
+    $stmt = $conn->prepare("SELECT * FROM blogs WHERE title LIKE :query");
+    $stmt->bindValue(':query', "%" . $query . "%", PDO::PARAM_STR);
+    $stmt->execute();
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    // نمایش نتایج جستجو
+    if ($results) {
+        echo "<div class='results-container'>";  // اضافه کردن کلاس برای کادر نتایج
+        foreach ($results as $result) {
+            echo "<div class='result-card'>";  // کادر هر نتیجه
+            echo "<h2><a href='./blog/index.php?id=" . $result['id'] . "'>" . htmlspecialchars($result['title']) . "</a></h2>";
+            echo "</div>";
+        }
+        echo "</div>";
+    } else {
+        echo "<p>نتیجه‌ای یافت نشد.</p>";
+    }
+}
+?>
+
+<style>
+   .card {
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+    
+</style>
+<style>
+    /* استایل کادر نتایج جستجو */
+    .results-container {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-height: 400px; /* حداکثر ارتفاع کادر */
+        overflow-y: auto; /* اگر نتایج زیاد باشد، اسکرول می‌شود */
+    }
+
+    /* استایل برای هر نتیجه */
+    .result-card {
+        margin-bottom: 10px;
+    }
+
+    .result-card h2 {
+        font-size: 16px;
+        margin: 0;
+        color: #333;
+    }
+
+    .result-card a {
+        text-decoration: none;
+        color: #007BFF;  /* رنگ لینک */
+    }
+
+    .result-card a:hover {
+        text-decoration: underline;  /* هنگام هاور کردن لینک */
+    }
+
+    .result-card hr {
+        border: none;
+        border-top: 1px solid #eee;
+        margin: 10px 0;
+    }
+</style>
+
 <div class="head">
 
 
@@ -17,13 +98,46 @@
         <div class="partOfHeader partOfHeader5">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-  <form action="">
-  <input type="search" autofocus required>
-  <i class="fa fa-search"></i>
-  <button onclick="clearInput()">Clear</a>
-  </form>
+        <form id="searchForm">
+    <input type="search" id="search-input" name="query" placeholder="جستجو..." autofocus required  autocomplete="off" >
+    <i class="fa fa-search"></i>
+    <div class='results-container'>
+    <div id="results"></div>
+    </div>
+</form>
         </div>
- 
+<script>
+    // تابع برای ارسال درخواست جستجو به سرور
+    function performSearch(query) {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "search.php?query=" + encodeURIComponent(query), true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                // نمایش نتایج در div#results
+                document.getElementById('results').innerHTML = xhr.responseText;
+            }
+        };
+        xhr.send();
+    }
+
+    // اضافه کردن رویداد input برای جستجوی آنی
+    document.getElementById("search-input").addEventListener("input", function(event) {
+        const query = event.target.value.trim();
+        
+        // اگر ورودی خالی نباشد، جستجو را شروع می‌کنیم
+        if (query !== "") {
+            performSearch(query); // جستجو را با هر تغییر وارد شده شروع می‌کنیم
+        } else {
+            document.getElementById('results').innerHTML = ''; // اگر ورودی خالی باشد، نتایج را پاک می‌کنیم
+        }
+    });
+
+    // جلوگیری از ارسال فرم و رفرش صفحه (در صورت فشردن اینتر)
+    document.getElementById('searchForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // جلوگیری از ارسال فرم
+    });
+</script>
+
         <script>
           
 const clearInput = () => {
@@ -38,7 +152,7 @@ const clearInput = () => {
         <button id="profileBtn1">پروفایل</button>
         <div id="dropdown1" class="dropdown-content1">
             <a href="#">داشبورد شخصی</a>
-            <a href="#">خروج از حساب</a>
+            <a href="./logout.php">خروج از حساب</a>
         </div>
     </div>'; } 
         
