@@ -262,10 +262,10 @@ body {
   align-items: center;
   flex-wrap: wrap;
   margin-top: 2rem;
-<<<<<<< HEAD
+
   /* border: 1px solid var(--text-color); */
-=======
->>>>>>> f550736ed4225ea50e155ca680778c914517dbb8
+
+
   border-radius: 25px;
   margin: 2rem 0rem;
   padding: 1rem;
@@ -413,8 +413,7 @@ h2>a:hover{
   font-size: 1.2rem;
   width: inherit;
   margin-bottom: -2rem;
-<<<<<<< HEAD
-  /* padding-top: 1rem; */
+  padding-top: 2rem;
   border-top: 2px solid rgba(71, 115, 128, 0.418);
 }
 
@@ -448,10 +447,9 @@ color: unset;
 }
 .comment:hover svg{
   fill: unset;
-=======
   padding-top: 1rem;
   border-top: 2px solid rgba(42, 71, 79, 0.2);
->>>>>>> f550736ed4225ea50e155ca680778c914517dbb8
+
 }
 
 
@@ -471,11 +469,12 @@ a{
 }
 
 
-<<<<<<< HEAD
-=======
+
+
 .blog .view:hover {
-color: var(--accent-color);}
->>>>>>> f550736ed4225ea50e155ca680778c914517dbb8
+color: var(--accent-color);
+}
+
 .categories{
   position: relative;
 }
