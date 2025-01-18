@@ -97,9 +97,9 @@ body {
 }
 
 .cats {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
+  grid-template-rows: 1fr; */
   gap: 1rem;
 }
 
@@ -112,8 +112,11 @@ body {
 }
 
 .cat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  padding: 0.8rem; 
+  padding: 0.2rem; 
   border-radius: 15px; 
   font-size: 1.5rem; 
   background-color: var(--base-color);
