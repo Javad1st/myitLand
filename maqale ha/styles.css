@@ -101,22 +101,18 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr; */
   gap: 1rem;
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
 }
 
-.cats2 .cat {
-  position: absolute;
-  top: 20px;
-  left: 10px;
-  background: none;
-  width: fit-content;
-}
 
-.cat {
+.cats .cat {
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  padding: 0.2rem; 
+  padding: 0.2rem 0.4rem; 
   border-radius: 15px; 
   font-size: 1.5rem; 
   background-color: var(--base-color);
@@ -128,6 +124,15 @@ body {
 .cat:hover {
   background-color: var(--primary-color); 
   transform: translateY(-5px); 
+}
+.cats2 .cat {
+  position: absolute;
+  /* top: 50px; */
+  left: 10px;
+  background: none;
+  width: fit-content;
+  background-color: var(--text-color);
+  color: var(--base-color);
 }
 
 .cat:active {
@@ -489,17 +494,6 @@ color: var(--accent-color);
   top: 0;
   z-index: 1000;
 }
-@media (max-width: 1200px) {
-  .cats {
-    grid-template-columns: repeat(4, 1fr); /* 4 ستون */
-  }
-}
-
-@media (max-width: 992px) {
-  .cats {
-    grid-template-columns: repeat(3, 1fr); /* 3 ستون */
-  }
-}
   @media (max-width: 900px) {
   
   .partOfHeader5 form{
@@ -507,26 +501,13 @@ color: var(--accent-color);
   }
 }
 
-  @media (max-width: 768px) {
-  .cats {
-    grid-template-columns: repeat(2, 1fr); /* 2 ستون */
+@media (max-width: 400px){
+  .cats2 .cat{
+    top: 50px;
   }
 }
 
-@media (max-width: 576px) {
-  .cats {
-    grid-template-columns: 1fr; /* 1 ستون */
-  }
-
-}
-@media (max-width: 350px){
-  .cat{
-    width: 100px;
-  }
-  .cat6{
-    width: unset;
-  }
-}
+ 
 
 .blogs {
   display: flex;

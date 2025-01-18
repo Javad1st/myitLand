@@ -34,7 +34,87 @@
     font-weight: 300;
     src: url(yekan/Yekan-Bakh-FaNum-04-Regular.woff);
   }
+
+  :root {
+    --base-color: #f0f4f8; 
+    --base-variant: #caddef; 
+    --text-color: #2c3e50; 
+    --secondary-text: #34495e; 
+    --primary-color: #1abc9c; 
+    --accent-color: #16a085; 
+    --footer-color: #2c3e50; 
+    --darkMode: #27ae60; 
+    --zed: #2ecc71;
+    --zed2: #27ae60; 
+    --grad1: rgba(104, 229, 238, 0.671);
+    --grad2: #00ccff;
+  }
   
+  
+  .darkmode {
+    --base-color: #00182f; 
+    --base-variant: #1c2329; 
+    --text-color: #ecf0f1; 
+    --secondary-text: #bdc3c7; 
+    --primary-color: #167ba0; 
+    --accent-color: #1abc9c; 
+    --footer-color: #2c3e50; 
+    --darkMode: #1abc9c; 
+    transition: all ease-in-out .5s;
+    --zed: #2ecc71; 
+    --zed2: #27ae60; 
+    --grad1: rgba(27, 98, 190, 0.671);
+    --grad2: #91e9ff;
+  }
+  #theme-switch {
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--darkMode);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid var(--secondary-text);
+    transition: ease-in 1s;
+    position: absolute;
+    left: 1rem;
+    top: 0.8rem;
+  }
+  
+  #theme-switch svg {
+    fill: var(--base-variant);
+  }
+  
+  #theme-switch svg:last-child {
+    display: none;
+  }
+  
+  .darkmode #theme-switch svg:first-child {
+    display: none;
+  }
+  
+  .darkmode #theme-switch svg:last-child {
+    display: block;
+  }
+  
+  .back{
+    position: absolute;
+    right: 1rem;
+    top: 0.8rem;
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: rgb(12, 68, 179);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: ease-in 1s;
+  }
+  .back svg{
+    fill: var(--base-variant);
+  }
 
 * {
     margin: 0;
@@ -47,8 +127,8 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f7fc;
-    color: #333;
+    background-color: var(--base-color);
+    color: var(--text-color);
 }
 
 .container {
@@ -57,12 +137,16 @@ body {
 }
 
 .sidebar {
-    background-color: #2d3a49;
-    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--base-variant);
+    color: var(--secondary-text);
     width: 250px;
     padding: 20px;
     border-radius: 8px;
-    margin-right: 20px;
+    box-shadow: 0px -2px 25px rgba(0, 0, 0, 0.386);
 }
 
 .profile-section {
@@ -111,7 +195,7 @@ body {
 
 .nav-list ul {
     list-style-type: none;
-    margin-top: 30px;
+    /* margin-top: 30px; */
 }
 
 .nav-list ul li {
@@ -120,7 +204,7 @@ body {
 
 .nav-list ul li a {
     text-decoration: none;
-    color: white;
+    color: var(--text-color);
     font-size: 18px;
     display: block;
     padding: 8px;
@@ -129,19 +213,20 @@ body {
 }
 
 .nav-list ul li a:hover {
-    background-color: #3e4b59;
+    background-color: #3e4b5936;
 }
 
 .main-content {
     flex-grow: 1;
     padding: 20px;
-    background-color: white;
+    background-color: var(--base-color);
     border-radius: 8px;
 }
 
 h2 {
-    font-size: 22px;
+    font-size: 42px;
     margin-bottom: 20px;
+    font-weight: bolder;
 }
 
 .user-info p, .saved-articles ul {
@@ -153,7 +238,6 @@ h2 {
 }
 
 .saved-articles ul li {
-    background-color: #fafafa;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 8px;
@@ -161,17 +245,42 @@ h2 {
 }
 
 .saved-articles ul li:hover {
-    background-color: #f1f1f1;
+    background-color: #d4d4d4;
 }
 
 .ai-section {
-    background-color: #f9f9f9;
+    color: var(--text-color);
+    background-color: #0000003a;
     padding: 20px;
     border-radius: 8px;
     margin-top: 20px;
 }
 
 .ai-section p {
-    font-size: 16px;
-    color: #666;
+    font-size: 20px;
+    color: var(--secondary-text);
+}
+@media screen and (max-width:600px) {
+    h2{
+        font-size: 24px;
+    }
+}
+@media screen and (max-width:450px){
+
+  
+    .container{
+        flex-direction: column;
+    }
+    .sidebar{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .sidebar ul {
+        width: 100%;
+    }
+    .sidebar ul a{
+        background-color: var(--primary-color);
+    }
+
 }

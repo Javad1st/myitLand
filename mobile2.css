@@ -184,6 +184,7 @@
         justify-content: center;
     }
     .bigText{
+      position: static;
         padding: 1rem;
         display: flex;
         align-items: center;
@@ -192,9 +193,11 @@
     }
     .bigText h2{
         font-size: xxx-large;
+        text-align: center;
     }
     .bigText p{
         font-size: large;
+        text-align: center;
     }
     .bigPicture img {
       display: none;
