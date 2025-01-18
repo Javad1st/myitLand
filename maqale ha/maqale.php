@@ -55,7 +55,7 @@ require_once('./header-maqale.php');
     
 ?>
             <div class="blog">
-                <img src="../uploads/<?= ($blog['image']) ?>" alt="تصویر مقاله" class="article-image">
+            <a href="./blog/index.php?id=<?=$blog['id'] ?>">    <img src="../uploads/<?= ($blog['image']) ?>" alt="تصویر مقاله" class="article-image"></a>
              <h2>  <a href="./blog/index.php?id=<?=$blog['id'] ?>"><?= htmlspecialchars($blog['title']) ?></a></h2> 
                 <div class="discreption">
                     <?php

@@ -1,0 +1,6 @@
+RewriteEngine On
+
+# بررسی درخواست به مسیر /login
+RewriteCond %{REQUEST_URI} ^/myitland/login/?$ [NC]
+RewriteCond %{HTTP_COOKIE} PHPSESSID=([^;]+) [NC]
+RewriteRule ^ /myitland/check_login.php [L]

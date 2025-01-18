@@ -17,7 +17,7 @@ if (isset($_GET['query'])) {
         echo "<div class='results-container'>";  // اضافه کردن کلاس برای کادر نتایج
         foreach ($results as $result) {
             echo "<div class='result-card'>";  // کادر هر نتیجه
-            echo "<h2><a href='blog/index.php?id=" . $result['id'] . "'>" . htmlspecialchars($result['title']) . "</a></h2>";
+            echo "<h2><a href='maqale ha/blog/index.php?id=" . $result['id'] . "'>" . htmlspecialchars($result['title']) . "</a></h2>";
             echo "</div>";
         }
         echo "</div>";
@@ -26,8 +26,27 @@ if (isset($_GET['query'])) {
     }
 }
 ?>
+<?php
 
-<a href="blog/index.php"></a>
+if (isset($_SESSION['user_email'])) {
+    // اگر سشن ست شده باشد، این کد اجرا می‌شود
+    $email = $_SESSION['user_email'];
+
+    // دریافت نام و تصویر پروفایل کاربر از دیتابیس
+    $stmt = $conn->prepare("SELECT profile_image FROM users WHERE email = :email");
+    $stmt->execute([':email' => $email]);
+
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($user) {
+        $profile_image = $user['profile_image']; // نام فایل تصویر پروفایل
+    } else {
+        echo "کاربر یافت نشد!";
+        exit();
+    }
+} 
+?>
+
+<a href="maqale ha/blog/index.php"></a>
 <style>
    .card {
             border: 1px solid #ccc;
@@ -92,7 +111,6 @@ if (isset($_GET['query'])) {
       <div class="partOfHeader partOfHeader">
       <img class="logo" src="../tasavir/Untitled-2.png" alt="">
       </div>
-
         <div class="partOfHeader partOfHeader5">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
@@ -143,27 +161,40 @@ const clearInput = () => {
   input.value = "";
 }
 
-        </script>
-         <div class="partOfHeader partOfHeader6">
 
-         <?php if (isset($_SESSION['user_email'])) { echo '<div class="profile1">
-        <button id="profileBtn1">پروفایل</button>
+        </script>
+      <div class="partOfHeader partOfHeader6">
+    <?php if (isset($_SESSION['user_email'])) { 
+        echo '<div class="profile1">
+        <button id="profileBtn1">
+            <img src="../profile/' . $profile_image . '" alt="Profile Image">
+        </button>
         <div id="dropdown1" class="dropdown-content1">
-            <a href="#">داشبورد شخصی</a>
-            <a href="./logout.php">خروج از حساب</a>
+            <a href="../dashboard.php">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);">
+                    <path d="M4 13h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1zm-1 7a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v4zm10 0a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-7a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v7zm1-10h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1z"></path>
+                </svg>
+                داشبورد
+            </a>
+            <a href="../logout.php">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);">
+                    <path d="M18 2H6a1 1 0 0 0-1 1v9l5-4v3h6v2h-6v3l-5-4v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z"></path>
+                </svg>
+                خروج از حساب
+            </a>
         </div>
-    </div>'; } 
-        
+    </div>';}
+
         
         else {  
           
           
-          echo '<a class="linkOne" href="../login/login.php"> <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+          echo '<a class="linkOne" href="./login/login.php"> <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path opacity="0.4" d="M6.67065 6.4847C6.67065 4.27199 8.53019 2.47095 10.8157 2.47095H15.3587C17.6387 2.47095 19.4935 4.26748 19.4935 6.47567V16.5109C19.4935 18.7246 17.6349 20.5265 15.3494 20.5265H10.8064C8.52646 20.5265 6.67065 18.7291 6.67065 16.52V15.6714V6.4847Z" fill="currentColor"></path>
       <path d="M14.5621 11.0056L11.8827 8.37941C11.6058 8.10858 11.1602 8.10858 10.8841 8.38122C10.6091 8.65386 10.61 9.09351 10.886 9.36434L12.3531 10.8025H3.04688C2.65717 10.8025 2.34082 11.1139 2.34082 11.4985C2.34082 11.8822 2.65717 12.1927 3.04688 12.1927H12.3531L10.886 13.6318C10.61 13.9026 10.6091 14.3423 10.8841 14.6149C11.0226 14.7512 11.2033 14.8198 11.3848 14.8198C11.5645 14.8198 11.7452 14.7512 11.8827 14.6167L14.5621 11.9905C14.695 11.8596 14.7702 11.6827 14.7702 11.4985C14.7702 11.3134 14.695 11.1365 14.5621 11.0056Z" fill="currentColor"></path>
     </svg> <p>ورود</p> </a>'; 
 
-          echo '<a class="linkTwo" href="../login/rgister.php"> <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          echo '<a class="linkTwo" href="./login/rgister.php"> <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path opacity="0.4" d="M19.3827 8.78099H18.2966V7.71911C18.2966 7.26576 17.933 6.89612 17.485 6.89612C17.0379 6.89612 16.6734 7.26576 16.6734 7.71911V8.78099H15.5892C15.1412 8.78099 14.7776 9.15063 14.7776 9.60398C14.7776 10.0573 15.1412 10.427 15.5892 10.427H16.6734V11.4898C16.6734 11.9431 17.0379 12.3128 17.485 12.3128C17.933 12.3128 18.2966 11.9431 18.2966 11.4898V10.427H19.3827C19.8297 10.427 20.1943 10.0573 20.1943 9.60398C20.1943 9.15063 19.8297 8.78099 19.3827 8.78099" fill="currentColor"></path>
             <path d="M8.90975 13.681C5.25731 13.681 2.13892 14.265 2.13892 16.598C2.13892 18.9301 5.23834 19.5351 8.90975 19.5351C12.5613 19.5351 15.6806 18.9511 15.6806 16.6181C15.6806 14.2851 12.5812 13.681 8.90975 13.681" fill="currentColor"></path>
             <path opacity="0.4" d="M8.90984 11.459C11.3966 11.459 13.39 9.43996 13.39 6.92114C13.39 4.40232 11.3966 2.38232 8.90984 2.38232C6.42308 2.38232 4.42969 4.40232 4.42969 6.92114C4.42969 9.43996 6.42308 11.459 8.90984 11.459" fill="currentColor"></path>
@@ -171,7 +202,35 @@ const clearInput = () => {
         } 
         
         ?>
+
         <style>
+#profileBtn1 {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0; /* رنگ پس‌زمینه */
+    border: 2px solid #ddd; /* حاشیه برای دکمه */
+    transition: background-color 0.3s, box-shadow 0.3s; /* انتقال نرم برای تغییرات */
+}
+
+#profileBtn1:hover {
+    background-color: #e0e0e0; /* تغییر رنگ پس‌زمینه هنگام هاور */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* سایه هنگام هاور */
+}
+
+#profileBtn1 img {
+    /* width: 340px; */
+    height: 50p;
+    border-radius: 50%;
+    object-fit: cover;
+    width: 55px;
+    height: 55px;
+}
 
 
 
@@ -206,8 +265,9 @@ const clearInput = () => {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
-    display: block;
-}
+display: flex;
+font-size: medium;
+  }
 
 .dropdown-content1 a:hover {
     background-color: #f1f1f1;

@@ -26,6 +26,26 @@ if (isset($_GET['query'])) {
     }
 }
 ?>
+<?php
+
+if (isset($_SESSION['user_email'])) {
+    // اگر سشن ست شده باشد، این کد اجرا می‌شود
+    $email = $_SESSION['user_email'];
+
+    // دریافت نام و تصویر پروفایل کاربر از دیتابیس
+    $stmt = $conn->prepare("SELECT profile_image FROM users WHERE email = :email");
+    $stmt->execute([':email' => $email]);
+
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($user) {
+        $profile_image = $user['profile_image']; // نام فایل تصویر پروفایل
+    } else {
+        echo "کاربر یافت نشد!";
+        exit();
+    }
+} 
+?>
+
 
 <a href="maqale ha/blog/index.php"></a>
 <style>
@@ -92,7 +112,6 @@ if (isset($_GET['query'])) {
       <div class="partOfHeader partOfHeader">
       <img class="logo" src="tasavir/Untitled-2.png" alt="">
       </div>
-
         <div class="partOfHeader partOfHeader5">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
@@ -142,18 +161,39 @@ const clearInput = () => {
   const input = document.getElementsByTagName("input")[0];
   input.value = "";
 }
+<div class="partOfHeader partOfHeader6">
+    <?php if (isset($_SESSION['user_email'])) { 
+        echo '<div class="profile1">
+        <button id="profileBtn1">
+            <img src="./profile/' . $profile_image . '" alt="Profile Image">
+        </button>';
+    } ?>
+</div>
+
 
         </script>
-         <div class="partOfHeader partOfHeader6">
-
-         <?php if (isset($_SESSION['user_email'])) { echo '<div class="profile1">
-        <button id="profileBtn1">پروفایل</button>
+      <div class="partOfHeader partOfHeader6">
+    <?php if (isset($_SESSION['user_email'])) { 
+        echo '<div class="profile1">
+        <button id="profileBtn1">
+            <img src="./profile/' . $profile_image . '" alt="Profile Image">
+        </button>
         <div id="dropdown1" class="dropdown-content1">
-            <a href="./dashboard.php"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M4 13h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1zm-1 7a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v4zm10 0a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-7a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v7zm1-10h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1z"></path></svg> داشبورد</a>
-            <a href="./logout.php"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M18 2H6a1 1 0 0 0-1 1v9l5-4v3h6v2h-6v3l-5-4v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z"></path></svg>خروج از حساب</a>
+            <a href="./dashboard.php">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);">
+                    <path d="M4 13h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1zm-1 7a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v4zm10 0a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-7a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v7zm1-10h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1z"></path>
+                </svg>
+                داشبورد
+            </a>
+            <a href="./logout.php">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);">
+                    <path d="M18 2H6a1 1 0 0 0-1 1v9l5-4v3h6v2h-6v3l-5-4v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z"></path>
+                </svg>
+                خروج از حساب
+            </a>
         </div>
-    </div>'; } 
-        
+    </div>';}
+
         
         else {  
           
@@ -171,7 +211,35 @@ const clearInput = () => {
         } 
         
         ?>
+
         <style>
+#profileBtn1 {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0; /* رنگ پس‌زمینه */
+    border: 2px solid #ddd; /* حاشیه برای دکمه */
+    transition: background-color 0.3s, box-shadow 0.3s; /* انتقال نرم برای تغییرات */
+}
+
+#profileBtn1:hover {
+    background-color: #e0e0e0; /* تغییر رنگ پس‌زمینه هنگام هاور */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* سایه هنگام هاور */
+}
+
+#profileBtn1 img {
+    /* width: 340px; */
+    height: 50p;
+    border-radius: 50%;
+    object-fit: cover;
+    width: 55px;
+    height: 55px;
+}
 
 
 

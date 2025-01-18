@@ -1,3 +1,6 @@
+
+
+
 <?php
 include '../database/db.php'; 
 session_start();
@@ -51,7 +54,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
+<?php
 
+if (isset($_SESSION['user_email'])) {
+    // اگر کاربر وارد شده بود، هدایت به صفحه‌ای مثل homepage.php
+    header("Location: /myitland/index.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="fa">
 <head>

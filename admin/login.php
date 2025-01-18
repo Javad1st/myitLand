@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <div class="wrapper">
-        <h2>ورود</h2>
+        <h2>ورود پنل</h2>
 
         <form method="POST" action="">
             <div class="input-field">

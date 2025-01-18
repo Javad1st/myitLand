@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="fa">
 <head>
@@ -70,6 +72,13 @@
             }
         }
         ?>
+        <?php
+
+if (isset($_SESSION['user_email'])) {
+    header("Location: /myitland/index.php");
+    exit();
+}
+?>
         <form method="POST" action="">
             <div class="input-field">
                 <input type="email" id="email" name="email" required>

@@ -294,8 +294,8 @@ margin: 0 0;
   color: var(--text-color);
 }
 .logo{
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
 position: relative;
 right: -1rem;
 }
@@ -1031,4 +1031,29 @@ body {
 .headOfMenu{
   display: flex;
   gap: 10px;
+}
+#profileBtn1 {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0; /* رنگ پس‌زمینه */
+  border: 2px solid #ddd; /* حاشیه برای دکمه */
+  transition: background-color 0.3s, box-shadow 0.3s; /* انتقال نرم برای تغییرات */
+}
+
+#profileBtn1:hover {
+  background-color: #e0e0e0; /* تغییر رنگ پس‌زمینه هنگام هاور */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* سایه هنگام هاور */
+}
+
+#profileBtn1 img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* گوشه‌های دایره‌ای برای تصویر */
+  object-fit: cover; /* تصویر را به طور مناسب درون دایره قرار می‌دهد */
 }
