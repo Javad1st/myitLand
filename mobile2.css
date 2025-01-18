@@ -192,9 +192,11 @@
     }
     .bigText h2{
         font-size: xxx-large;
+        text-align: center;
     }
     .bigText p{
         font-size: large;
+        text-align: center;
     }
     .bigPicture img {
       display: none;
