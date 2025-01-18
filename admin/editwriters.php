@@ -56,7 +56,6 @@ if (isset($_POST['sub'])) {
     <?php include 'header.php' ?>
 
     <h1>بخش ویرایش نویسنده</h1>
-    <p>طراح سایت: امیر عزیز التجار</p> 
 
     <form action="" method="POST">
         <input name="username" type="text" placeholder="نام نویسنده" class="form-control" value="<?= htmlspecialchars($writer['username']) ?>">

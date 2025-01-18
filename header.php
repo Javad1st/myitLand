@@ -149,8 +149,8 @@ const clearInput = () => {
          <?php if (isset($_SESSION['user_email'])) { echo '<div class="profile1">
         <button id="profileBtn1">پروفایل</button>
         <div id="dropdown1" class="dropdown-content1">
-            <a href="#">داشبورد شخصی</a>
-            <a href="./logout.php">خروج از حساب</a>
+            <a href="./dashboard.php"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M4 13h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1zm-1 7a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v4zm10 0a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-7a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v7zm1-10h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1z"></path></svg> داشبورد</a>
+            <a href="./logout.php"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M18 2H6a1 1 0 0 0-1 1v9l5-4v3h6v2h-6v3l-5-4v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z"></path></svg>خروج از حساب</a>
         </div>
     </div>'; } 
         
@@ -206,8 +206,9 @@ const clearInput = () => {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
-    display: block;
-}
+display: flex;
+font-size: medium;
+  }
 
 .dropdown-content1 a:hover {
     background-color: #f1f1f1;

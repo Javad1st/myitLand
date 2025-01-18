@@ -226,14 +226,19 @@ $blogs = $select->fetchAll(PDO::FETCH_ASSOC);
 
   <div class="footerSection footerSection1">
   <h1>درباره ما</h1>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, nemo harum laudantium earum ad quod tenetur veniam perspiciatis in at.</p>
+  <p> سایت آیتی‌لند در آبان ۱۴۰۳ با هدف ارائه خدمات نوین فناوری و آموزش‌های به‌روز در دنیای آی‌تی راه‌اندازی شد.
+در آیتی‌لند، مرزهای دانش را جستجو می‌کنیم و تلاش داریم پلی باشیم بین شما و آینده تکنولوژی.
+با ما همراه باشید تا در دنیای دیجیتال پیشرو باشید!
+
+تمامی حقوق این سایت محفوظ است.
+www.Myitland.ir</p>
   </div>
 
   <div class="footerSection footerSection2">
     <h1>ارتباط با ما</h1>
 
     <ul>
-      <li> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(35, 124, 207);"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.7-8 5.334L4 8.7V6.297l8 5.333 8-5.333V8.7z"></path></svg> itland@gmail.com</li>
+      <li> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(35, 124, 207);"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.7-8 5.334L4 8.7V6.297l8 5.333 8-5.333V8.7z"></path></svg> myitland.ir@gmail.com</li>
       <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(35, 124, 207)"><path d="m20.665 3.717-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42 10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701h-.002l.002.001-.314 4.692c.46 0 .663-.211.921-.46l2.211-2.15 4.599 3.397c.848.467 1.457.227 1.668-.785l3.019-14.228c.309-1.239-.473-1.8-1.282-1.434z"></path></svg> itland_blog</li>
     </ul>
   </div>
