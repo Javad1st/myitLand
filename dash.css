@@ -57,6 +57,10 @@ body {
 }
 
 .sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     background-color: #2d3a49;
     color: white;
     width: 250px;
@@ -111,7 +115,7 @@ body {
 
 .nav-list ul {
     list-style-type: none;
-    margin-top: 30px;
+    /* margin-top: 30px; */
 }
 
 .nav-list ul li {
@@ -140,8 +144,9 @@ body {
 }
 
 h2 {
-    font-size: 22px;
+    font-size: 42px;
     margin-bottom: 20px;
+    font-weight: bolder;
 }
 
 .user-info p, .saved-articles ul {
@@ -165,13 +170,37 @@ h2 {
 }
 
 .ai-section {
-    background-color: #f9f9f9;
+    background-color: #dadada;
     padding: 20px;
     border-radius: 8px;
     margin-top: 20px;
 }
 
 .ai-section p {
-    font-size: 16px;
+    font-size: 20px;
     color: #666;
+}
+@media screen and (max-width:600px) {
+    h2{
+        font-size: 24px;
+    }
+}
+@media screen and (max-width:450px){
+
+  
+    .container{
+        flex-direction: column;
+    }
+    .sidebar{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .sidebar ul {
+        width: 100%;
+    }
+    .sidebar ul a{
+        background-color: #2a4969;
+    }
+
 }

@@ -37,6 +37,7 @@ $email = $_SESSION['user_email'];
                 <div class="profile-image">
                     <img src="default-avatar.jpg" alt="پروفایل" id="profile-img">
                 </div>
+                <h2 id="user-name"><?= $user_name?></h2>
                 <button class="upload-btn" onclick="document.getElementById('file-input').click();">بارگذاری عکس</button>
                 <input type="file" id="file-input" accept="image/*" style="display: none;">
                 <button class="delete-btn" id="delete-btn">حذف عکس</button>
@@ -47,6 +48,7 @@ $email = $_SESSION['user_email'];
                     <li><a href="password-recovery.php">بازیابی رمز عبور</a></li>
                     <li><a href="articles.php">مقالات سیو شده</a></li>
                     <li><a href="ai.php">بخش AI</a></li>
+                    <li><a style="color: red;" href="ai.php">خروج از حساب</a></li>
                 </ul>
             </div>
         </div>
