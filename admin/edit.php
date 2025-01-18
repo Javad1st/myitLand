@@ -78,7 +78,6 @@ if (isset($_POST['sub'])) {
     <?php  include 'header.php' ?>
 
     <h1>بخش افزودن مقاله</h1>
-    <p>طراح سایت :امیر عزیز التجار</p> 
   
     <?php  echo $date ?>
        <form action="" method="POST" enctype="multipart/form-data">

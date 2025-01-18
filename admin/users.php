@@ -37,7 +37,6 @@ $users=$select->fetchAll(PDO::FETCH_ASSOC);
     <?php  include 'header.php' ?>
 
     <h1>بخش مشاهده کاربران   </h1>
-    <p>طراح سایت :امیر عزیز التجار</p> 
     <?php  echo $date ?>
     <table class="table">
   <thead>
