@@ -184,6 +184,7 @@
         justify-content: center;
     }
     .bigText{
+      position: static;
         padding: 1rem;
         display: flex;
         align-items: center;
