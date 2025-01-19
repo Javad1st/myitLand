@@ -1,0 +1,160 @@
+@media (min-width: 200) and (max-width : 700px) {
+    * {
+      font-size: smaller;
+    }
+    
+    
+  }
+
+    
+  
+  @media screen and (max-width : 700px){
+    
+    header{
+      height: 10%;
+    }
+    .bigPicture {
+      display: none;
+      
+    }
+    .footerSection2 ul{
+      display: flex;
+      font-size: x-large;
+    }
+    footer ul {
+      grid-gap: 0;
+      
+    }
+  }
+  
+@media screen and (max-width : 900px) {
+
+    .partOfHeader2 {
+      display: none;
+    }
+    .hamburger-menu{
+      display: block;
+    }
+    .headerButton {
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: 15px;
+    }
+  
+    header {
+      flex-direction: row;
+      /* height: 15%; */
+      
+    }
+    .logo{
+      display: none;
+    }
+  h4{
+    text-align: center;
+    margin-right: 120px;
+  }
+  
+    #theme-switch {
+      /* position: absolute; */
+      right: 2rem;
+      top: 2.5rem;
+      display: flex;
+      display: none;
+    }
+  
+    .partOfHeader3 {
+      position: unset
+    }
+  
+    .contact {
+      display: flex;
+      background :none;
+      z-index: 998;
+    }
+  
+    .headerTitle {
+      font-size: x-large;
+  
+    }
+    .primarySection{
+      flex-direction: column;
+      align-items: center;
+      
+    }
+    .slider{
+      width: 90%;
+    }
+    .bigPicture{
+      margin-top: 3rem;
+    }
+    .bigPicture img{
+
+     width: 600px;
+      height: 450px;
+    }
+    .bigText{
+      top: 230px;
+      margin-top: 30px;
+    }
+    .bigText h2 {
+      font-size: xx-large;
+      font-weight: bolder;
+    }
+    .bigText p{
+      font-size: medium;
+      font-weight: 600;
+    }
+  }
+  @media screen and (max-width : 1100px){
+   
+    .bigPicture img{
+      width: 650px;
+      height: 450px;
+    }
+    .bigPicture h2{
+      font-size: xx-large;
+    }
+    .bigText{
+      font-size: medium;
+      /* left: 450px; */
+      top: 230px;
+      right: 50px;
+    }
+    .moon{
+      width: 200px;
+      height: 200px;
+      top: 70px;
+    }
+    .moon2{
+      width: 200px;
+      height: 200px;
+      top: 70px;
+    }
+  }
+  @media  screen  and (max-width : 750px) {
+    .bigText{
+     
+      display: none;
+    }
+    .moon {
+      display: none;
+    }
+    .moon2 {
+      display: none;
+    }
+    #theme-switch{
+      display: none;
+    }
+  }
+  @media  screen  and (max-height : 650px){
+    .slider{
+      height: 400px;
+    }
+  }
+  @media screen and (max-width : 1366px){
+   
+    .bigPicture img{
+      width: 650px;
+      height: 450px;
+    }
+    }

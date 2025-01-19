@@ -393,6 +393,7 @@ h2>a:hover{
 
 }
 .icons{
+ 
   display: flex;
   gap: 0.8rem;
   justify-content: flex-start;
@@ -408,7 +409,13 @@ h2>a:hover{
   gap: 0.2rem;
 }
 .like{
-  color: red;
+  color: rgb(0, 0, 0);
+  background-color: rgba(255, 0, 13, 0.336);
+  border-radius: 4px;
+  padding: 0.1rem 0.3rem;
+}
+.like:hover{
+  background-color: rgba(0, 0, 0, 0.171);
 }
 #liked-icon{
   display: none;
@@ -443,22 +450,12 @@ h2>a:hover{
   transition: fill 0.2s;
 }
 
-.icon:hover svg {
-  fill: #27ae60; 
-}
-.icon:hover{
-  color: #27ae60;
-}
 
-.comment:hover{
-color: unset;
-}
-.comment:hover svg{
-  fill: unset;
+/* .comment:hover svg{
   padding-top: 1rem;
   border-top: 2px solid rgba(42, 71, 79, 0.2);
 
-}
+} */
 
 
 a{
@@ -641,7 +638,7 @@ top: -85px;
   gap: 0.2rem;
 }
 .like{
-  color: red;
+  /* color: red; */
 }
 #liked-icon{
   display: none;
