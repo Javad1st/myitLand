@@ -701,8 +701,26 @@ footer li{
   justify-content: center;
   gap: 8px;
 }
+.foot2{
+  width: inherit;
+  justify-content: space-around;
+}
 
+.footSec{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
 
+.footSec hr{
+  width: 100px;
+  opacity: 0.4;
+}
+.footSec img{
+  width: 200px;
+}
 
 .headerTitle{
   font-size: xx-large;

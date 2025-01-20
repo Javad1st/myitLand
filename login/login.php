@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="pass.css"><!-- ارجاع به فایل CSS -->
 </head>
 <body>
+    <div class="shape1"></div>
     <div class="wrapper">
         <h2>ورود</h2>
         <?php

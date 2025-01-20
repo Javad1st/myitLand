@@ -677,3 +677,24 @@ h2>a:hover{
 color: var( --accent-color);
 
 }
+@media screen and (max-width: 400px) {
+  .blog{
+    width: 300px;
+  }
+  .blog img.article-image{
+    width: 260px;
+  }
+}
+@media screen and (max-width: 350px){
+
+  .blog{
+    width: 250px;
+    height: 400px;
+    
+  }
+  .blog img.article-image{
+    width: 220px;
+    
+  }
+}
+

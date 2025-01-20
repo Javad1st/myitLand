@@ -52,6 +52,7 @@ body {
   min-height: 100vh;
   width: 100%;
   padding: 0 10px;
+  position: relative;
 }
 
 body::before {
@@ -64,7 +65,15 @@ body::before {
   background-position: center;
   background-size: cover;
 }
-
+.shape1{
+position: absolute;
+background-color: #0e74cd;
+width: 180px;
+height: 180px;
+border-radius: 50%;
+right: 360px;
+top: 300px;
+}
 .wrapper {
   width: 400px;
   border-radius: 15px;
