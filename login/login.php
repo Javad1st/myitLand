@@ -65,12 +65,6 @@
                 $emailError = 'کاربری با این ایمیل پیدا نشد';
             }
 
-            // بررسی تعداد تلاش‌های ناموفق
-            if ($_SESSION['login_attempts'] >= 5) {
-                // هدایت به صفحه دیگر
-                header('location:error.php'); // آدرس صفحه مورد نظر خود را اینجا وارد کنید
-                exit();
-            }
         }
         ?>
         <?php
@@ -106,6 +100,7 @@ if (isset($_SESSION['user_email'])) {
         </form>
         <div class="register">
             <p>هنوز ثبت‌نام نکرده‌اید؟ <a href="rgister.php">ثبت‌نام</a></p>
+            <p>رمز عبور خود را فراموش کردید؟<a href="./newpass.php">بازیابی رمز </a></p>
         </div>
     </div>
 

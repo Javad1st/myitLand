@@ -57,7 +57,7 @@ if ($user) {
 
             <div class="nav-list">
                 <ul>
-                    <li><a href="password-recovery.php">بازیابی رمز عبور</a></li>
+                    <li><a href="./login/newpass.php">بازیابی رمز عبور</a></li>
                     <li><a href="articles.php">مقالات سیو شده</a></li>
                     <li><a href="ai.php">بخش AI</a></li>
                     <li><a style="color: red;" href="./logout.php">خروج از حساب</a></li>
