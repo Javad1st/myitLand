@@ -69,6 +69,9 @@ $blogs = $select->fetchAll(PDO::FETCH_ASSOC);
     <img class="moon" src="svgHa/b8420a7ec558f6cd2e796a3fabffa775.png" alt="">
     <img class="moon2" src="svgHa/—Pngtree—hazy and beautiful halo moon_5336588.png" alt="">
     <div class="bigPicture">
+      <img class="img1" src="svgHa/ITLand.png" alt="">
+      <img class="jazir" src="svgHa/jazir.png" alt="">
+      <img class="img2 disNone" src="svgHa/ITLand2.png" alt="">
       <div class="bigText">
         <h2>سایت مقاله ای آیتی لند</h2>
         <p>مقالات رایگان و بروز برنامه نویسی در دنیا با آیتی لند</p>
@@ -80,8 +83,6 @@ $blogs = $select->fetchAll(PDO::FETCH_ASSOC);
       </a>
       <a href="./maqale ha/maqale.php"><button style="background-color: green; padding: 10px; border-radius: 10px; color: white; cursor: pointer; " class="blogha" id="blogha"  >برای مشاهده تمامی مقالات کلیک کنید</button></a>
     </div>
-    <img class="img1" src="svgHa/ITLand.png" alt="">
-    <img class="img2 disNone" src="svgHa/ITLand2.png" alt="">
   </div>
   
   <div class="primarySection">

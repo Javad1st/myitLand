@@ -303,9 +303,18 @@ margin: 0 0;
   width: 120px;
   height: 120px;
 position: relative;
-right: -8rem;
+right: -7rem;
 }
 
+@keyframes spinAli {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.jazir{
+  display: none;
+  animation: spinAli 15s linear infinite;
+}
 .contact {
   margin-top: 1rem;
   color: var(--text-color);

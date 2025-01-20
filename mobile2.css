@@ -184,6 +184,11 @@
     .bigPicture{
         align-items: center;
         justify-content: center;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .space{
+      display: none;
     }
     .bigText{
       position: static;
@@ -201,9 +206,19 @@
         font-size: large;
         text-align: center;
     }
+    .jazir{
+      display: block;
+    }
     .bigPicture img {
-      display: none;
+      width: 250px;
+      height: 250px;
       
+    }
+    .bigPicture .img1{
+      display: none;
+    }
+    .bigPicture .img2{
+      display: none;
     }
     .footerSection ul{
       font-size: large;
