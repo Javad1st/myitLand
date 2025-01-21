@@ -56,6 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <input type="text" id="userInput" name="userInput" required>
                 <label for="userInput">کد تأیید</label>
             </div>
+            <h2 id="count">3:00</h2>
             <?php if ($codeError): ?>
                 <div class="error-message"><?php echo $codeError; ?></div>
             <?php endif; ?>
@@ -65,5 +66,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="success-message"><?php echo $successMessage; ?></div>
         <?php endif; ?>
     </div>
+    <script src="register.js"></script>
 </body>
 </html>
