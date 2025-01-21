@@ -106,6 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="pass.css">
 </head>
 <body>
+<div class="shape1"></div>
     <div class="wrapper">
         <h2>ثبت‌نام</h2>
         <form method="POST" action="">
@@ -124,11 +125,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <input type="password" id="password" name="password" required minlength="8">
                 <label for="password">رمز عبور</label>
             </div>
+            <h2 id="count">3:00</h2>
             <?php if ($passwordError): ?>
                 <div class="error-message"><?php echo $passwordError; ?></div>
             <?php endif; ?>
             <button type="submit" name="sendCode">ارسال کد تأیید به ایمیل</button>
         </form>
     </div>
+    <script src="register.js"></script>
 </body>
 </html>

@@ -59,7 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(String(email).toLowerCase());
     }
-
+const countElement = document.getElementById('count');
+        countElement.style.display = 'none'
     // رویداد کلیک برای ارسال ایمیل
     sendEmailButton.addEventListener('click', function() {
         // اینجا می‌توانید کد ارسال ایمیل را اضافه کنید
@@ -67,5 +68,24 @@ document.addEventListener('DOMContentLoaded', function() {
         generatedCodeInput.value = '123456'; // اینجا باید کد واقعی را قرار دهید
         codeInputField.style.display = 'block'; // نمایش فیلد کد تأیید
         registerButton.style.display = 'block'; // نمایش دکمه ثبت‌نام
+
+        let time = 180; // 3 دقیقه به ثانیه
+        const countElement = document.getElementById('count');
+        
+        countElement.style.display = 'block'
+const timer = setInterval(() => {
+const minutes = Math.floor(time / 60);
+const seconds = time % 60;
+
+// فرمت زمان به صورت دو رقمی
+countElement.innerText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+
+if (time <= 0) {
+clearInterval(timer);
+alert("زمان به پایان رسید!");
+}
+
+time--;
+}, 1000);
     });
 });
