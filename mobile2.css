@@ -233,6 +233,9 @@
     .header2{
         display: none;
     }
+    .footSec hr{
+      display: none;
+    }
  
   }
 
@@ -245,7 +248,7 @@
 
    
   }
- 
+  
 
 
     @media  screen  and (max-height : 400px){

@@ -313,6 +313,8 @@ right: -7rem;
 
 .jazir{
   display: none;
+  width: 500px;
+  height: 500px;
   animation: spinAli 15s linear infinite;
 }
 .contact {

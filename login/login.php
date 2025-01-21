@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <title>فرم ورود</title>
     <link rel="stylesheet" href="loginstyle.css"> 
+    <link rel="stylesheet" href="loginmobile.css">
     <link rel="stylesheet" href="pass.css"><!-- ارجاع به فایل CSS -->
 </head>
 <body>
@@ -99,6 +100,7 @@ if (isset($_SESSION['user_email'])) {
     </span>
 </div>
 
+
             <?php if ($passwordError): ?>
                 <div class="error-message"><?php echo $passwordError; ?></div><br>
             <?php endif; ?>
@@ -108,8 +110,65 @@ if (isset($_SESSION['user_email'])) {
             <p>هنوز ثبت‌نام نکرده‌اید؟ <a href="rgister.php">ثبت‌نام</a></p>
         </div>
     </div>
+<style>
+    
+@media screen and (max-width: 1100px) {
+  .wrapper{
+    width: 50%;
+    font-size: xx-large;
+    padding: 4rem 3rem;
+    gap: 2rem;
+  }
+  h2{
+    font-size: xxx-large;
+  }
+  .input-field{
+    margin-top: 2rem;
+    padding: 1rem;
+    font-size: xx-large;
+  }
+  .input-field{
+    font-size: xx-large;
+  }
+  button {
+    font-size: x-large;
+  }
+  .shape1{
+    right: 15%;
+    top: 30%;
+  }
+  .input-field input {
+    font-size: 1.8rem;
+  }
+  .input-field label{
+    font-size: 28px;
+  }
+}
 
+@media screen and (max-width: 750px){
+   
+.shape1{
+  right: 15%;
+  top: 40%;
+}
+
+}
+
+
+@media screen and (max-width: 700px) {
+    .wrapper {
+      width: 60%;
+      font-size: xxx-large;
+      padding: 6rem 3rem;
+      gap: 2rem;
+      /* margin-top: auto; */
+      /* gap: 2rem; */
+  }
+  
+  }
+</style>
     <script src="eyes.js"></script>
+    <script src="../darkmode.js"></script>
    
 </body>
 </html>
