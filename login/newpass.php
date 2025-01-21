@@ -21,49 +21,59 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $emailError = 'ایمیل معتبر نیست.';
     } else {
-        // تولید کد تأیید ۶ رقمی تصادفی
-        $generatedCode = rand(100000, 999999);
-        $timestamp = time();  // زمان ارسال کد تأیید
+        // بررسی اینکه ایمیل در پایگاه داده وجود دارد یا نه
+        $select = $conn->prepare("SELECT * FROM users WHERE email = :email");
+        $select->bindParam(':email', $email);
+        $select->execute();
+        $user = $select->fetch(PDO::FETCH_ASSOC);
 
-        // ارسال ایمیل با PHPMailer
-        $mail = new PHPMailer(true);
-        try {
-            // تنظیمات SMTP
-            $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com';
-            $mail->SMTPAuth = true;
-            $mail->Username = 'myitland.ir@gmail.com'; 
-            $mail->Password = 'gcrz eyza pcox mpuq'; 
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-            $mail->Port = 587;
+        if ($user) {
+            // تولید کد تأیید ۶ رقمی تصادفی
+            $generatedCode = rand(100000, 999999);
+            $timestamp = time();  // زمان ارسال کد تأیید
 
-            // فرستنده و گیرنده
-            $mail->setFrom('myitland.ir@gmail.com', 'itland');
-            $mail->addAddress($email);
+            // ارسال ایمیل با PHPMailer
+            $mail = new PHPMailer(true);
+            try {
+                // تنظیمات SMTP
+                $mail->isSMTP();
+                $mail->Host = 'smtp.gmail.com';
+                $mail->SMTPAuth = true;
+                $mail->Username = 'myitland.ir@gmail.com'; 
+                $mail->Password = 'gcrz eyza pcox mpuq'; 
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                $mail->Port = 587;
 
-            // محتوای ایمیل
-            $mail->isHTML(true);
-            $mail->CharSet = 'UTF-8'; // تنظیم UTF-8 برای ایمیل
-            $mail->Subject = 'کد تأیید بازیابی رمز عبور'; // موضوع ایمیل
-            $mail->Body = "
-                <div style='text-align: center;'>
-                    <p><b>$email</b> سلام</p>
-                    <p>به آیتی لند خوش آمدید</p>
-                    <p>کد تأیید بازیابی رمز عبور شما: <b>$generatedCode</b></p>
-                    <p>Welcome to ITLAND, $email</p>
-                    <p>Your reset password code is: <b>$generatedCode</b></p>
-                    <p><a href='http://myitland.ir/' style='color: blue;'>myitland.ir</a></p>
-                </div>
-            ";
+                // فرستنده و گیرنده
+                $mail->setFrom('myitland.ir@gmail.com', 'itland');
+                $mail->addAddress($email);
 
-            // ارسال ایمیل
-            $mail->send();
-            $_SESSION['generatedCode'] = $generatedCode;  // ذخیره کد در session
-            $_SESSION['email'] = $email;  // ذخیره ایمیل در session
-            $_SESSION['timestamp'] = $timestamp;  // ذخیره زمان ارسال در session
-            $codeSent = true;
-        } catch (Exception $e) {
-            echo "خطا در ارسال ایمیل: {$mail->ErrorInfo}";
+                // محتوای ایمیل
+                $mail->isHTML(true);
+                $mail->CharSet = 'UTF-8'; // تنظیم UTF-8 برای ایمیل
+                $mail->Subject = 'کد تأیید بازیابی رمز عبور'; // موضوع ایمیل
+                $mail->Body = "
+                    <div style='text-align: center;'>
+                        <p><b>$email</b> سلام</p>
+                        <p>به آیتی لند خوش آمدید</p>
+                        <p>کد تأیید بازیابی رمز عبور شما: <b>$generatedCode</b></p>
+                        <p>Welcome to ITLAND, $email</p>
+                        <p>Your reset password code is: <b>$generatedCode</b></p>
+                        <p><a href='http://myitland.ir/' style='color: blue;'>myitland.ir</a></p>
+                    </div>
+                ";
+
+                // ارسال ایمیل
+                $mail->send();
+                $_SESSION['generatedCode'] = $generatedCode;  // ذخیره کد در session
+                $_SESSION['email'] = $email;  // ذخیره ایمیل در session
+                $_SESSION['timestamp'] = $timestamp;  // ذخیره زمان ارسال در session
+                $codeSent = true;
+            } catch (Exception $e) {
+                echo "خطا در ارسال ایمیل: {$mail->ErrorInfo}";
+            }
+        } else {
+            $emailError = 'ایمیل وارد شده در سیستم ثبت نشده است.';
         }
     }
 }
