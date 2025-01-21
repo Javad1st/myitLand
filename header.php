@@ -41,6 +41,7 @@ if (isset($_SESSION['user_email'])) {
         $profile_image = $user['profile_image']; // نام فایل تصویر پروفایل
     } else {
         echo "کاربر یافت نشد!";
+        session_unset();
         exit();
     }
 } 
