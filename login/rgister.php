@@ -106,7 +106,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="pass.css">
 </head>
 <body>
-<div class="shape1"></div>
     <div class="wrapper">
         <h2>ثبت‌نام</h2>
         <form method="POST" action="">
@@ -122,175 +121,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="error-message"><?php echo $emailError; ?></div>
             <?php endif; ?>
             <div class="input-field">
-<<<<<<< HEAD
-    <input type="password" id="password" name="password" required minlength="8">
-    <label for="password">رمز عبور</label>
-    <span class="toggle-password">
-        <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye">
-            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-            <circle cx="12" cy="12" r="3"></circle>
-        </svg>
-    </span>
-</div>
-
-            <?php if ($passwordError): ?>
-                <div class="error-message"> <?php echo $passwordError; ?> </div>
-            <?php endif; ?>
-            <input type="hidden" id="generatedCode" name="message">
-            <input type="hidden" id="to_email" name="to_email">
-            <input type="hidden" id="to_name" name="to_name" value="">
-            <input type="hidden" id="reply_to" name="reply_to" value="noreply@example.com">
-            <input type="hidden" id="timestamp" name="timestamp">
-            <button id="sendEmailButton" type="button">ارسال ایمیل</button>
-            
-            <div class="input-field" id="codeInputField" style="display:none;">
-                <input type="text" id="userInput" name="userInput" required>
-                <label for="userInput">کد تأیید</label>
-            </div>
-            <h2 id="count">3:00</h2>
-            
-            <br>
-            <?php if ($codeError): ?>
-                <div class="error-message"> <?php echo $codeError; ?> </div>
-=======
                 <input type="password" id="password" name="password" required minlength="8">
                 <label for="password">رمز عبور</label>
             </div>
             <?php if ($passwordError): ?>
                 <div class="error-message"><?php echo $passwordError; ?></div>
->>>>>>> d0cee5467b8acbe63818eedc3242ba383c9e4b6a
             <?php endif; ?>
             <button type="submit" name="sendCode">ارسال کد تأیید به ایمیل</button>
         </form>
     </div>
-<<<<<<< HEAD
-    <script>
-        const countElement = document.getElementById('count');
-        countElement.style.display = 'none'
-        let generatedCode;
-        const generateNewCode = () => {
-            generatedCode = Math.floor(100000 + Math.random() * 900000); // تولید کد ۶ رقمی تصادفی
-            $("#generatedCode").val(generatedCode);
-        };
-
-        const sendEmailButton = document.getElementById('sendEmailButton');
-        const codeInputField = document.getElementById('codeInputField');
-        const registerButton = document.getElementById('registerButton');
-        let timestamp;
-
-        sendEmailButton.addEventListener('click', function() {
-            const email = $("#email").val();
-            const password = $("#password").val();
-            
-
-            if (password.length < 8) {
-                alert('رمز عبور باید حداقل ۸ کاراکتر باشد.');
-                return;
-            }
-
-            $.ajax({
-                url: "check_email.php",
-                method: "POST",
-                data: { email },
-                success: function(response) {
-                    if (response.trim() === "ایمیل وجود دارد") {
-                        alert("این ایمیل قبلاً ثبت شده است.");
-                    } else {
-                        generateNewCode();
-                        $("#to_email").val(email);
-                        timestamp = Date.now();
-                        $("#timestamp").val(timestamp);
-
-                        emailjs.sendForm('default_service', 'template_rnzukkk', document.getElementById('form'))
-                            .then(() => {
-                                sendEmailButton.style.display = 'none';
-                                codeInputField.style.display = 'block';
-                                registerButton.style.display = 'block';
-                                alert('ایمیل ارسال شد!');
-                                let time = 180; // 3 دقیقه به ثانیه
-                                const countElement = document.getElementById('count');
-                                
-                                countElement.style.display = 'block'
-        const timer = setInterval(() => {
-            const minutes = Math.floor(time / 60);
-            const seconds = time % 60;
-
-            // فرمت زمان به صورت دو رقمی
-            countElement.innerText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-
-            if (time <= 0) {
-                clearInterval(timer);
-                alert("زمان به پایان رسید!");
-            }
-
-            time--;
-        }, 1000);
-                            }, (err) => {
-                                alert("خطا در ارسال ایمیل.");
-                            });
-                    }
-                }
-            });
-        });
-    </script>
-    <style>
-@media screen and (max-width: 1100px) {
-  .wrapper{
-    width: 50%;
-    font-size: xx-large;
-    padding: 4rem 3rem;
-    gap: 2rem;
-  }
-  h2{
-    font-size: xxx-large;
-  }
-  .input-field{
-    margin-top: 2rem;
-    padding: 1rem;
-    font-size: xx-large;
-  }
-  .input-field{
-    font-size: xx-large;
-  }
-  button {
-    font-size: x-large;
-  }
-  .shape1{
-    right: 15%;
-    top: 30%;
-  }
-  .input-field input {
-    font-size: 1.8rem;
-  }
-  .input-field label{
-    font-size: 28px;
-  }
-}
-
-@media screen and (max-width: 750px){
-   
-.shape1{
-  right: 15%;
-  top: 40%;
-}
-
-}
-
-
-@media screen and (max-width: 700px) {
-    .wrapper {
-      width: 60%;
-      font-size: xxx-large;
-      padding: 6rem 3rem;
-      gap: 2rem;
-      /* margin-top: auto; */
-      /* gap: 2rem; */
-  }
-  
-  }</style>
-    <script src="eyes.js"></script>
-    <script src="../darkmode.js"></script>
-=======
->>>>>>> d0cee5467b8acbe63818eedc3242ba383c9e4b6a
 </body>
 </html>
