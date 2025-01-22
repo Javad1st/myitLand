@@ -146,7 +146,7 @@ $blogs = $select->fetchAll(PDO::FETCH_ASSOC);
     $count = $rowcoment->fetchColumn(); // استفاده از fetchColumn برای شمارش
     
 ?>
-            <div class="blog">
+            <div class="blog block">
                 <img src="./uploads/<?= ($blog['image']) ?>" alt="تصویر مقاله" class="article-image">
              <h2>  <a href="./maqale ha/blog/index.php?id=<?=$blog['id'] ?>"><?= htmlspecialchars($blog['title']) ?></a></h2> 
                 <div class="discreption">

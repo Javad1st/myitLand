@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const articles = document.querySelectorAll('.blog'); // انتخاب همه مقالات
+    const articles = document.querySelectorAll('.like-button'); // انتخاب همه مقالات
 
     articles.forEach((article, index) => {
         const likeIcon = article.querySelector(`#like-icon-${index}`);

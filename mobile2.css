@@ -210,10 +210,9 @@
       display: block;
     }
     .bigPicture img {
-      width: 250px;
-      height: 250px;
-      
-    }
+      width: 350px;
+      height: 350px;
+  }
     .bigPicture .img1{
       display: none;
     }
@@ -239,7 +238,12 @@
  
   }
 
- 
+  @media  screen  and (max-width : 550px){
+    .bigPicture img {
+      width: 250px;
+      height: 250px;
+  }
+  }
 
   @media  screen  and (max-height : 650px){
     .slider{
@@ -249,7 +253,7 @@
    
   }
   
-
+ 
 
     @media  screen  and (max-height : 400px){
         .bigText h2{

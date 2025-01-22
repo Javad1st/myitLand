@@ -132,6 +132,62 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <button type="submit" name="sendCode">ارسال کد تأیید به ایمیل</button>
         </form>
     </div>
-  
+    <style>
+    
+    @media screen and (max-width: 1100px) {
+      .wrapper{
+        width: 50%;
+        font-size: xx-large;
+        padding: 4rem 3rem;
+        gap: 2rem;
+      }
+      h2{
+        font-size: xxx-large;
+      }
+      .input-field{
+        margin-top: 2rem;
+        padding: 1rem;
+        font-size: xx-large;
+      }
+      .input-field{
+        font-size: xx-large;
+      }
+      button {
+        font-size: x-large;
+      }
+      .shape1{
+        right: 15%;
+        top: 30%;
+      }
+      .input-field input {
+        font-size: 1.8rem;
+      }
+      .input-field label{
+        font-size: 28px;
+      }
+    }
+    
+    @media screen and (max-width: 750px){
+       
+    .shape1{
+      right: 15%;
+      top: 40%;
+    }
+    
+    }
+    
+    
+    @media screen and (max-width: 700px) {
+        .wrapper {
+          width: 60%;
+          font-size: xxx-large;
+          padding: 6rem 3rem;
+          gap: 2rem;
+          /* margin-top: auto; */
+          /* gap: 2rem; */
+      }
+      
+      }
+    </style>
 </body>
 </html>
