@@ -198,25 +198,19 @@ $blogs = $select->fetchAll(PDO::FETCH_ASSOC);
       
     
     <div id="category" class="addMaqaleh block">
-      <h2 class="addText">افزودن مقاله</h2>
+      <h2 class="addText">درباره مقالات</h2>
       <div class="addContents">
         <div class="addContent rules">
           <p id="Mcontent">قوانین
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="3 0 17 17"
-            style="fill: var(--text-color);  border-radius: 50%;">
-            <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
-          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: var(--accent-color);"><path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z"></path></svg>
         </p>
-        <span class="Mtexts ">مقالات حتما باید از منابع موصق باشد<br> مقالات باید اخلاقی باشد</span>
+        <span class="Mtexts ">هرگونه کپی برداری از مقالات و منتشر کردن مقاله بدون ذکر منبع ممنوع میباشد</span>
       </div>
       <div class="addContent learn">
         <p id="Lcontent">آموزش
-          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="3 0 17 17"
-          style="fill: var(--text-color);  border-radius: 50%;">
-          <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: var(--accent-color);"><path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z"></path></svg>
       </p>
-      <span class="Ltexts ">مقالات حتما باید از منابع موصق باشد<br> مقالات باید اخلاقی باشد</span>
+      <span class="Ltexts "> برای خواندن مؤثر مقاله، ابتدا عنوان و چکیده را بررسی کنید، سپس به دقت متن را بخوانید و نکات کلیدی را یادداشت کنید. </span>
     </div>
   </div>
 </div>
