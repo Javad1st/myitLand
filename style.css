@@ -47,6 +47,7 @@
 :root {
   --base-color: #f0f4f8; 
   --base-variant: #e0f7fa; 
+  --shad: #2c3e509e; 
   --text-color: #2c3e50; 
   --secondary-text: #34495e; 
   --primary-color: #1abc9c; 
@@ -62,7 +63,8 @@
 
 .darkmode {
   --base-color: #00182f; 
-  --base-variant: #1c2329; 
+  --base-variant: #1c2329;
+  --shad: #ffffff79;  
   --text-color: #ecf0f1; 
   --secondary-text: #bdc3c7; 
   --primary-color: #167ba0; 
@@ -79,6 +81,7 @@
 
   --base-color: #00182f; 
   --base-variant: #1c2329; 
+  --shad: #ffffffaf; 
   --text-color: #ecf0f1; 
   --secondary-text: #bdc3c7; 
   --primary-color: #167ba0; 
@@ -528,6 +531,7 @@ body {
   margin:0px 2rem;
 }
 .addMaqaleh{
+  padding: 0 4rem;
   color: var(--text-color);
   display: flex;
   flex-direction: column;
@@ -537,26 +541,33 @@ body {
 }
 .addMaqaleh h2{
   font-size: xx-large;
+  font-weight: 900;
 }
 .addContents{
   color: var(--text-color);
   display: flex;
   flex-direction: column;
   padding:1rem;
-border: 1px solid var(--text-color);
+border: 2px solid var(--text-color);
 border-radius: 10px;
 color: var(--text-color);
+box-shadow: 0px 0px 15px var(--shad) ;
 }
 .addContent:last-child{
   border-bottom: none;
 }
 .addContent{
   padding: 0.4rem;
-  border-bottom: 1px solid var(--text-color);
+  border-bottom: 2px solid var(--text-color);
 }
 .addContent p{
   cursor: pointer;
   font-size: x-large;
+  display: flex;
+  font-weight: bolder;
+  color: var(--accent-color);
+  align-items: center;
+  gap: 4px;
   
 }
 .addContent span{
