@@ -128,7 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <?php if ($passwordError): ?>
                 <div class="error-message"><?php echo $passwordError; ?></div>
             <?php endif; ?>
-            <button type="submit" name="sendCode">ارسال کد تأیید به ایمیل</button>
+            <button  type="submit" name="sendCode">ارسال کد تأیید به ایمیل</button>
         </form>
         <?php if ($successMessage): ?>
             <div class="success-message"><?php echo $successMessage; ?></div>
