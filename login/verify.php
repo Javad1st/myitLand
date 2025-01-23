@@ -110,6 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </style>
 </head>
 <body>
+<div class="shape1"></div>
     <div class="wrapper">
         <h2>تایید کد</h2>
         <form method="POST" action="">
@@ -175,6 +176,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         });
     </script>
+    <script src="../darkmode.js"></script>
 
 </body>
 </html>
