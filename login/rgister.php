@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // اعتبارسنجی ایمیل
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $emailError = 'ایمیل معتبر نیست.';
+        $emailError = 'ایمیل وارد شده معتبر نیست. لطفاً یک ایمیل صحیح وارد کنید.';
     }
     // چک کردن وجود ایمیل در دیتابیس
     else {
@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $checkEmailQuery->execute();
 
         if ($checkEmailQuery->rowCount() > 0) {
-            $emailError = 'ایمیل وارد شده قبلاً ثبت شده است.';
+            $emailError = 'این ایمیل قبلاً ثبت شده است. لطفاً از ایمیل دیگری استفاده کنید.';
         }
     }
 
@@ -72,14 +72,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <p><b>$name</b> سلام</p>
                     <p>به آیتی لند خوش آمدید</p>
                     <p>کد تأیید شما: <b>$generatedCode</b></p>
-                    <p>Welcome to the ITLAND, $name</p>
+                    <p>Welcome to ITLAND, $name</p>
                     <p>Your verify code: <b>$generatedCode</b></p>
                     <p><a href='http://myitland.ir/' style='color: blue;'>myitland.ir</a></p>
                 </div>
             ";
             
-            
-
             // ارسال ایمیل
             $mail->send();
             $_SESSION['generatedCode'] = $generatedCode;  // ذخیره کد در session
@@ -87,11 +85,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['timestamp'] = $timestamp;  // ذخیره زمان ارسال در session
             $_SESSION['name'] = $name; // ذخیره نام کاربر در session
             $_SESSION['password'] = $password; // ذخیره رمز عبور کاربر در session
+            $successMessage = 'کد تأیید به ایمیل شما ارسال شد. لطفاً آن را وارد کنید.';
             header("Location: verify.php");
             exit;
 
         } catch (Exception $e) {
-            echo "خطا در ارسال ایمیل: {$mail->ErrorInfo}";
+            $emailError = "خطا در ارسال ایمیل: {$mail->ErrorInfo}. لطفاً دوباره تلاش کنید.";
         }
     }
 }
@@ -131,7 +130,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <?php endif; ?>
             <button type="submit" name="sendCode">ارسال کد تأیید به ایمیل</button>
         </form>
+        <?php if ($successMessage): ?>
+            <div class="success-message"><?php echo $successMessage; ?></div>
+        <?php endif; ?>
     </div>
+<<<<<<< HEAD
     <style>
     
     @media screen and (max-width: 1100px) {
@@ -189,5 +192,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       
       }
     </style>
+=======
+>>>>>>> 345132f1cf9f57de538c486cbc06ed3ebd60f9d4
 </body>
 </html>
