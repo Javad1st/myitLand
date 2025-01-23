@@ -638,7 +638,7 @@ footer{
   height: 10%;
   transition: all ease-in-out;
   transition-duration: 500ms;
-  background-image: url(tasavir/baKeyfiayat.jpg);
+  /* background-image: url(tasavir/baKeyfiayat.jpg); */
   background-position: center ;
   background-repeat: no-repeat;
   background-size: cover;
