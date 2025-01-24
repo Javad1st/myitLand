@@ -42,7 +42,12 @@
   box-sizing: border-box;
   font-family: iranSans;
   font-weight: 700;
-  
+  -webkit-touch-callout: none; 
+  -webkit-user-select: none; 
+   -khtml-user-select: none; 
+     -moz-user-select: none; 
+      -ms-user-select: none; 
+          user-select: none;
 }
 :root {
   --base-color: #f0f4f8; 
