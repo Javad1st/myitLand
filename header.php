@@ -352,7 +352,7 @@ window.onclick = function(event) {
           </div>
           <div class="menu-item">
             <button class="menu-btn">
-              درس ها
+             دروس و امکانات
               <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                 style="fill: var(--text-color);">
                 <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
@@ -361,8 +361,8 @@ window.onclick = function(event) {
             </button>
             <div class="dropdown-content">
               <a href="maqale ha/maqale.php">مقالات</a>
-              <a href="#">لینک 2</a>
-              <a href="#">لینک 3</a>
+              <a href="Ai.php">هوش مصنوعی</a>
+              <a href="undeveloped.html">ویدیو ها</a>
             </div>
           </div>
           <!-- بقیه منو ها... -->
@@ -375,9 +375,8 @@ window.onclick = function(event) {
               </svg></span>
             </button>
             <div class="dropdown-content">
-              <a href="#">لینک 1</a>
-              <a href="#">لینک 2</a>
-              <a href="#">لینک 3</a>
+              <a href="undeveloped.html">تیم ایتی لند</a>
+              <a href="#">اسپانسر ها</a>
             </div>
           </div>
 
@@ -390,9 +389,8 @@ window.onclick = function(event) {
                 </svg></span>
             </button>
             <div class="dropdown-content">
-              <a href="#">لینک 1</a>
-              <a href="#">لینک 2</a>
-              <a href="#">لینک 3</a>
+              <a href="undeveloped.html">تلکرام</a>
+              <a href="undeveloped.html">ایمیل</a>
             </div>
           </div>
         </header>
@@ -407,9 +405,9 @@ window.onclick = function(event) {
             <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
           </svg> 
         <div id="aboutDropdown" class="dropdownContent">
-          <a href="/overview" class="dropdownItem">Overview</a>
-          <a href="/team" class="dropdownItem">Team</a>
-          <a href="/careers" class="dropdownItem">Careers</a>
+          <a href="/overview" class="dropdownItem">تاریخچه</a>
+          <a href="/team" class="dropdownItem">کامینیتی</a>
+          <a href="/careers" class="dropdownItem">سازندگان</a>
         </div>
         </div>
         

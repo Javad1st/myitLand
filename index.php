@@ -84,7 +84,104 @@ $blogs = $select->fetchAll(PDO::FETCH_ASSOC);
       <a href="./maqale ha/maqale.php"><button style="background-color: green; padding: 10px; border-radius: 10px; color: white; cursor: pointer; " class="blogha" id="blogha"  >برای مشاهده تمامی مقالات کلیک کنید</button></a>
     </div>
   </div>
-  
+
+
+<div class="searchMain">
+
+
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+        <form id="searchForm">
+    <input type="search" id="search-input" name="query" placeholder="جستجو..." autofocus required  autocomplete="off" >
+    <i class="fa fa-search"></i>
+    <div class='results-container'>
+    <div id="results"></div>
+    </div>
+</form>
+       </div>
+<script>
+    // تابع برای ارسال درخواست جستجو به سرور
+    function performSearch(query) {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "search.php?query=" + encodeURIComponent(query), true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                // نمایش نتایج در div#results
+                document.getElementById('results').innerHTML = xhr.responseText;
+            }
+        };
+        xhr.send();
+    }
+
+    // اضافه کردن رویداد input برای جستجوی آنی
+    document.getElementById("search-input").addEventListener("input", function(event) {
+        const query = event.target.value.trim();
+        
+        // اگر ورودی خالی نباشد، جستجو را شروع می‌کنیم
+        if (query !== "") {
+            performSearch(query); // جستجو را با هر تغییر وارد شده شروع می‌کنیم
+        } else {
+            document.getElementById('results').innerHTML = ''; // اگر ورودی خالی باشد، نتایج را پاک می‌کنیم
+        }
+    });
+
+    // جلوگیری از ارسال فرم و رفرش صفحه (در صورت فشردن اینتر)
+    document.getElementById('searchForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // جلوگیری از ارسال فرم
+    });
+</script>
+
+        <script>
+          
+const clearInput = () => {
+  const input = document.getElementsByTagName("input")[0];
+  input.value = "";
+}
+
+
+
+        </script>
+  <style>
+    /* استایل کادر نتایج جستجو */
+    .results-container {
+      display: none;
+        margin-top: 40px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-height: 400px; /* حداکثر ارتفاع کادر */
+        overflow-y: auto; /* اگر نتایج زیاد باشد، اسکرول می‌شود */
+    }
+
+    /* استایل برای هر نتیجه */
+    .result-card {
+        margin-bottom: 10px;
+    }
+
+    .result-card h2 {
+        font-size: 16px;
+        margin: 0;
+        color: #333;
+    }
+
+    .result-card a {
+        text-decoration: none;
+        color: #007BFF;  /* رنگ لینک */
+    }
+
+    .result-card a:hover {
+        text-decoration: underline;  /* هنگام هاور کردن لینک */
+    }
+
+    .result-card hr {
+        border: none;
+        border-top: 1px solid #eee;
+        margin: 10px 0;
+    }
+</style>
   <h1 class="title">مقالات پیشنهادی</h1>
   <div class="primarySection">
     <div id="slider" class="slider block">

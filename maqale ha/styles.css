@@ -375,12 +375,13 @@ top: -85px;
  
 }
 h2>a{
+  font-weight: 900;
   color: var(--text-color);
   transition: .5s;
 
 }
 h2>a:hover{
-  color: var( --accent-color);
+  color: var( --primary-color);
 
 }
 
@@ -508,7 +509,7 @@ h2>a:hover{
 
 .blog .view:hover {
     /* background-color: #1c262977; */
-    color: var(--zed2);
+    color: var(--primary-color);
 }
 
 

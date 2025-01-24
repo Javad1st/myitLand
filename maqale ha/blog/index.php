@@ -182,7 +182,7 @@ justify-content: center;
     <div style="text-align: center; margin-top: 20px;">
         <form action="../../pdf.php" method="post" target="_blank">
             <input type="hidden" name="blog_id" value="<?= htmlspecialchars($id) ?>">
-            <button dir="rtl" type="submit" class="download-pdf down">دانلود این مقاله با فرمت pdf</button>
+            <button dir="rtl" type="submit" class="download-pdf down"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: var(--text-color)"><path d="m12 16 4-5h-3V4h-2v7H8z"></path><path d="M20 18H4v-7H2v7c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2v-7h-2v7z"></path></svg> <p>دانلود این مقاله با فرمت pdf</p></button>
         </form>
     </div>
     <?php else:?>

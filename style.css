@@ -496,6 +496,97 @@ body {
   display: block;
 }
 
+
+
+
+
+
+
+.searchMain form {
+  position: relative;
+  top: 25px;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  transition: all 500ms;
+  width: 50px;
+  height: 50px;
+  background: var(--text-color);
+  border-radius: 18px;
+  border: 4px solid var(--text-color);
+  /* padding: 5px 10px 5px 10px; */
+  width: 250px;
+  cursor: pointer;
+}
+
+
+.searchMain input {
+  position: absolute;
+  top: 0;
+  left: -4px;
+  width: 0;
+  height: 42.5px;
+  line-height: 30px;
+  outline: 0;
+  border: 0;
+  font-size: 1em;
+  border-radius: 20px;
+  padding: 0 40px 0 10px;
+  background: var(--text-color);
+  color: var(--base-color);
+  width: 100%;
+}
+
+.searchMain .fa {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 42.5px;
+  height: 42.5px;
+  position: absolute;
+  top: 0;
+  right: -1px;
+  color: var(--base-color);
+  border-radius: 18px;
+  text-align: center;
+  font-size: 1.2em;
+  background:var(--zed);
+  color: white;
+ 
+}
+
+.searchMain form:valid{
+  .results-container{
+    display: block;
+  }
+
+}
+
+
+
+.searchMain button {
+  display: none;
+  position: absolute;
+  top: 70px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 20px;
+  color: white;
+  padding: 4px;
+  min-height: max-content;
+  background: transparent;
+  outline: 0;
+  border: 1px solid #303030;
+  border-radius: 4px;
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.searchMain form:valid button {
+  display: block;
+}
+
+
 .bigText{
   text-shadow: 1px 2px 5px var(--base-variant);
   gap: 15px;

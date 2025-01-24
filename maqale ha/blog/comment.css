@@ -34,6 +34,7 @@
 }
 
 .comments-section {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,7 +42,7 @@
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    max-width: 50%;
+    max-width: 80%;
     transition: transform 0.3s;
 }
 
