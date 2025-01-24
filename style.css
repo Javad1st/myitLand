@@ -526,6 +526,12 @@ body {
 .sliderText{
   font-weight: 300;
 }
+.title{
+  color: var(--text-color);
+  font-weight: bolder;
+  text-align: center;
+  margin-top: 2rem;
+}
 .baseOf{
   
   margin:0px 2rem;

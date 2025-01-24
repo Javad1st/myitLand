@@ -112,6 +112,7 @@ body {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  gap: 6px;
   padding: 0.2rem 0.4rem; 
   border-radius: 15px; 
   font-size: 1.5rem; 
@@ -126,9 +127,12 @@ body {
   transform: translateY(-5px); 
 }
 .cats2 .cat {
-  position: absolute;
-  /* top: 50px; */
-  left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  gap: 2px;
+  position: relative;
   background: none;
   width: fit-content;
   background-color: var(--text-color);
@@ -562,11 +566,7 @@ color: var(--accent-color);
   }
 }
 
-@media (max-width: 400px){
-  .cats2 .cat{
-    top: 50px;
-  }
-}
+
 
  
 
