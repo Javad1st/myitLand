@@ -275,8 +275,8 @@ const clearInput = () => {
     
 ?>
              <div class="blog">
-                <img src="../uploads/<?= ($blog['image']) ?>" alt="تصویر مقاله" class="article-image">
-             <h2>  <a href="./blog/index.php?id=<?=$blog['id'] ?>"><?= htmlspecialchars($blog['title']) ?></a></h2> 
+                <img src="./uploads/<?= ($blog['image']) ?>" alt="تصویر مقاله" class="article-image">
+             <h2>  <a href="./maqale ha/blog/index.php?id=<?=$blog['id'] ?>"><?= htmlspecialchars($blog['title']) ?></a></h2> 
                 <div class="discreption">
                     <?php
                      
@@ -329,7 +329,7 @@ const clearInput = () => {
                     </div>
                 </div>
                 
-                <a href="blog/index.php?id=<?=$blog['id'] ?>">
+                <a href="maqale ha/blog/index.php?id=<?=$blog['id'] ?>">
                 <div class="view">مشاهده</div>
                  </a>
                 
