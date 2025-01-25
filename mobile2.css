@@ -61,6 +61,7 @@
       /* height: 15%; */
       
     }
+  
   h4{
     text-align: center;
     /* margin-right: 120px; */
@@ -178,6 +179,9 @@
   
   @media screen and (max-width : 700px){
     
+    .searchMain{
+      display: flex;
+    }
     header{
       height: 10%;
     }
@@ -254,6 +258,13 @@
     .bigPicture img {
       width: 250px;
       height: 250px;
+  }
+  }
+
+  @media  screen  and (max-width : 370px){
+    .bigPicture img {
+      width: 220px;
+      height: 220px;
   }
   }
 

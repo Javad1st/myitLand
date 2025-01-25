@@ -1,3 +1,4 @@
+
 <?php 
 
 session_start();
@@ -65,30 +66,37 @@ $blogs = $select->fetchAll(PDO::FETCH_ASSOC);
     
     </div>
   </div>
-  <div id="base" class="baseOf">
-    <img class="moon" src="svgHa/b8420a7ec558f6cd2e796a3fabffa775.png" alt="">
-    <img class="moon2" src="svgHa/—Pngtree—hazy and beautiful halo moon_5336588.png" alt="">
-    <div class="bigPicture">
-      <img class="img1" src="svgHa/ITLand.png" alt="">
-      <img class="jazir" src="svgHa/jazir.png" alt="">
-      <img class="img2 disNone" src="svgHa/ITLand2.png" alt="">
-      <div class="bigText">
-        <h2>سایت مقاله ای آیتی لند</h2>
-        <p>مقالات رایگان و بروز برنامه نویسی در دنیا با آیتی لند</p>
-        <a style="font-weight: 900;" href="#slider" class="bigText1">اسکرول کنید
-          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="3 0 17 17"
-          style="fill: var(--text-color);  border-radius: 50%;">
-          <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
-        </svg>
-      </a>
-      <a href="./maqale ha/maqale.php"><button style="background-color: green; padding: 10px; border-radius: 10px; color: white; cursor: pointer; " class="blogha" id="blogha"  >برای مشاهده تمامی مقالات کلیک کنید</button></a>
-    </div>
-  </div>
+  <?php
+// اتصال به پایگاه داده
+include './database/db.php';
 
+// بررسی پارامتر جستجو
+if (isset($_GET['query'])) {
+    $query = htmlspecialchars($_GET['query']);  // جلوگیری از حملات XSS
 
-<div class="searchMain">
+    // جستجو در پایگاه داده
+    $stmt = $conn->prepare("SELECT * FROM blogs WHERE title LIKE :query");
+    $stmt->bindValue(':query', "%" . $query . "%", PDO::PARAM_STR);
+    $stmt->execute();
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+    // نمایش نتایج جستجو
+    if ($results) {
+        echo "<div class='results-container'>";  // اضافه کردن کلاس برای کادر نتایج
+        foreach ($results as $result) {
+            echo "<div class='result-card'>";  // کادر هر نتیجه
+            echo "<h2><a href='maqale ha/blog/index.php?id=" . $result['id'] . "'>" . htmlspecialchars($result['title']) . "</a></h2>";
+            echo "</div>";
+        }
+        echo "</div>";
+    } else {
+        echo "<p>نتیجه‌ای یافت نشد.</p>";
+    }
+}
+?>
+  <div class="searchMain">
 
+  <h2 class="title"> دنبال چه میگردی </h2>
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
@@ -99,7 +107,7 @@ $blogs = $select->fetchAll(PDO::FETCH_ASSOC);
     <div id="results"></div>
     </div>
 </form>
-       </div>
+        </div>
 <script>
     // تابع برای ارسال درخواست جستجو به سرور
     function performSearch(query) {
@@ -182,6 +190,28 @@ const clearInput = () => {
         margin: 10px 0;
     }
 </style>
+  <div id="base" class="baseOf">
+    <img class="moon" src="svgHa/b8420a7ec558f6cd2e796a3fabffa775.png" alt="">
+    <img class="moon2" src="svgHa/—Pngtree—hazy and beautiful halo moon_5336588.png" alt="">
+    <div class="bigPicture">
+      <img class="img1" src="svgHa/ITLand.png" alt="">
+      <img class="jazir" src="svgHa/jazir.png" alt="">
+      <img class="img2 disNone" src="svgHa/ITLand2.png" alt="">
+      <div class="bigText">
+        <h2>سایت مقاله ای آیتی لند</h2>
+        <p>مقالات رایگان و بروز برنامه نویسی در دنیا با آیتی لند</p>
+        <a style="font-weight: 900;" href="#slider" class="bigText1">اسکرول کنید
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="3 0 17 17"
+          style="fill: var(--text-color);  border-radius: 50%;">
+          <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
+        </svg>
+      </a>
+      <a href="./maqale ha/maqale.php"><button style="background-color: green; padding: 10px; border-radius: 10px; color: white; cursor: pointer; " class="blogha" id="blogha"  >برای مشاهده تمامی مقالات کلیک کنید</button></a>
+    </div>
+  </div>
+
+
+
   <h1 class="title">مقالات پیشنهادی</h1>
   <div class="primarySection">
     <div id="slider" class="slider block">
