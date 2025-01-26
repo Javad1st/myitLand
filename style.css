@@ -79,8 +79,8 @@
   transition: all ease-in-out .5s;
   --zed: #2ecc71; 
   --zed2: #27ae60; 
-  --grad1: rgba(27, 98, 190, 0.671);
-  --grad2: #91e9ff;
+  --grad1: rgba(27, 98, 190, 0.522);
+  --grad2: #91e9ffc2;
 }
 .darkmode2 {
 

@@ -14,7 +14,11 @@
 }
 
 a {
-  text-decoration: none;
+  
+    width: inherit;
+    text-decoration: none;
+    color: var(--text-color)!important; 
+  
 }
 
 @font-face {
@@ -536,10 +540,6 @@ h2>a:hover{
 } */
 
 
-a{
-  width: inherit;
-  text-decoration: none;
-}
 
 
 .disNone{
