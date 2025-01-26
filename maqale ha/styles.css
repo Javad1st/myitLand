@@ -127,6 +127,11 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
   transition: background-color 0.3s ease, transform 0.3s ease; 
 }
+.cats1 .cat a {
+
+  color: var(--text-color);
+
+}
 
 .cat:hover {
   background-color: var(--primary-color); 
@@ -490,9 +495,7 @@ h2>a:hover{
   background-color: rgba(133, 60, 60, 0.171);
 
 }
-#savedIcon{
-  display: none;
-}
+
 .save svg{
   fill: var(--text-color);
 }
@@ -535,7 +538,6 @@ h2>a:hover{
 
 a{
   width: inherit;
-
   text-decoration: none;
 }
 
