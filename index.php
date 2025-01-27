@@ -66,6 +66,8 @@ $blogs = $select->fetchAll(PDO::FETCH_ASSOC);
     
     </div>
   </div>
+  <div class="searchMain">
+    
   <?php
 // اتصال به پایگاه داده
 include './database/db.php';
@@ -94,7 +96,6 @@ if (isset($_GET['query'])) {
     }
 }
 ?>
-  <div class="searchMain">
 
   <h2 class="title"> دنبال چه میگردی </h2>
 
@@ -151,6 +152,15 @@ const clearInput = () => {
 
         </script>
   <style>
+
+.card {
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
     /* استایل کادر نتایج جستجو */
     .results-container {
       display: none;
