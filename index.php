@@ -107,6 +107,7 @@ if (isset($_GET['query'])) {
     <div id="results"></div>
     </div>
 </form>
+       
         </div>
 <script>
     // تابع برای ارسال درخواست جستجو به سرور
@@ -265,7 +266,7 @@ const clearInput = () => {
 {
     $words = explode(" ",$string);
     return implode(" ",array_splice($words,0,$word_limit));
-} foreach ($blogs as $blog): 
+} foreach (array_slice($blogs, 0, 8) as $blog): 
 
 
     $rowcoment = $conn->prepare("SELECT COUNT(*) FROM coment WHERE post = ? ");
