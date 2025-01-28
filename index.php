@@ -332,11 +332,62 @@ const clearInput = () => {
     
     <div class="comment icon"><?=$count ?> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style=";transform: ;msFilter:;"><path d="M20 2H4c-1.103 0-2 .897-2 2v18l5.333-4H20c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 14H6.667L4 18V4h16v12z"></path><circle cx="15" cy="10" r="2"></circle><circle cx="9" cy="10" r="2"></circle></svg></div>
                     </div>
-                    <div class=" save icons">
-                        <div id="saveIcon" class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18 2H6c-1.103 0-2 .897-2 2v18l8-4.572L20 22V4c0-1.103-.897-2-2-2zm0 16.553-6-3.428-6 3.428V4h12v14.553z"></path></svg>
-                        <svg id="savedIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M19 10.132v-6c0-1.103-.897-2-2-2H7c-1.103 0-2 .897-2 2V22l7-4.666L19 22V10.132z"></path></svg>
-                    </div>
-                    </div>
+                    <div class="save icons">
+    <div class="saveIcon icon" data-id="<?= $blog['id'] ?>">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M18 2H6c-1.103 0-2 .897-2 2v18l8-4.572L20 22V4c0-1.103-.897-2-2-2zm0 16.553-6-3.428-6 3.428V4h12v14.553z"></path>
+        </svg>
+    </div>
+    <div class="savedIcon icon" data-id="<?= $blog['id'] ?>" style="display: none;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M19 10.132v-6c0-1.103-.897-2-2-2H7c-1.103 0-2 .897-2 2V22l7-4.666L19 22V10.132z"></path>
+        </svg>
+    </div>
+</div>
+
+<script>
+    // گرفتن همه آیکون‌های ذخیره و ذخیره‌شده
+    const saveIcons = document.querySelectorAll('.saveIcon');
+    const savedIcons = document.querySelectorAll('.savedIcon');
+
+    // به‌روزرسانی وضعیت آیکون‌ها بر اساس localStorage
+    function updateIcons() {
+        saveIcons.forEach(saveIcon => {
+            const articleId = saveIcon.dataset.id;
+            const isSaved = localStorage.getItem(`isSaved-${articleId}`) === 'true';
+            const savedIcon = document.querySelector(`.savedIcon[data-id="${articleId}"]`);
+
+            if (isSaved) {
+                saveIcon.style.display = "none";
+                savedIcon.style.display = "flex";
+            } else {
+                saveIcon.style.display = "flex";
+                savedIcon.style.display = "none";
+            }
+        });
+    }
+
+    // به‌روزرسانی وضعیت آیکون‌ها در بارگذاری صفحه
+    updateIcons();
+
+    // افزودن رویداد به هر آیکون ذخیره
+    saveIcons.forEach(saveIcon => {
+        const articleId = saveIcon.dataset.id;
+        const savedIcon = document.querySelector(`.savedIcon[data-id="${articleId}"]`);
+
+        saveIcon.addEventListener("click", () => {
+            saveIcon.style.display = "none";
+            savedIcon.style.display = "flex";
+            localStorage.setItem(`isSaved-${articleId}`, 'true'); // ذخیره وضعیت
+        });
+
+        savedIcon.addEventListener("click", () => {
+            savedIcon.style.display = "none";
+            saveIcon.style.display = "flex";
+            localStorage.setItem(`isSaved-${articleId}`, 'false'); // ذخیره وضعیت
+        });
+    });
+</script>
                 </div>
                 
                 <a href="maqale ha/blog/index.php?id=<?=$blog['id'] ?>">
@@ -345,6 +396,8 @@ const clearInput = () => {
                 
             </div>
         <?php endforeach; ?>
+      
+    </div>
         <a id="all" href="./maqale ha/maqale.php"><h1>مشاهده همه<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:var(--secondary-text);"><path d="M12.707 17.293 8.414 13H18v-2H8.414l4.293-4.293-1.414-1.414L4.586 12l6.707 6.707z"></path></svg> </h1></a>
     </div>
       
