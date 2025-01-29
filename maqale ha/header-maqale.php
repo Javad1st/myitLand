@@ -166,7 +166,7 @@ const clearInput = () => {
         </script>
      <div class="partOfHeader partOfHeader6">
     <?php if (isset($_SESSION['user_email'])) { 
-        $profileImagePath = !empty($profile_image) ? './profile/' . $profile_image : 'default-avatar.jpg'; 
+        $profileImagePath = !empty($profile_image) ? '../profile/' . $profile_image : '../default-avatar.jpg'; 
     ?>
         <div class="profile1">
             <button id="profileBtn1">

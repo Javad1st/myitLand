@@ -67,35 +67,6 @@ $blogs = $select->fetchAll(PDO::FETCH_ASSOC);
     </div>
   </div>
   <div class="searchMain">
-    
-  <?php
-// اتصال به پایگاه داده
-include './database/db.php';
-
-// بررسی پارامتر جستجو
-if (isset($_GET['query'])) {
-    $query = htmlspecialchars($_GET['query']);  // جلوگیری از حملات XSS
-
-    // جستجو در پایگاه داده
-    $stmt = $conn->prepare("SELECT * FROM blogs WHERE title LIKE :query");
-    $stmt->bindValue(':query', "%" . $query . "%", PDO::PARAM_STR);
-    $stmt->execute();
-    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    // نمایش نتایج جستجو
-    if ($results) {
-        echo "<div class='results-container'>";  // اضافه کردن کلاس برای کادر نتایج
-        foreach ($results as $result) {
-            echo "<div class='result-card'>";  // کادر هر نتیجه
-            echo "<h2><a href='maqale ha/blog/index.php?id=" . $result['id'] . "'>" . htmlspecialchars($result['title']) . "</a></h2>";
-            echo "</div>";
-        }
-        echo "</div>";
-    } else {
-        echo "<p>نتیجه‌ای یافت نشد.</p>";
-    }
-}
-?>
 
   <h2 class="title"> دنبال چه میگردی </h2>
 
@@ -110,97 +81,7 @@ if (isset($_GET['query'])) {
 </form>
        
         </div>
-<script>
-    // تابع برای ارسال درخواست جستجو به سرور
-    function performSearch(query) {
-        const xhr = new XMLHttpRequest();
-        xhr.open("GET", "search.php?query=" + encodeURIComponent(query), true);
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                // نمایش نتایج در div#results
-                document.getElementById('results').innerHTML = xhr.responseText;
-            }
-        };
-        xhr.send();
-    }
 
-    // اضافه کردن رویداد input برای جستجوی آنی
-    document.getElementById("search-input").addEventListener("input", function(event) {
-        const query = event.target.value.trim();
-        
-        // اگر ورودی خالی نباشد، جستجو را شروع می‌کنیم
-        if (query !== "") {
-            performSearch(query); // جستجو را با هر تغییر وارد شده شروع می‌کنیم
-        } else {
-            document.getElementById('results').innerHTML = ''; // اگر ورودی خالی باشد، نتایج را پاک می‌کنیم
-        }
-    });
-
-    // جلوگیری از ارسال فرم و رفرش صفحه (در صورت فشردن اینتر)
-    document.getElementById('searchForm').addEventListener('submit', function(e) {
-        e.preventDefault(); // جلوگیری از ارسال فرم
-    });
-</script>
-
-        <script>
-          
-const clearInput = () => {
-  const input = document.getElementsByTagName("input")[0];
-  input.value = "";
-}
-
-
-
-        </script>
-  <style>
-
-.card {
-            border: 1px solid #ccc;
-            padding: 20px;
-            background-color: #fff;
-            margin: 20px 0;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-    /* استایل کادر نتایج جستجو */
-    .results-container {
-      display: none;
-        margin-top: 40px;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        background-color: #f9f9f9;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        max-height: 400px; /* حداکثر ارتفاع کادر */
-        overflow-y: auto; /* اگر نتایج زیاد باشد، اسکرول می‌شود */
-    }
-
-    /* استایل برای هر نتیجه */
-    .result-card {
-        margin-bottom: 10px;
-    }
-
-    .result-card h2 {
-        font-size: 16px;
-        margin: 0;
-        color: #333;
-    }
-
-    .result-card a {
-        text-decoration: none;
-        color: #007BFF;  /* رنگ لینک */
-    }
-
-    .result-card a:hover {
-        text-decoration: underline;  /* هنگام هاور کردن لینک */
-    }
-
-    .result-card hr {
-        border: none;
-        border-top: 1px solid #eee;
-        margin: 10px 0;
-    }
-</style>
   <div id="base" class="baseOf">
     <img class="moon" src="svgHa/b8420a7ec558f6cd2e796a3fabffa775.png" alt="">
     <img class="moon2" src="svgHa/—Pngtree—hazy and beautiful halo moon_5336588.png" alt="">
@@ -333,62 +214,11 @@ const clearInput = () => {
     
     <div class="comment icon"><?=$count ?> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style=";transform: ;msFilter:;"><path d="M20 2H4c-1.103 0-2 .897-2 2v18l5.333-4H20c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 14H6.667L4 18V4h16v12z"></path><circle cx="15" cy="10" r="2"></circle><circle cx="9" cy="10" r="2"></circle></svg></div>
                     </div>
-                    <div class="save icons">
-    <div class="saveIcon icon" data-id="<?= $blog['id'] ?>">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-            <path d="M18 2H6c-1.103 0-2 .897-2 2v18l8-4.572L20 22V4c0-1.103-.897-2-2-2zm0 16.553-6-3.428-6 3.428V4h12v14.553z"></path>
-        </svg>
-    </div>
-    <div class="savedIcon icon" data-id="<?= $blog['id'] ?>" style="display: none;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-            <path d="M19 10.132v-6c0-1.103-.897-2-2-2H7c-1.103 0-2 .897-2 2V22l7-4.666L19 22V10.132z"></path>
-        </svg>
-    </div>
-</div>
-
-<script>
-    // گرفتن همه آیکون‌های ذخیره و ذخیره‌شده
-    const saveIcons = document.querySelectorAll('.saveIcon');
-    const savedIcons = document.querySelectorAll('.savedIcon');
-
-    // به‌روزرسانی وضعیت آیکون‌ها بر اساس localStorage
-    function updateIcons() {
-        saveIcons.forEach(saveIcon => {
-            const articleId = saveIcon.dataset.id;
-            const isSaved = localStorage.getItem(`isSaved-${articleId}`) === 'true';
-            const savedIcon = document.querySelector(`.savedIcon[data-id="${articleId}"]`);
-
-            if (isSaved) {
-                saveIcon.style.display = "none";
-                savedIcon.style.display = "flex";
-            } else {
-                saveIcon.style.display = "flex";
-                savedIcon.style.display = "none";
-            }
-        });
-    }
-
-    // به‌روزرسانی وضعیت آیکون‌ها در بارگذاری صفحه
-    updateIcons();
-
-    // افزودن رویداد به هر آیکون ذخیره
-    saveIcons.forEach(saveIcon => {
-        const articleId = saveIcon.dataset.id;
-        const savedIcon = document.querySelector(`.savedIcon[data-id="${articleId}"]`);
-
-        saveIcon.addEventListener("click", () => {
-            saveIcon.style.display = "none";
-            savedIcon.style.display = "flex";
-            localStorage.setItem(`isSaved-${articleId}`, 'true'); // ذخیره وضعیت
-        });
-
-        savedIcon.addEventListener("click", () => {
-            savedIcon.style.display = "none";
-            saveIcon.style.display = "flex";
-            localStorage.setItem(`isSaved-${articleId}`, 'false'); // ذخیره وضعیت
-        });
-    });
-</script>
+                    <div class=" save icons">
+                        <div id="saveIcon" class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18 2H6c-1.103 0-2 .897-2 2v18l8-4.572L20 22V4c0-1.103-.897-2-2-2zm0 16.553-6-3.428-6 3.428V4h12v14.553z"></path></svg>
+                        <svg id="savedIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M19 10.132v-6c0-1.103-.897-2-2-2H7c-1.103 0-2 .897-2 2V22l7-4.666L19 22V10.132z"></path></svg>
+                    </div>
+                    </div>
                 </div>
                 
                 <a href="maqale ha/blog/index.php?id=<?=$blog['id'] ?>">
@@ -397,8 +227,6 @@ const clearInput = () => {
                 
             </div>
         <?php endforeach; ?>
-      
-    </div>
         <a id="all" href="./maqale ha/maqale.php"><h1>مشاهده همه<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:var(--secondary-text);"><path d="M12.707 17.293 8.414 13H18v-2H8.414l4.293-4.293-1.414-1.414L4.586 12l6.707 6.707z"></path></svg> </h1></a>
     </div>
       

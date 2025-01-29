@@ -1,4 +1,5 @@
 RewriteEngine On
+Options -Indexes
 
 # بررسی درخواست به مسیر /login
 RewriteCond %{REQUEST_URI} ^/myitland/login/?$ [NC]

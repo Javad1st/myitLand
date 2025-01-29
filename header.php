@@ -393,56 +393,8 @@ window.onclick = function(event) {
           <div class="menuitem">
           <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<form id="searchForm">
-<input type="search" id="search-input" name="query" placeholder="جستجو..." autofocus required  autocomplete="off" >
-<i class="fa fa-search"></i>
-<div class='results-container'>
-<div id="results"></div>
+
 </div>
-</form>
-</div>
-<script>
-// تابع برای ارسال درخواست جستجو به سرور
-function performSearch(query) {
-const xhr = new XMLHttpRequest();
-xhr.open("GET", "search.php?query=" + encodeURIComponent(query), true);
-xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-        // نمایش نتایج در div#results
-        document.getElementById('results').innerHTML = xhr.responseText;
-    }
-};
-xhr.send();
-}
-
-// اضافه کردن رویداد input برای جستجوی آنی
-document.getElementById("search-input").addEventListener("input", function(event) {
-const query = event.target.value.trim();
-
-// اگر ورودی خالی نباشد، جستجو را شروع می‌کنیم
-if (query !== "") {
-    performSearch(query); // جستجو را با هر تغییر وارد شده شروع می‌کنیم
-} else {
-    document.getElementById('results').innerHTML = ''; // اگر ورودی خالی باشد، نتایج را پاک می‌کنیم
-}
-});
-
-// جلوگیری از ارسال فرم و رفرش صفحه (در صورت فشردن اینتر)
-document.getElementById('searchForm').addEventListener('submit', function(e) {
-e.preventDefault(); // جلوگیری از ارسال فرم
-});
-</script>
-
-<script>
-  
- clearInput = () => {
-const input = document.getElementsByTagName("input")[0];
-input.value = "";
-}
-
-
-
-</script>
           </div>
         </header>
         
