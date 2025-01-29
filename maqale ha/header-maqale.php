@@ -162,23 +162,24 @@ const clearInput = () => {
 }
 
 
+
         </script>
-       <div class="partOfHeader partOfHeader6">
+     <div class="partOfHeader partOfHeader6">
     <?php if (isset($_SESSION['user_email'])) { 
-        $profileImagePath = !empty($profile_image) ? '../profile/' . $profile_image : '../default-avatar.jpg'; 
+        $profileImagePath = !empty($profile_image) ? './profile/' . $profile_image : 'default-avatar.jpg'; 
     ?>
         <div class="profile1">
             <button id="profileBtn1">
                 <img src="<?php echo $profileImagePath; ?>" alt="Profile Image">
             </button>
             <div id="dropdown1" class="dropdown-content1">
-                <a href="../dashboard.php">
+                <a href="./dashboard.php">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);">
                         <path d="M4 13h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1zm-1 7a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v4zm10 0a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-7a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v7zm1-10h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1z"></path>
                     </svg>
                     داشبورد
                 </a>
-                <a href="../logout.php">
+                <a href="./logout.php">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);">
                         <path d="M18 2H6a1 1 0 0 0-1 1v9l5-4v3h6v2h-6v3l-5-4v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z"></path>
                     </svg>
@@ -187,14 +188,14 @@ const clearInput = () => {
             </div>
         </div>
     <?php } else { ?>
-        <a class="linkOne" href="../login/login.php">
+        <a class="linkOne" href="./login/login.php">
             <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.4" d="M6.67065 6.4847C6.67065 4.27199 8.53019 2.47095 10.8157 2.47095H15.3587C17.6387 2.47095 19.4935 4.26748 19.4935 6.47567V16.5109C19.4935 18.7246 17.6349 20.5265 15.3494 20.5265H10.8064C8.52646 20.5265 6.67065 18.7291 6.67065 16.52V15.6714V6.4847Z" fill="currentColor"></path>
                 <path d="M14.5621 11.0056L11.8827 8.37941C11.6058 8.10858 11.1602 8.10858 10.8841 8.38122C10.6091 8.65386 10.61 9.09351 10.886 9.36434L12.3531 10.8025H3.04688C2.65717 10.8025 2.34082 11.1139 2.34082 11.4985C2.34082 11.8822 2.65717 12.1927 3.04688 12.1927H12.3531L10.886 13.6318C10.61 13.9026 10.6091 14.3423 10.8841 14.6149C11.0226 14.7512 11.2033 14.8198 11.3848 14.8198C11.5645 14.8198 11.7452 14.7512 11.8827 14.6167L14.5621 11.9905C14.695 11.8596 14.7702 11.6827 14.7702 11.4985C14.7702 11.3134 14.695 11.1365 14.5621 11.0056Z" fill="currentColor"></path>
             </svg>
             <p>ورود</p>
         </a>
-        <a class="linkTwo" href="../login/rgister.php">
+        <a class="linkTwo" href="./login/rgister.php">
             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.4" d="M19.3827 8.78099H18.2966V7.71911C18.2966 7.26576 17.933 6.89612 17.485 6.89612C17.0379 6.89612 16.6734 7.26576 16.6734 7.71911V8.78099H15.5892C15.1412 8.78099 14.7776 9.15063 14.7776 9.60398C14.7776 10.0573 15.1412 10.427 15.5892 10.427H16.6734V11.4898C16.6734 11.9431 17.0379 12.3128 17.485 12.3128C17.933 12.3128 18.2966 11.9431 18.2966 11.4898V10.427H19.3827C19.8297 10.427 20.1943 10.0573 20.1943 9.60398C20.1943 9.15063 19.8297 8.78099 19.3827 8.78099" fill="currentColor"></path>
                 <path d="M8.90975 13.681C5.25731 13.681 2.13892 14.265 2.13892 16.598C2.13892 18.9301 5.23834 19.5351 8.90975 19.5351C12.5613 19.5351 15.6806 18.9511 15.6806 16.6181C15.6806 14.2851 12.5812 13.681 8.90975 13.681" fill="currentColor"></path>
@@ -203,7 +204,6 @@ const clearInput = () => {
             <p>ثبت نام</p>
         </a>
     <?php } ?>
-
 
         <style>
 #profileBtn1 {
@@ -343,14 +343,11 @@ window.onclick = function(event) {
                 d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z" />
               </svg>
             </button>
-            <div class="headerButton headerButton4">
-              <a class="linkOne" href="login/login.php">ورود</a>
-              <a class="linkTwo" href="login/rgister.php">ثبت نام</a>
-            </div>
+           
           </div>
           <div class="menu-item">
             <button class="menu-btn">
-              درس ها
+             دروس و امکانات
               <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                 style="fill: var(--text-color);">
                 <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
@@ -359,8 +356,8 @@ window.onclick = function(event) {
             </button>
             <div class="dropdown-content">
               <a href="maqale ha/maqale.php">مقالات</a>
-              <a href="#">لینک 2</a>
-              <a href="#">لینک 3</a>
+              <a href="Ai.php">هوش مصنوعی</a>
+              <a href="../undeveloped.html">ویدیو ها</a>
             </div>
           </div>
           <!-- بقیه منو ها... -->
@@ -373,9 +370,8 @@ window.onclick = function(event) {
               </svg></span>
             </button>
             <div class="dropdown-content">
-              <a href="#">لینک 1</a>
-              <a href="#">لینک 2</a>
-              <a href="#">لینک 3</a>
+              <a href="../undeveloped.html">تیم ایتی لند</a>
+              <a href="#">اسپانسر ها</a>
             </div>
           </div>
 
@@ -388,10 +384,63 @@ window.onclick = function(event) {
                 </svg></span>
             </button>
             <div class="dropdown-content">
-              <a href="#">لینک 1</a>
-              <a href="#">لینک 2</a>
-              <a href="#">لینک 3</a>
+              <a href="../undeveloped.html">تلکرام</a>
+              <a href="../undeveloped.html">ایمیل</a>
             </div>
+          </div>
+          <div class="menuitem">
+          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+<form id="searchForm">
+<input type="search" id="search-input" name="query" placeholder="جستجو..." autofocus required  autocomplete="off" >
+<i class="fa fa-search"></i>
+<div class='results-container'>
+<div id="results"></div>
+</div>
+</form>
+</div>
+<script>
+// تابع برای ارسال درخواست جستجو به سرور
+function performSearch(query) {
+const xhr = new XMLHttpRequest();
+xhr.open("GET", "search.php?query=" + encodeURIComponent(query), true);
+xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+        // نمایش نتایج در div#results
+        document.getElementById('results').innerHTML = xhr.responseText;
+    }
+};
+xhr.send();
+}
+
+// اضافه کردن رویداد input برای جستجوی آنی
+document.getElementById("search-input").addEventListener("input", function(event) {
+const query = event.target.value.trim();
+
+// اگر ورودی خالی نباشد، جستجو را شروع می‌کنیم
+if (query !== "") {
+    performSearch(query); // جستجو را با هر تغییر وارد شده شروع می‌کنیم
+} else {
+    document.getElementById('results').innerHTML = ''; // اگر ورودی خالی باشد، نتایج را پاک می‌کنیم
+}
+});
+
+// جلوگیری از ارسال فرم و رفرش صفحه (در صورت فشردن اینتر)
+document.getElementById('searchForm').addEventListener('submit', function(e) {
+e.preventDefault(); // جلوگیری از ارسال فرم
+});
+</script>
+
+<script>
+  
+ clearInput = () => {
+const input = document.getElementsByTagName("input")[0];
+input.value = "";
+}
+
+
+
+</script>
           </div>
         </header>
         
@@ -405,14 +454,14 @@ window.onclick = function(event) {
             <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
           </svg> 
         <div id="aboutDropdown" class="dropdownContent">
-          <a href="/overview" class="dropdownItem">Overview</a>
-          <a href="/team" class="dropdownItem">Team</a>
-          <a href="/careers" class="dropdownItem">Careers</a>
+          <a href="/overview" class="dropdownItem">تاریخچه</a>
+          <a href="/team" class="dropdownItem">کامینیتی</a>
+          <a href="/careers" class="dropdownItem">سازندگان</a>
         </div>
         </div>
         
         <!-- Support Dropdown -->
-        <div class="headerButton headerButton2">پشتیبانی </div>
+        <div class="headerButton headerButton2"><p>هوش مصنوعی </p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: var(--text-color);"><path d="M5 18v3.766l1.515-.909L11.277 18H16c1.103 0 2-.897 2-2V8c0-1.103-.897-2-2-2H4c-1.103 0-2 .897-2 2v8c0 1.103.897 2 2 2h1zM4 8h12v8h-5.277L7 18.234V16H4V8z"></path><path d="M20 2H8c-1.103 0-2 .897-2 2h12c1.103 0 2 .897 2 2v8c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2z"></path></svg> </div>
         
         
         <!-- Home Dropdown -->

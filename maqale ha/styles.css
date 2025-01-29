@@ -17,7 +17,6 @@ a {
   
     width: inherit;
     text-decoration: none;
-    color: var(--text-color)!important; 
   
 }
 
@@ -70,6 +69,7 @@ a {
   --zed: #2ecc71;
   --zed2: #27ae60; 
   --box: rgba(255, 255, 255, 0.205);
+  --grad2: #1b8aa6;
 }
 
 
@@ -86,6 +86,7 @@ a {
   --zed: #2ecc71; 
   --zed2: #27ae60; 
   --box: rgba(0, 0, 0, 0.1);
+  --grad2: #1fd2ffd4;
 }
 
 
@@ -170,7 +171,7 @@ body {
 }
 
 .hamburger-menu {
-  display: none;
+  /* display: none; */
 }
 
 .hamburger-icon {
@@ -511,12 +512,12 @@ h2>a:hover{
   width: inherit;
   margin-bottom: -2rem;
   padding-top: 2rem;
-  border-top: 2px solid rgba(71, 115, 128, 0.418);
+  border-top: 2px solid rgba(71, 115, 128, 0.187);
 }
 
 .blog .view:hover {
     /* background-color: #1c262977; */
-    color: var(--primary-color);
+    color: var(--grad2);
 }
 
 
@@ -553,9 +554,6 @@ h2>a:hover{
 
 
 
-.blog .view:hover {
-color: var(--accent-color);
-}
 
 .categories{
   position: relative;
